@@ -53,13 +53,13 @@ export function Header() {
 
         {/* Right actions */}
         <div className="flex items-center gap-2 md:gap-4">
+          <div className="hidden sm:block">
+            <Button href="/contact">Liên hệ ngay</Button>
+          </div>
+
           <div className="hidden md:flex items-center gap-2">
             <Image src="/images/ic_dark_mode.png" alt="Dark mode" width={36} height={36} className="w-9 h-9" />
             <Image src="/images/ic_lang.png" alt="Language" width={30} height={30} className="w-7 h-7" />
-          </div>
-
-          <div className="hidden sm:block">
-            <Button href="/contact">Liên hệ ngay</Button>
           </div>
 
           {/* Hamburger — mobile */}
