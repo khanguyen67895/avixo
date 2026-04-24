@@ -23,7 +23,7 @@ export default function Button({
     ...props
 }: ButtonProps) {
     const base =
-        "flex items-center justify-center py-3.5 px-8 rounded-full font-semibold transition-all active:scale-95 font-['Science_Gothic',_sans-serif]";
+        "flex items-center justify-center py-3.5 px-8 rounded-full transition-all active:scale-95";
 
     const variants: Record<Variant, string> = {
         primary:
@@ -31,7 +31,7 @@ export default function Button({
         outline:
             "bg-[#0a0f1c] border border-[#00b4ff]/40 text-white hover:bg-[#0f172a] hover:border-[#00b4ff]/70 hover:scale-105",
         light:
-            "bg-zinc-100 text-zinc-900 hover:bg-zinc-200 transition-colors",
+            "bg-zinc-100 text-zinc-900 hover:bg-zinc-200 transition-colors shadow-[0_0_15px_rgba(255,255,255,0.25)]",
     };
 
     const classes = clsx(

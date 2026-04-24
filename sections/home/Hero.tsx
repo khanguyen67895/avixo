@@ -2,6 +2,7 @@
 
 import Button from "@/components/ui/button";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Text from "@/components/ui/label";
 
 export function Hero() {
@@ -63,7 +64,7 @@ export function Hero() {
 
       {/* Hero Border Arc */}
       <div className="w-full h-full flex items-center justify-center relative z-10 pointer-events-none">
-        <img src="/images/ic_border_hero.png" alt="Border" className="w-full h-auto brightness-150 contrast-125 drop-shadow-[0_0_25px_rgba(0,180,255,0.8)] mix-blend-screen" />
+        <Image src="/images/ic_border_hero.png" alt="Border" width={1920} height={400} className="w-full h-auto brightness-150 contrast-125 drop-shadow-[0_0_25px_rgba(0,180,255,0.8)] mix-blend-screen" />
       </div>
 
       {/* Globe Video */}

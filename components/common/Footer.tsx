@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Image from 'next/image';
 
 export function Footer() {
   return (
@@ -58,12 +59,12 @@ export function Footer() {
 
       {/* Main Footer Links */}
       <section className="w-full py-16 bg-[#0a0a0a] border-t border-white/5">
-        <div className="w-full max-w-[1400px] mx-auto px-6 lg:px-8 flex flex-col md:flex-row justify-between gap-12">
+        <div className="w-full max-w-350 mx-auto px-6 lg:px-8 flex flex-col md:flex-row justify-between gap-12">
           
           {/* Logo & Copyright */}
           <div className="flex flex-col justify-between max-w-xs">
             <Link href="/" className="flex items-center gap-2 mb-12 md:mb-0">
-              <img src="/images/logo-avixo.png" alt="AVIXO Logo" className="h-10 w-auto" />
+              <Image src="/images/logo-avixo.png" alt="AVIXO Logo" width={120} height={40} className="h-10 w-auto" />
             </Link>
             <p className="text-zinc-500 text-sm hidden md:block">
               © 2024 AVIXO Capital Management. All rights reserved.
