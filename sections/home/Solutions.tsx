@@ -62,12 +62,11 @@ export function Solutions() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <Text className="text-4xl md:text-5xl font-bold tracking-tight text-zinc-900 mb-6">
+          <Text className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight text-zinc-900 mb-6">
             Giải pháp cho mọi đối tác
           </Text>
-          <p className="max-w-2xl mx-auto text-lg text-[#505050]">
-            AVIXO là hệ sinh thái toàn diện nơi công nghệ, dữ liệu và con người <br />
-            cùng tạo giá trị dài hạn trên Forex, Gold, Crypto, Chứng khoán và Hàng hóa.
+          <p className="max-w-2xl mx-auto text-base md:text-lg text-[#505050] px-2">
+            AVIXO là hệ sinh thái toàn diện nơi công nghệ, dữ liệu và con người cùng tạo giá trị dài hạn trên Forex, Gold, Crypto, Chứng khoán và Hàng hóa.
           </p>
         </motion.div>
 

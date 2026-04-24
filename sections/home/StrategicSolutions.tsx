@@ -1,109 +1,174 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Zap } from "lucide-react";
+import Image from "next/image";
+import Text from "@/components/ui/label";
 
-export function StrategicSolutions() {
-  const bots = [
-    {
-      type: "FULL AUTO BOT",
-      name: "AUTO BMR & SMN MGH Pro",
-      badges: ["PAMM/MAM", "Copy Trade", "Low DD"],
-      isActive: false
-    },
-    {
-      type: "SEMI BOT",
-      typeColor: "text-green-700 bg-green-100",
-      name: "Semi Boomerang & Smart Money",
-      desc: "Chiến lược hồi giá kết hợp tư duy Smart Money / Liquidity / Order Flow. Công cụ hỗ trợ phân tích vùng cung-cầu, BOS, CHoCH — nhà đầu tư chủ động quyết định lệnh.",
-      badges: ["Order flow", "Mean Reversion", "Intraday"],
-      isActive: true,
-      button: "Tìm hiểu ngay"
-    },
-    {
-      type: "FULL AUTO BOT",
-      name: "Arrow Big Trend & AI Trading Swing",
-      badges: ["AI-powered", "Swing", "Position"],
-      isActive: false
-    }
-  ];
+type BadgeCfg = { label: string; bx: number; by: number; bw: number; lx: number; ly: number };
+
+// cx=120, cy=90, r=22 → vertices: R(142,90) UR(131,71) UL(109,71) L(98,90) LL(109,109) LR(131,109)
+const NETWORKS: BadgeCfg[][] = [
+  [
+    { label: "PAMM/MAM",   bx: 55,  by: 35,  bw: 72, lx: 109, ly: 71  },
+    { label: "Copy Trade", bx: 5,   by: 148, bw: 70, lx: 109, ly: 109 },
+    { label: "Low DD",     bx: 160, by: 142, bw: 58, lx: 131, ly: 109 },
+  ],
+  [
+    { label: "Order flow",     bx: 5,   by: 90,  bw: 68, lx: 98,  ly: 90  },
+    { label: "Mean Reversion", bx: 153, by: 65,  bw: 82, lx: 142, ly: 78  },
+    { label: "Intraday",       bx: 5,   by: 148, bw: 60, lx: 109, ly: 109 },
+  ],
+  [
+    { label: "AI-powered", bx: 158, by: 35,  bw: 72, lx: 131, ly: 71  },
+    { label: "Swing",      bx: 5,   by: 148, bw: 52, lx: 109, ly: 109 },
+    { label: "Position",   bx: 162, by: 148, bw: 62, lx: 131, ly: 109 },
+  ],
+];
+
+function NetworkDiagram({ idx }: { idx: number }) {
+  const cfg = NETWORKS[idx];
+  const stroke = "#d1d5db";
+  const bh = 22;
 
   return (
-    <section className="w-full py-32 bg-white flex flex-col items-center">
+    <svg viewBox="0 0 240 190" className="w-full h-full">
+      {cfg.map((b, i) => (
+        <g key={i}>
+          <rect x={b.bx} y={b.by - bh / 2} width={b.bw} height={bh} rx="11" fill="white" stroke={stroke} strokeWidth="1" />
+          <text x={b.bx + b.bw / 2} y={b.by + 4} textAnchor="middle" fontSize="9" fill="#374151" fontFamily="system-ui, sans-serif">
+            {b.label}
+          </text>
+        </g>
+      ))}
+    </svg>
+  );
+}
+
+const bots = [
+  {
+    type: "FULL AUTO BOT",
+    name: "AUTO BMR & SMN MGH Pro",
+    desc: "Hệ thống giao dịch tự động hoàn toàn với mô hình PAMM/MAM, copy trade và drawdown thấp, phù hợp nhà đầu tư thụ động.",
+    button: "Tìm hiểu ngay",
+  },
+  {
+    type: "SEMI BOT",
+    name: "Semi Boomerang & Smart Money",
+    desc: "Chiến lược hồi giá kết hợp tư duy Smart Money / Liquidity / Order Flow. Công cụ hỗ trợ phân tích vùng cung-cầu, BOS, CHoCH — nhà đầu tư chủ động quyết định lệnh.",
+    button: "Tìm hiểu ngay",
+  },
+  {
+    type: "FULL AUTO BOT",
+    name: "Arrow Big Trend & AI Trading Swing",
+    desc: "Thuật toán AI phát hiện xu hướng lớn kết hợp chiến lược swing và position trading trên các thị trường quốc tế.",
+    button: "Tìm hiểu ngay",
+  },
+];
+
+export function StrategicSolutions() {
+  const [activeIdx, setActiveIdx] = useState(1);
+
+  return (
+    <section className="w-full bg-white">
       <div className="w-full max-w-6xl mx-auto px-4">
-        
-        <motion.div 
+
+        {/* Heading */}
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20 border border-zinc-200 rounded-[40px] p-12 relative overflow-hidden"
+          className="text-center mb-8 md:mb-16 border border-zinc-200 rounded-[24px] md:rounded-[40px] p-6 md:p-12 relative overflow-hidden"
         >
-          {/* Decorative accent */}
-          <div className="absolute top-0 right-0 w-32 h-full bg-[#00b4ff] rounded-l-[100px] opacity-[0.03]"></div>
-          
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-zinc-900 mb-4">
+          <div className="absolute top-0 right-0 w-32 h-full bg-[#00b4ff] rounded-l-[100px] opacity-[0.03]" />
+          <Text as="h2" className="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 mb-4">
             Giải pháp chiến lược
-          </h2>
+          </Text>
           <p className="max-w-2xl mx-auto text-lg text-zinc-500">
             Các thuật toán được tinh chỉnh qua 15 năm thực chiến trên thị trường quốc tế.
           </p>
         </motion.div>
 
-        <div className="flex flex-col md:flex-row gap-8 justify-center items-stretch">
-          {bots.map((bot, index) => (
-            <motion.div 
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              className={`flex-1 flex flex-col items-center text-center p-8 rounded-3xl border transition-all ${
-                bot.isActive 
-                  ? 'bg-white shadow-[0_20px_60px_rgb(0,0,0,0.08)] border-zinc-200 scale-105 z-10' 
-                  : 'bg-zinc-50 border-zinc-100 opacity-80 hover:opacity-100'
-              }`}
-            >
-              <div className={`text-xs font-bold px-3 py-1 rounded-full mb-8 ${
-                bot.typeColor || 'text-orange-700 bg-orange-100'
-              }`}>
-                ✦ {bot.type}
-              </div>
-
-              {/* Bot Network Placeholder */}
-              <div className="relative w-full aspect-[4/3] mb-8 flex items-center justify-center">
-                <div className="w-16 h-16 bg-white rounded shadow-md border flex items-center justify-center z-10">
-                  <span className="text-[#00b4ff] font-bold italic text-xl">AX</span>
+        {/* Cards — equal width, inactive cards vertically centered against active */}
+        <div className="flex flex-col md:flex-row md:items-center gap-4">
+          {bots.map((bot, idx) => {
+            const isActive = activeIdx === idx;
+            return (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                onHoverStart={() => setActiveIdx(idx)}
+                onClick={() => setActiveIdx(idx)}
+                className={`relative w-full md:flex-1 flex flex-col overflow-hidden rounded-[28px] p-6 cursor-pointer transition-all ${
+                  isActive
+                    ? "bg-white shadow-[0_8px_40px_rgba(0,0,0,0.10)] border-2 border-zinc-300 z-10"
+                    : "bg-[#F5F6F8] border-2 border-zinc-200"
+                }`}
+              >
+                {/* Background decorative image */}
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <Image
+                    src="/images/ic_bg_solution.png"
+                    alt=""
+                    width={240}
+                    height={240}
+                    className={`object-contain transition-opacity duration-300 ${isActive ? "opacity-80" : "opacity-40"}`}
+                  />
                 </div>
-                {/* Lines and badges */}
-                <svg className="absolute inset-0 w-full h-full -z-0" viewBox="0 0 100 100">
-                  <line x1="50" y1="50" x2="20" y2="20" stroke="#e5e5e5" strokeWidth="1" />
-                  <line x1="50" y1="50" x2="80" y2="20" stroke="#e5e5e5" strokeWidth="1" />
-                  <line x1="50" y1="50" x2="20" y2="80" stroke="#e5e5e5" strokeWidth="1" />
-                  <line x1="50" y1="50" x2="80" y2="80" stroke="#e5e5e5" strokeWidth="1" />
-                </svg>
-                {bot.badges.map((badge, i) => (
-                  <div key={i} className={`absolute text-[10px] px-2 py-0.5 bg-white border rounded-full whitespace-nowrap ${
-                    i === 0 ? 'top-[10%] left-[10%]' : i === 1 ? 'top-[10%] right-[10%]' : 'bottom-[20%] left-[20%]'
-                  }`}>
-                    {badge}
-                  </div>
-                ))}
-              </div>
 
-              <h3 className="text-xl font-bold text-zinc-900 mb-4">{bot.name}</h3>
-              
-              {bot.desc && (
-                <p className="text-sm text-zinc-500 mb-8">{bot.desc}</p>
-              )}
+                {/* Badge — centered */}
+                <div className="relative z-10 mb-4 flex justify-center">
+                  <span className={`inline-flex items-center gap-1 text-xs font-semibold px-3 py-1 rounded-full transition-colors duration-300 ${isActive ? "bg-[#4CAF50] text-[#1D1D1D]" : "bg-[#FFE1CC] text-[#1D1D1D]"}`}>
+                    <Zap size={11} fill="#1D1D1D" color="#1D1D1D" /> {bot.type}
+                  </span>
+                </div>
 
-              {bot.button && (
-                <button className="mt-auto bg-[#00b4ff] hover:bg-[#0090cc] text-white px-8 py-3 rounded-full font-semibold transition-colors">
-                  {bot.button}
-                </button>
-              )}
-            </motion.div>
-          ))}
+                {/* Network diagram */}
+                <div className="relative z-10 w-full aspect-[6/5] mb-4">
+                  <NetworkDiagram idx={idx} />
+                </div>
+
+                {/* Title */}
+                <h3 className="relative z-10 font-bold text-zinc-900 leading-snug text-lg mb-3">
+                  {bot.name}
+                </h3>
+
+                {/* Mobile: always show content */}
+                <div className="md:hidden relative z-10">
+                  <p className="text-sm text-zinc-500 leading-relaxed mb-6">{bot.desc}</p>
+                  <button className="w-fit mx-auto flex bg-gradient-to-r from-[#37C0FF] to-[#0090cc] hover:opacity-90 text-white px-8 py-3 rounded-full font-semibold transition-opacity text-sm">
+                    {bot.button}
+                  </button>
+                </div>
+
+                {/* Desktop: expand on hover */}
+                <AnimatePresence mode="wait">
+                  {isActive && (
+                    <motion.div
+                      key="content"
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.25 }}
+                      className="hidden md:block relative z-10 overflow-hidden"
+                    >
+                      <p className="text-sm text-zinc-500 leading-relaxed mb-6">{bot.desc}</p>
+                      <button className="w-fit mx-auto flex bg-gradient-to-r from-[#37C0FF] to-[#0090cc] hover:opacity-90 text-white px-8 py-3 rounded-full font-semibold transition-opacity text-sm">
+                        {bot.button}
+                      </button>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            );
+          })}
         </div>
+
       </div>
     </section>
   );

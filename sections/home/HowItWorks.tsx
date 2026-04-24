@@ -30,6 +30,11 @@ const steps = [
   },
 ];
 
+const CARD_H = 540;
+const STEP_Y = [108, 270, 432];
+const TEXT_Y = [108, 200, 300];
+const CARD_W = 45;
+
 export function HowItWorks() {
   const [active, setActive] = useState(0);
 
@@ -39,7 +44,12 @@ export function HowItWorks() {
   }, []);
 
   return (
-    <section className="relative w-full bg-white py-24 overflow-hidden">
+    <section className="relative w-full py-16 md:py-24 overflow-hidden">
+
+      {/* Background SVG */}
+      <div className="absolute inset-0 top-20 left-10 pointer-events-none">
+        <Image src="/images/bg_howtoit.svg" alt="" fill className="object-fill" />
+      </div>
 
       {/* Heading */}
       <div className="relative z-10 w-full max-w-6xl mx-auto px-4">
@@ -48,36 +58,88 @@ export function HowItWorks() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-12 md:mb-20"
         >
-          <Text className="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 mb-4">
+          <Text className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 mb-4">
             Phương thức hoạt động của AVIXO
           </Text>
-          <p className="max-w-2xl mx-auto text-lg text-zinc-500">
+          <p className="max-w-2xl mx-auto text-base text-zinc-500 px-2">
             Chúng tôi không chỉ cung cấp công cụ, chúng tôi xây dựng một nền tảng tư duy
             và công nghệ bền vững cho sự thịnh vượng tài chính toàn cầu.
           </p>
         </motion.div>
       </div>
 
-      {/* Main content area — bg sits behind this */}
-      <div className="relative w-full max-w-6xl mx-auto px-4">
-
-        {/* Background svg — behind content, like Solutions */}
-        <div className="absolute inset-0 -top-10 -bottom-10 pointer-events-none">
-          <Image
-            src="/images/bg_howtoit.svg"
-            alt=""
-            fill
-            className="object-contain"
-          />
+      {/* ── MOBILE layout (below md) ── */}
+      <div className="md:hidden relative z-10 w-full max-w-6xl mx-auto px-4">
+        {/* Image card */}
+        <div
+          className="relative w-full aspect-[4/3] rounded-[30px] overflow-hidden mb-6"
+          style={{ background: "linear-gradient(to bottom, #F8FCFF, #EBECF0)" }}
+        >
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={`mb-bg-${active}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+              className="absolute inset-0"
+            >
+              <Image src={steps[active].bg} alt="" fill className="object-contain mix-blend-multiply" />
+            </motion.div>
+          </AnimatePresence>
         </div>
 
-        {/* Layout row */}
-        <div className="relative z-10 flex items-stretch gap-0">
+        {/* Step icon tabs */}
+        <div className="flex justify-center gap-4 mb-6">
+          {steps.map((step, i) => {
+            const isActive = i === active;
+            return (
+              <button
+                key={i}
+                onClick={() => setActive(i)}
+                className={`w-14 h-14 rounded-full flex items-center justify-center transition-all ${
+                  isActive
+                    ? "bg-[#37C0FF] text-white shadow-md"
+                    : "bg-zinc-100 text-zinc-400"
+                }`}
+              >
+                <step.Icon size={22} />
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Text */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={`mb-txt-${active}`}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.3 }}
+            className="text-center px-2"
+          >
+            <Text as="h3" className="text-xl font-bold text-zinc-900 mb-3 leading-snug">
+              {steps[active].title}
+            </Text>
+            <p className="text-zinc-500 text-sm leading-relaxed">
+              {steps[active].desc}
+            </p>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      {/* ── DESKTOP layout (md+) ── */}
+      <div className="hidden md:block relative z-10 w-full max-w-6xl mx-auto px-4">
+        <div className="relative flex gap-0" style={{ height: CARD_H }}>
 
           {/* LEFT — image card */}
-          <div className="relative w-[42%] shrink-0 h-115 rounded-[40px] overflow-hidden bg-[#f0f2f5]">
+          <div
+            className="relative shrink-0 rounded-[40px] overflow-hidden"
+            style={{ width: `${CARD_W}%`, background: "linear-gradient(to bottom, #F8FCFF, #EBECF0)" }}
+          >
             <AnimatePresence mode="wait">
               <motion.div
                 key={`bg-${active}`}
@@ -87,97 +149,82 @@ export function HowItWorks() {
                 transition={{ duration: 0.5 }}
                 className="absolute inset-0"
               >
-                <Image
-                  src={steps[active].bg}
-                  alt=""
-                  fill
-                  className="object-cover"
-                />
+                <Image src={steps[active].bg} alt="" fill />
               </motion.div>
             </AnimatePresence>
           </div>
 
-          {/* CENTER — vertical line + step circles (in normal flow, not absolute) */}
-          <div className="relative flex flex-col items-center justify-between w-20 shrink-0 py-10">
-            {/* Vertical connecting line */}
-            <div className="absolute top-10 bottom-10 left-1/2 -translate-x-1/2 w-px bg-zinc-200" />
+          {/* CENTER — icon column */}
+          <div
+            className="absolute z-20 w-20"
+            style={{ left: `calc(${CARD_W}% - 40px)`, top: 0, bottom: 0 }}
+          >
+            <div
+              className="absolute left-1/2 -translate-x-1/2 w-px bg-zinc-200"
+              style={{ top: STEP_Y[0], bottom: CARD_H - STEP_Y[2] }}
+            />
 
             {steps.map((step, i) => {
               const isActive = i === active;
               return (
-                <div key={i} className="relative z-10 flex items-center">
-                  <button
-                    onClick={() => setActive(i)}
-                    className="flex items-center justify-center"
-                  >
-                    <motion.div
-                      animate={{
-                        width: isActive ? 56 : 40,
-                        height: isActive ? 56 : 40,
-                      }}
-                      transition={{ duration: 0.3 }}
-                      className={`rounded-full flex items-center justify-center border-2 bg-white shadow-md transition-colors ${
-                        isActive ? "border-[#37C0FF]" : "border-zinc-200"
-                      }`}
-                    >
-                      <step.Icon
-                        className={`transition-colors ${isActive ? "text-[#37C0FF]" : "text-zinc-400"}`}
-                        size={isActive ? 24 : 18}
-                      />
-                    </motion.div>
-                  </button>
+                <div
+                  key={i}
+                  className="absolute left-1/2 z-10"
+                  style={{ top: STEP_Y[i], transform: "translate(-50%, -50%)" }}
+                >
+                  <div className="relative flex items-center">
+                    <button onClick={() => setActive(i)} className="flex items-center justify-center">
+                      {isActive ? (
+                        <motion.div
+                          initial={{ scale: 0.9 }}
+                          animate={{ scale: 1 }}
+                          transition={{ duration: 0.3 }}
+                          className="relative w-24 h-24 rounded-full flex items-center justify-center"
+                          style={{ background: "linear-gradient(135deg, #4299e1 0%, #38b2ac 55%, #68d391 100%)", padding: "2px" }}
+                        >
+                          <div className="w-full h-full rounded-full bg-[#f0f2f5] flex items-center justify-center">
+                            <div className="w-14 h-14 rounded-full bg-white shadow-md flex items-center justify-center">
+                              <step.Icon className="text-[#37C0FF]" size={24} />
+                            </div>
+                          </div>
+                        </motion.div>
+                      ) : (
+                        <div className="w-20 h-20 rounded-full bg-[#f0f2f5] flex items-center justify-center">
+                          <div className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center">
+                            <step.Icon className="text-zinc-400" size={20} />
+                          </div>
+                        </div>
+                      )}
+                    </button>
 
-                  {/* Connector line — absolute, extends to the right into content area */}
-                  {isActive && (
-                    <motion.div
-                      initial={{ opacity: 0, scaleX: 0 }}
-                      animate={{ opacity: 1, scaleX: 1 }}
-                      style={{ originX: "left" }}
-                      className="absolute left-full w-20 h-16 pointer-events-none"
-                    >
-                      <Image
-                        src={step.line}
-                        alt=""
-                        fill
-                        className="object-contain object-left"
-                      />
-                    </motion.div>
-                  )}
+                    {isActive && (
+                      <motion.div
+                        initial={{ opacity: 0, scaleX: 0 }}
+                        animate={{ opacity: 1, scaleX: 1 }}
+                        style={{ originX: "left" }}
+                        className={`absolute left-full w-24 h-16 pointer-events-none ${
+                          i === 0 ? "top-7" : i === 2 ? "bottom-7" : ""
+                        }`}
+                      >
+                        <Image src={step.line} alt="" fill className="object-contain object-left" />
+                      </motion.div>
+                    )}
+                  </div>
                 </div>
               );
             })}
           </div>
 
-          {/* RIGHT — text content + earth decorations */}
-          <div className="relative flex-1 flex flex-col justify-center pl-20">
-
-            {/* Earth decorations */}
+          {/* RIGHT — text */}
+          <div className="relative flex-1">
             <div className="absolute top-6 right-2 pointer-events-none">
-              <Image
-                src="/images/ic_earth_big.png"
-                alt=""
-                width={110}
-                height={110}
-                className="object-contain opacity-70"
-              />
+              <Image src="/images/ic_earth_big.png" alt="" width={110} height={110} className="object-contain opacity-70" />
             </div>
             <div className="absolute top-24 right-24 pointer-events-none">
-              <Image
-                src="/images/ic_earth.png"
-                alt=""
-                width={52}
-                height={52}
-                className="object-contain opacity-50"
-              />
+              <Image src="/images/ic_earth.png" alt="" width={52} height={52} className="object-contain opacity-50" />
             </div>
             <div className="absolute bottom-16 right-8 pointer-events-none">
-              <Image
-                src="/images/ic_earth.png"
-                alt=""
-                width={36}
-                height={36}
-                className="object-contain opacity-35"
-              />
+              <Image src="/images/ic_earth.png" alt="" width={36} height={36} className="object-contain opacity-35" />
             </div>
 
             <AnimatePresence mode="wait">
@@ -187,10 +234,12 @@ export function HowItWorks() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.4 }}
+                className="absolute pr-4 bottom-10"
+                style={{ top: TEXT_Y[active], left: 144, right: 0, transform: "translateY(-50%)" }}
               >
-                <h3 className="text-2xl md:text-3xl font-bold text-zinc-900 mb-4 leading-snug">
+                <Text as="h3" className="text-2xl md:text-3xl font-bold text-zinc-900 mb-4 leading-snug">
                   {steps[active].title}
-                </h3>
+                </Text>
                 <p className="text-zinc-500 text-base leading-relaxed max-w-xs">
                   {steps[active].desc}
                 </p>

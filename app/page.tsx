@@ -4,6 +4,7 @@ import { HowItWorks } from "@/sections/home/HowItWorks";
 import { StrategicSolutions } from "@/sections/home/StrategicSolutions";
 import { Transparency } from "@/sections/home/Transparency";
 import { Founders } from "@/sections/home/Founders";
+import { News } from "@/sections/home/News";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <StrategicSolutions />
       <Transparency />
       <Founders />
+      <News />
     </>
   );
 }
