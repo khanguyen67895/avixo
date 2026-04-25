@@ -80,7 +80,7 @@ export function StrategicSolutions() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-8 md:mb-16 border border-zinc-200 rounded-[24px] md:rounded-[40px] p-6 md:p-12 relative overflow-hidden"
+          className="text-center mb-8 md:mb-16 border border-zinc-200 rounded-3xl md:rounded-[40px] p-6 md:p-12 relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-32 h-full bg-[#00b4ff] rounded-l-[100px] opacity-[0.03]" />
           <Text as="h2" className="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 mb-4">
@@ -112,6 +112,8 @@ export function StrategicSolutions() {
               >
                 {/* Background decorative image */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  {/* Purple/lavender glow behind the hex image */}
+                  <div className="absolute w-50 h-50 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(180,130,255,0.35)_0%,rgba(220,180,255,0.15)_50%,transparent_75%)]" />
                   <Image
                     src="/images/ic_bg_solution.png"
                     alt=""
@@ -129,7 +131,7 @@ export function StrategicSolutions() {
                 </div>
 
                 {/* Network diagram */}
-                <div className="relative z-10 w-full aspect-[6/5] mb-4">
+                <div className="relative z-10 w-full aspect-6/5 mb-4">
                   <NetworkDiagram idx={idx} />
                 </div>
 
@@ -141,7 +143,7 @@ export function StrategicSolutions() {
                 {/* Mobile: always show content */}
                 <div className="md:hidden relative z-10">
                   <p className="text-sm text-zinc-500 leading-relaxed mb-6">{bot.desc}</p>
-                  <button className="w-fit mx-auto flex bg-gradient-to-r from-[#37C0FF] to-[#0090cc] hover:opacity-90 text-white px-8 py-3 rounded-full font-semibold transition-opacity text-sm">
+                  <button className="w-fit mx-auto flex bg-linear-to-r from-[#37C0FF] to-[#0090cc] hover:opacity-90 text-white px-8 py-3 rounded-full font-semibold transition-opacity text-sm">
                     {bot.button}
                   </button>
                 </div>
