@@ -97,7 +97,7 @@ export function HowItWorks() {
       </div>
 
       {/* ── MOBILE layout (below md) ── */}
-      <div className="md:hidden relative z-10 w-full max-w-6xl mx-auto px-4">
+      <div className="md:hidden relative z-10 w-full max-w-6xl px-4">
         {/* Image card */}
         <div
           className="relative w-full rounded-[30px] overflow-hidden"
@@ -158,12 +158,12 @@ export function HowItWorks() {
       </div>
 
       {/* ── DESKTOP layout (md+) ── */}
-      <div className="hidden md:block relative z-10 w-full max-w-6xl mx-auto px-4">
+      <div className="hidden md:block relative z-10 w-full max-w-7xl mx-36 -mt-8 px-4">
         <div className="relative flex gap-0" style={{ height: CARD_H }}>
 
           {/* LEFT — image card */}
           <div
-            className="relative shrink-0 rounded-[40px] overflow-hidden"
+            className="relative shrink-0 rounded-[30px] overflow-hidden"
             style={{ width: `${CARD_W}%`, background: "linear-gradient(to bottom, #F8FCFF, #EBECF0)" }}
           >
             <AnimatePresence mode="wait">
