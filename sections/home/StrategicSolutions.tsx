@@ -6,45 +6,6 @@ import { Zap } from "lucide-react";
 import Image from "next/image";
 import Text from "@/components/ui/label";
 
-type BadgeCfg = { label: string; bx: number; by: number; bw: number; lx: number; ly: number };
-
-// cx=120, cy=90, r=22 → vertices: R(142,90) UR(131,71) UL(109,71) L(98,90) LL(109,109) LR(131,109)
-const NETWORKS: BadgeCfg[][] = [
-  [
-    { label: "PAMM/MAM",   bx: 55,  by: 35,  bw: 72, lx: 109, ly: 71  },
-    { label: "Copy Trade", bx: 5,   by: 148, bw: 70, lx: 109, ly: 109 },
-    { label: "Low DD",     bx: 160, by: 142, bw: 58, lx: 131, ly: 109 },
-  ],
-  [
-    { label: "Order flow",     bx: 5,   by: 90,  bw: 68, lx: 98,  ly: 90  },
-    { label: "Mean Reversion", bx: 153, by: 65,  bw: 82, lx: 142, ly: 78  },
-    { label: "Intraday",       bx: 5,   by: 148, bw: 60, lx: 109, ly: 109 },
-  ],
-  [
-    { label: "AI-powered", bx: 158, by: 35,  bw: 72, lx: 131, ly: 71  },
-    { label: "Swing",      bx: 5,   by: 148, bw: 52, lx: 109, ly: 109 },
-    { label: "Position",   bx: 162, by: 148, bw: 62, lx: 131, ly: 109 },
-  ],
-];
-
-function NetworkDiagram({ idx }: { idx: number }) {
-  const cfg = NETWORKS[idx];
-  const stroke = "#d1d5db";
-  const bh = 22;
-
-  return (
-    <svg viewBox="0 0 240 190" className="w-full h-full">
-      {cfg.map((b, i) => (
-        <g key={i}>
-          <rect x={b.bx} y={b.by - bh / 2} width={b.bw} height={bh} rx="11" fill="white" stroke={stroke} strokeWidth="1" />
-          <text x={b.bx + b.bw / 2} y={b.by + 4} textAnchor="middle" fontSize="9" fill="#374151" fontFamily="system-ui, sans-serif">
-            {b.label}
-          </text>
-        </g>
-      ))}
-    </svg>
-  );
-}
 
 const bots = [
   {
@@ -177,17 +138,6 @@ export function StrategicSolutions() {
                     : "bg-[#F5F6F8] border-[3px] border-white"
                 }`}
               >
-                {/* Background decorative image */}
-                {/* <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                  <div className="absolute w-50 h-50 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(180,130,255,0.35)_0%,rgba(220,180,255,0.15)_50%,transparent_75%)]" />
-                  <Image
-                    src="/images/ic_bg_solution.png"
-                    alt=""
-                    width={240}
-                    height={240}
-                    className={`object-contain transition-opacity duration-300 ${isActive ? "opacity-80" : "opacity-40"}`}
-                  />
-                </div> */}
 
                 {/* Badge — centered */}
                 <div className="relative z-10 mb-4 flex justify-center">
