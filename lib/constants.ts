@@ -1,17 +1,10 @@
 import {
   Globe,
-  TrendingUp,
   Cpu,
   BrainCircuit,
   LineChart,
   GraduationCap,
   Brain,
-  User,
-  RefreshCw,
-  Network,
-  CheckCircle2,
-  Clock,
-  Wallet,
   ShieldCheck,
 } from "lucide-react";
 
@@ -353,19 +346,19 @@ export const trackStats = [
 
 export const trackRecords = [
   {
-    phone: "/images/ic_phone1.png",
+    phone: "/images/ic_ip15.png",
     roi: "+12,4%",
     drawdown: "-4,2%",
     desc: "Chiến lược định lượng đa tài sản tập trung vào khai thác sự kém hiệu quả của thị trường trong ngắn hạn.\nĐo lường liên tục từ 2021.",
   },
   {
-    phone: "/images/ic_phone2.png",
+    phone: "/images/ic_ip16.png",
     roi: "+28,4%",
     drawdown: "-1,2%",
     desc: "Chiến lược trung lập rủi ro, tận dụng sự chênh lệch giá giữa các sàn giao dịch lớn toàn cầu.\nChu kỳ đo lường: Hàng tháng.",
   },
   {
-    phone: "/images/ic_phone3.png",
+    phone: "/images/ic_ip17.png",
     roi: "+18,2%",
     drawdown: "-7,2%",
     desc: "Kết hợp phân tích cơ bản và tín hiệu on-chain để dự báo xu hướng dài hạn.\nGiai đoạn đo lường: Từ 2018 đến nay.",
@@ -376,22 +369,22 @@ export const trackRecords = [
 
 export const trackPhilosophyFeatures = [
   {
-    Icon: CheckCircle2,
+    icon: "/images/ic_philosophy1.png",
     title: "Xác thực 100%",
     desc: "Mọi con số đều có thể kiểm chứng thông qua các cổng dữ liệu độc lập và báo cáo kiểm toán nội bộ.",
   },
   {
-    Icon: Clock,
+    icon: "/images/ic_philosophy2.png",
     title: "Live performance",
     desc: "Sự tin cậy được xây dựng từ hệ thống báo cáo và dữ liệu công khai, trung thực.",
   },
   {
-    Icon: Wallet,
+    icon: "/images/ic_philosophy3.png",
     title: "Verified live account",
     desc: "Cung cấp theo yêu cầu cho các nhà đầu tư tổ chức và cá nhân có nhu cầu thẩm định sâu.",
   },
   {
-    Icon: ShieldCheck,
+    icon: "/images/ic_philosophy4.png",
     title: "Nguồn gốc rõ ràng",
     desc: "Hiệu suất phải đi kèm chú thích nguồn gốc và điều kiện thực hiện cụ thể cho từng thị trường.",
   },
@@ -439,22 +432,22 @@ export const aboutFounders = [
 
 export const aboutValues = [
   {
-    Icon: Cpu,
+    icon: "/images/ic_application_ai.png",
     title: "Data & AI First",
     desc: "Mọi quyết định đều dựa trên phân tích dữ liệu thực và trí tuệ nhân tạo, loại bỏ yếu tố cảm xúc trong giao dịch.",
   },
   {
-    Icon: Brain,
+    icon: "/images/ic_mindset.png",
     title: "Minh bạch tuyệt đối",
     desc: "Sự tin cậy được xây dựng từ hệ thống báo cáo và dữ liệu công khai, trung thực.",
   },
   {
-    Icon: User,
+    icon: "/images/ic_global_border.png",
     title: "Con người làm chủ",
     desc: "Lấy con người làm trung tâm của mọi sự phát triển và giá trị tạo ra. Công nghệ hỗ trợ cho nhà đầu tư quyết định cuối cùng.",
   },
   {
-    Icon: RefreshCw,
+    icon: "/images/ic_global_border.png",
     title: "Bền vững dài hạn",
     desc: "Chúng tôi không tìm kiếm lợi nhuận tức thời, mà tập trung vào sự phát triển ổn định kiểm soát rủi ro.",
   },
@@ -464,12 +457,12 @@ export const aboutValues = [
 
 export const aboutMainCards = [
   {
-    Icon: TrendingUp,
+    icon: "/images/ic_growth.png",
     title: "Cơ sở pháp lý",
     desc: "Mọi hoạt động thương mại và vận hành của AVIXO được thực hiện dựa trên sự tuân thủ nghiêm ngặt hệ thống pháp luật hiện hành.",
   },
   {
-    Icon: Network,
+    icon: "/images/ic_community.png",
     title: "Quan hệ đối tác Broker",
     desc: "AVIXO thiết lập quan hệ đối tác chiến lược với các sàn giao dịch quốc tế sở hữu giấy phép uy tín (FCA, ASIC, CySEC) trong vai trò Introducing Broker (IB). Mối quan hệ này dựa trên các thỏa thuận minh bạch và được kiểm soát chặt chẽ.",
   },
@@ -477,17 +470,17 @@ export const aboutMainCards = [
 
 export const aboutSubCards = [
   {
-    Icon: Globe,
+    icon: "/images/ic_traffic.png",
     title: "Xác minh thực tế",
     desc: "Sẵn sàng công khai đối soát tài khoản Live đã được xác minh theo yêu cầu của đối tác và khách hàng chiến lược.",
   },
   {
-    Icon: Globe,
+    icon: "/images/ic_traffic.png",
     title: "Chỉ số rủi ro",
     desc: "Công bố chi tiết Maximum Drawdown và các tham số quản trị rủi ro cho từng dòng sản phẩm.",
   },
   {
-    Icon: Globe,
+    icon: "/images/ic_global_semi.png",
     title: "Lợi nhuận trung bình",
     desc: "Báo cáo hiệu suất hàng tháng dựa trên dữ liệu lịch sử thực tế, cung cấp cái nhìn khách quan về kỳ vọng đầu tư.",
   },
