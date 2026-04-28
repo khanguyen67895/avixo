@@ -6,10 +6,12 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Button from "../ui/button";
+import { useContactModal } from "./contact-context";
 
 export function Header() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const { open: openContact } = useContactModal();
 
   const links = [
     { href: "/", label: "Trang Chủ" },
@@ -54,7 +56,7 @@ export function Header() {
         {/* Right actions */}
         <div className="flex items-center gap-2 md:gap-4">
           <div className="hidden sm:block">
-            <Button href="/contact">Liên hệ ngay</Button>
+            <Button onClick={openContact}>Liên hệ ngay</Button>
           </div>
 
           <div className="hidden md:flex items-center gap-2">
@@ -94,7 +96,7 @@ export function Header() {
             );
           })}
           <div className="pt-3 mt-1 border-t border-white/5">
-            <Button href="/contact" fullWidth>Liên hệ ngay</Button>
+            <Button fullWidth onClick={() => { setMenuOpen(false); openContact(); }}>Liên hệ ngay</Button>
           </div>
         </div>
       )}

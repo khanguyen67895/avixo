@@ -4,12 +4,11 @@ import Button from "@/components/ui/button";
 import Text from "@/components/ui/label";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useState } from "react";
+import { GlowBackground } from "@/components/common/GlowBackground";
 
 export function Solutions() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const sectionRef = useRef<HTMLElement>(null);
-  const glowRef = useRef<HTMLDivElement>(null);
 
   const cards = [
     {
@@ -48,46 +47,11 @@ export function Solutions() {
   ];
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative w-full pb-24 mt-10 bg-white flex flex-col items-center overflow-hidden"
-      onMouseMove={e => {
-        const r = sectionRef.current!.getBoundingClientRect();
-        const x = e.clientX - r.left;
-        const y = e.clientY - r.top;
-        if (glowRef.current) {
-          glowRef.current.style.filter =
-            `drop-shadow(0 0 8px #7FDEFF) drop-shadow(0 0 20px #0076FF)`;
-          glowRef.current.style.clipPath =
-            `circle(120px at ${x}px ${y}px)`;
-        }
-      }}
-      onMouseLeave={() => {
-        if (glowRef.current) {
-          glowRef.current.style.filter = "";
-          glowRef.current.style.clipPath = "";
-        }
-      }}
+    <GlowBackground
+      src="/images/ic_bg1.png"
+      as="section"
+      className="w-full pb-24 mt-10 bg-white flex flex-col items-center overflow-hidden"
     >
-      {/* Background — bản gốc mờ */}
-      <Image
-        src="/images/ic_bg1.png"
-        alt=""
-        fill
-        className="object-center pointer-events-none"
-      />
-      {/* Bản glow — clip theo cursor */}
-      <div
-        ref={glowRef}
-        className="absolute inset-0 pointer-events-none"
-      >
-        <Image
-          src="/images/ic_bg1.png"
-          alt=""
-          fill
-          className="object-center"
-        />
-      </div>
 
       <div className="relative z-10 w-full max-w-6xl">
         {/* Heading */}
@@ -151,6 +115,6 @@ export function Solutions() {
           })}
         </div>
       </div>
-    </section>
+    </GlowBackground>
   );
 }

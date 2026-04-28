@@ -3,8 +3,9 @@
 import Text from "@/components/ui/label";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { useRef, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Cpu, Brain, Globe } from "lucide-react";
+import { GlowBackground } from "@/components/common/GlowBackground";
 
 const steps = [
   {
@@ -37,8 +38,6 @@ const CARD_W = 45;
 
 export function HowItWorks() {
   const [active, setActive] = useState(0);
-  const sectionRef = useRef<HTMLElement>(null);
-  const glowRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const t = setInterval(() => setActive(p => (p + 1) % steps.length), 4000);
@@ -46,36 +45,11 @@ export function HowItWorks() {
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative w-full pb-24 md:pb-32 pt-8 overflow-hidden"
-      onMouseMove={e => {
-        const r = sectionRef.current!.getBoundingClientRect();
-        const x = e.clientX - r.left;
-        const y = e.clientY - r.top;
-        if (glowRef.current) {
-          glowRef.current.style.filter = `drop-shadow(0 0 8px #7FDEFF) drop-shadow(0 0 20px #0076FF)`;
-          glowRef.current.style.clipPath = `circle(120px at ${x}px ${y}px)`;
-        }
-      }}
-      onMouseLeave={() => {
-        if (glowRef.current) {
-          glowRef.current.style.filter = "";
-          glowRef.current.style.clipPath = "";
-        }
-      }}
+    <GlowBackground
+      src="/images/ic_bg1.png"
+      as="section"
+      className="w-full pb-24 md:pb-32 pt-8 overflow-hidden"
     >
-      {/* Background gốc */}
-      <Image
-        src="/images/ic_bg1.png"
-        alt=""
-        fill
-        className="object-center pointer-events-none"
-      />
-      {/* Glow layer — clip theo cursor */}
-      <div ref={glowRef} className="absolute inset-0 pointer-events-none">
-        <Image src="/images/ic_bg1.png" alt="" fill className="object-center" />
-      </div>
 
       {/* Heading */}
       <div className="relative z-10 w-full max-w-6xl mx-auto px-4">
@@ -275,6 +249,6 @@ export function HowItWorks() {
 
         </div>
       </div>
-    </section>
+    </GlowBackground>
   );
 }

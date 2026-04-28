@@ -1,10 +1,11 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Zap } from "lucide-react";
+import Tag from "@/components/ui/tag";
 import Image from "next/image";
 import Text from "@/components/ui/label";
+import { GlowBackground } from "@/components/common/GlowBackground";
 
 
 const bots = [
@@ -33,74 +34,14 @@ const bots = [
 
 export function StrategicSolutions() {
   const [activeIdx, setActiveIdx] = useState(1);
-  const sectionRef = useRef<HTMLElement>(null);
-  const glowRef = useRef<HTMLDivElement>(null);
-  const rafRef = useRef<number>(0);
-  const isHoveringRef = useRef(false);
-  const mousePosRef = useRef({ x: -999, y: -999 });
-
-  useEffect(() => {
-    const pxPerFrame = 3;
-    let dist = 0;
-
-    function posAt(d: number, W: number, H: number) {
-      const P = 2 * (W + H);
-      const dd = ((d % P) + P) % P;
-      if (dd < W)          return { x: dd,               y: 0 };
-      if (dd < W + H)      return { x: W,                y: dd - W };
-      if (dd < 2 * W + H) return { x: W - (dd - W - H), y: H };
-      return                      { x: 0,                y: H - (dd - 2 * W - H) };
-    }
-
-    const tick = () => {
-      const el = sectionRef.current;
-      const glow = glowRef.current;
-      if (!el || !glow) { rafRef.current = requestAnimationFrame(tick); return; }
-
-      const W = el.offsetWidth;
-      const H = el.offsetHeight;
-      const P = 2 * (W + H);
-
-      if (isHoveringRef.current) {
-        const { x, y } = mousePosRef.current;
-        const mask = `radial-gradient(160px circle at ${x}px ${y}px, black 0%, transparent 100%)`;
-        glow.style.maskImage = mask;
-      } else {
-        dist = (dist + pxPerFrame) % P;
-        const p0 = posAt(dist,         W, H);
-        const p1 = posAt(dist + P / 3, W, H);
-        const p2 = posAt(dist + 2*P/3, W, H);
-        const mask = [
-          `radial-gradient(130px circle at ${p0.x}px ${p0.y}px, black 0%, transparent 100%)`,
-          `radial-gradient(130px circle at ${p1.x}px ${p1.y}px, black 0%, transparent 100%)`,
-          `radial-gradient(130px circle at ${p2.x}px ${p2.y}px, black 0%, transparent 100%)`,
-        ].join(", ");
-        glow.style.maskImage = mask;
-      }
-
-      glow.style.filter = `drop-shadow(0 0 10px #7FDEFF) drop-shadow(0 0 24px #0076FF)`;
-      rafRef.current = requestAnimationFrame(tick);
-    };
-
-    rafRef.current = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(rafRef.current);
-  }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative w-full pb-24 md:pb-24 overflow-hidden"
-      onMouseMove={e => {
-        const r = sectionRef.current!.getBoundingClientRect();
-        mousePosRef.current = { x: e.clientX - r.left, y: e.clientY - r.top };
-        isHoveringRef.current = true;
-      }}
-      onMouseLeave={() => { isHoveringRef.current = false; }}
+    <GlowBackground
+      src="/images/ic_bg1.png"
+      variant="perimeter"
+      as="section"
+      className="w-full pb-24 md:pb-24 overflow-hidden"
     >
-      <Image src="/images/ic_bg1.png" alt="" fill className="object-center pointer-events-none" />
-      <div ref={glowRef} className="absolute inset-0 pointer-events-none">
-        <Image src="/images/ic_bg1.png" alt="" fill className="object-center" />
-      </div>
 
       <div className="relative z-10 w-full max-w-6xl mx-auto px-4">
         {/* Heading */}
@@ -141,9 +82,9 @@ export function StrategicSolutions() {
 
                 {/* Badge — centered */}
                 <div className="relative z-10 mb-4 flex justify-center">
-                  <span className={`inline-flex items-center gap-1 text-xs font-semibold px-3 py-1 rounded-full transition-colors duration-300 ${isActive ? "bg-[#4CAF50] text-[#1D1D1D]" : "bg-[#FFE1CC] text-[#1D1D1D]"}`}>
-                    <Zap size={11} fill="#1D1D1D" color="#1D1D1D" /> {bot.type}
-                  </span>
+                  <Tag bg={isActive ? "bg-[#4CAF50]" : "bg-[#FFE1CC]"} className="transition-colors duration-300">
+                    {bot.type}
+                  </Tag>
                 </div>
 
                 {/* Icon */}
@@ -194,6 +135,6 @@ export function StrategicSolutions() {
         </div>
 
       </div>
-    </section>
+    </GlowBackground>
   );
 }

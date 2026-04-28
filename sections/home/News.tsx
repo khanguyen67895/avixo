@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Text from "@/components/ui/label";
+import { GlowBackground } from "@/components/common/GlowBackground";
 
 const articles = [
   {
@@ -24,8 +25,8 @@ const articles = [
 
 export function News() {
   return (
-    <section className="w-full bg-white">
-      <div className="w-full max-w-6xl mx-auto px-4">
+    <GlowBackground src="/images/ic_bg1.png" variant="perimeter" as="section" className="w-full bg-white">
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-4">
 
         {/* Heading */}
         <motion.div
@@ -33,7 +34,7 @@ export function News() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12"
+          className="text-center mt-8"
         >
           <Text as="h2" className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 mb-3">
             Tin tức mới nhất
@@ -44,7 +45,7 @@ export function News() {
         </motion.div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-30">
           {articles.map((article, i) => (
             <motion.div
               key={i}
@@ -75,7 +76,7 @@ export function News() {
         </div>
 
         {/* Xem thêm */}
-        <div className="flex justify-center">
+        <div className="flex justify-center mt-10">
           <button className="bg-[#37C0FF] hover:opacity-90 text-white font-semibold px-10 py-3 rounded-full transition-opacity text-sm">
             Xem thêm
           </button>
@@ -87,11 +88,11 @@ export function News() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="px-8 py-12 text-center"
+          className="px-8 pt-8 pb-20 text-center"
         >
-          <h3 className="text-2xl font-bold text-zinc-900 mb-2">
+          <Text as="h3" className="text-2xl font-bold text-zinc-900 mb-2">
             Nhận tin mới nhất từ chúng tôi
-          </h3>
+          </Text>
           <p className="text-zinc-500 text-sm mb-8">
             Cập nhật bài viết, ưu đãi và thông báo mới qua email.
           </p>
@@ -108,6 +109,6 @@ export function News() {
         </motion.div>
 
       </div>
-    </section>
+    </GlowBackground>
   );
 }

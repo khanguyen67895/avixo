@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Text from "@/components/ui/label";
+import { GlowBackground } from "@/components/common/GlowBackground";
 
 const founders = [
   {
@@ -27,9 +28,13 @@ const founders = [
 
 export function Founders() {
   return (
-    <section className="w-full bg-white">
-      <div className="w-full mb-20 max-w-6xl mx-auto px-4">
-
+    <GlowBackground
+      src="/images/ic_bg1.png"
+      variant="perimeter"
+      as="section"
+      className="w-full"
+    >
+      <div className="relative z-10 w-full mb-20 max-w-6xl mx-auto px-4">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -38,11 +43,15 @@ export function Founders() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20 relative"
         >
-          <Text as="h2" className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight text-zinc-900 mb-4">
+          <Text
+            as="h2"
+            className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight text-zinc-900 my-4"
+          >
             Đội ngũ sáng lập
           </Text>
           <p className="text-zinc-500">
-            Ba Founders — ba thế mạnh bổ trợ nhau — một hệ sinh thái không thể sao chép.
+            Ba Founders — ba thế mạnh bổ trợ nhau — một hệ sinh thái không thể
+            sao chép.
           </p>
         </motion.div>
 
@@ -60,7 +69,10 @@ export function Founders() {
               {/* Avatar */}
               <div
                 className="relative w-full"
-                style={{ background: "linear-gradient(to bottom, #EBF5FF, #F5F9FF)", aspectRatio: "4/3" }}
+                style={{
+                  background: "linear-gradient(to bottom, #EBF5FF, #F5F9FF)",
+                  aspectRatio: "4/3",
+                }}
               >
                 <Image
                   src={founder.avatar}
@@ -72,8 +84,12 @@ export function Founders() {
 
               {/* Content */}
               <div className="p-6">
-                <h3 className="text-xl font-bold text-zinc-900 mb-2">{founder.name}</h3>
-                <p className="text-sm text-zinc-500 leading-relaxed mb-6">{founder.desc}</p>
+                <h3 className="text-xl font-bold text-zinc-900 mb-2">
+                  {founder.name}
+                </h3>
+                <p className="text-sm text-zinc-500 leading-relaxed mb-6">
+                  {founder.desc}
+                </p>
                 <span className="block w-full text-center bg-zinc-100 rounded-full px-5 py-3 text-sm font-semibold text-zinc-800">
                   {founder.role}
                 </span>
@@ -81,8 +97,7 @@ export function Founders() {
             </motion.div>
           ))}
         </div>
-
       </div>
-    </section>
+    </GlowBackground>
   );
 }

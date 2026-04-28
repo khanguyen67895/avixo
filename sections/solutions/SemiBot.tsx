@@ -4,15 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Text from "@/components/ui/label";
 import Button from "@/components/ui/button";
-import { Zap } from "lucide-react";
-
-function Tag({ label }: { label: string }) {
-  return (
-    <span className="inline-flex items-center gap-1 text-xs font-semibold px-3 py-1 rounded-full bg-[#E8F9FF] text-[#0090cc] border border-[#b3e8ff]">
-      + {label}
-    </span>
-  );
-}
+import Tag from "@/components/ui/tag";
 
 const features = [
   {
@@ -43,9 +35,7 @@ export function SemiBot() {
           transition={{ duration: 0.7 }}
         >
           <div className="flex justify-center mb-4">
-            <span className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1 rounded-full bg-[#8DEE92] text-[#1D1D1D]">
-              <Zap size={11} fill="currentColor" /> SEMI BOT
-            </span>
+            <Tag>SEMI BOT</Tag>
           </div>
           <Text as="h2" className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
             Giải pháp giao dịch bán tự động
@@ -93,9 +83,7 @@ export function SemiBot() {
           </div>
 
           <div className="flex flex-wrap gap-2 mb-8 ml-30">
-            {["Mean Reversion", "Order Flow", "Intraday"].map(t => <><span className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1 rounded-full bg-[#8DEE92] text-[#1D1D1D]">
-              <Zap size={11} fill="currentColor" /> {t}
-            </span></>)}
+            {["Mean Reversion", "Order Flow", "Intraday"].map(t => <Tag key={t}>{t}</Tag>)}
           </div>
 
           <div className="flex-1">

@@ -4,11 +4,12 @@ import { motion } from "framer-motion";
 import { CheckCircle2, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import Text from "@/components/ui/label";
+import { GlowBackground } from "@/components/common/GlowBackground";
 
 export function Transparency() {
   return (
-    <section className="w-full py-24 bg-white flex flex-col items-center">
-      <div className="w-full max-w-5xl mx-auto px-4">
+    <GlowBackground src="/images/ic_bg1.png" variant="perimeter" as="section" className="w-full py-12">
+      <div className="relative z-10 w-full max-w-5xl mx-auto px-4">
         
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
@@ -48,6 +49,6 @@ export function Transparency() {
         </motion.div>
         
       </div>
-    </section>
+    </GlowBackground>
   );
 }
