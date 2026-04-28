@@ -9,7 +9,7 @@ export function PartnersHero() {
     <section className="relative w-full min-h-150 bg-black flex items-center overflow-hidden">
       {/* Pixel dot-grid background */}
       <div
-        className="absolute z-50 inset-0 bg-center bg-cover bg-no-repeat opacity-50"
+        className="absolute z-50 inset-0 bg-center bg-cover bg-no-repeat opacity-50 pointer-events-none"
         style={{ backgroundImage: "url('/images/ic_pixels.png')" }}
       />
 

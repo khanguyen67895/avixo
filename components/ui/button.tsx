@@ -37,7 +37,7 @@ export default function Button({
     const classes = clsx(
         base,
         variants[variant],
-        fullWidth ? "w-full" : "flex-1",
+        fullWidth ? "w-full" : "w-fit",
         className
     );
 

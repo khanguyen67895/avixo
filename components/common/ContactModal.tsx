@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import Image from "next/image";
@@ -10,8 +10,6 @@ import { useContactModal } from "./contact-context";
 import { CONTACT_SUBJECTS as SUBJECTS } from "@/lib/constants";
 
 function AnimatedCard({ close }: { close: () => void }) {
-  const cardRef = useRef<HTMLDivElement>(null);
-  const glowRef = useRef<HTMLDivElement>(null);
   const [subject, setSubject] = useState("investor");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -19,48 +17,13 @@ function AnimatedCard({ close }: { close: () => void }) {
 
   return (
     <motion.div
-      ref={cardRef}
       initial={{ opacity: 0, scale: 0.95, y: 20 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.95, y: 20 }}
       transition={{ duration: 0.28, ease: "easeOut" }}
-      className="relative w-full max-w-4xl rounded-[28px] overflow-hidden shadow-2xl flex flex-col md:flex-row"
-      onMouseMove={(e) => {
-        const r = cardRef.current!.getBoundingClientRect();
-        const x = e.clientX - r.left;
-        const y = e.clientY - r.top;
-        if (glowRef.current) {
-          glowRef.current.style.filter =
-            "drop-shadow(0 0 8px #7FDEFF) drop-shadow(0 0 22px #0076FF)";
-          glowRef.current.style.clipPath = `circle(140px at ${x}px ${y}px)`;
-        }
-      }}
-      onMouseLeave={() => {
-        if (glowRef.current) {
-          glowRef.current.style.filter = "";
-          glowRef.current.style.clipPath = "";
-        }
-      }}
+      className="relative w-full max-w-4xl rounded-[28px] overflow-hidden shadow-2xl flex flex-col md:flex-row bg-white"
     >
-      {/* Static bg — full card */}
-      <Image
-        src="/images/ic_bg2.png"
-        alt=""
-        fill
-        className="object-cover pointer-events-none"
-        priority
-      />
-
-      {/* Glow layer — full card, clipped to cursor */}
-      <div ref={glowRef} className="absolute inset-0 pointer-events-none z-[1]">
-        <Image
-          src="/images/ic_bg2.png"
-          alt=""
-          fill
-          className="object-cover"
-          priority
-        />
-      </div>
+      {/* <Image src="/images/ic_bg1.png" alt="" fill className="object-cover pointer-events-none" /> */}
 
       {/* Close button */}
       <button
