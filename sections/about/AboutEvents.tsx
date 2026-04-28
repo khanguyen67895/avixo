@@ -2,25 +2,7 @@
 
 import { motion } from "framer-motion";
 import { CalendarDays, MapPin, ArrowRight } from "lucide-react";
-
-const events = [
-  {
-    tag: "Upcoming",
-    date: "15 – 16 Tháng 8, 2026",
-    location: "TP. Hồ Chí Minh, Việt Nam",
-    title: "Investment Leaders Summit 2026",
-    desc: "Sự kiện quy tụ các nhà lãnh đạo đầu tư, chuyên gia tài chính và công nghệ hàng đầu khu vực. AVIXO là nhà tài trợ chiến lược và đơn vị trình bày giải pháp AI Trading.",
-    img: "/images/ic_about_team.png",
-  },
-  {
-    tag: "Recap",
-    date: "20 Tháng 3, 2026",
-    location: "Hà Nội, Việt Nam",
-    title: "AVIXO Partner Day 2026",
-    desc: "Hội nghị đối tác thường niên quy tụ hơn 200 IB và nhà đầu tư chiến lược. Ra mắt dòng sản phẩm mới và ký kết thỏa thuận hợp tác với 12 tổ chức tài chính quốc tế.",
-    img: "/images/ic_about_team.png",
-  },
-];
+import { aboutEvents as events } from "@/lib/constants";
 
 export function AboutEvents() {
   return (

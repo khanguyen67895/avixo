@@ -5,24 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { articles } from "@/data/news";
-
-const CATEGORIES = [
-  "Tất cả",
-  "Hướng dẫn",
-  "Công nghệ tài chính",
-  "Phân tích thị trường",
-  "Chiến lược giao dịch",
-];
-
-const CATEGORY_COLORS: Record<string, string> = {
-  "Phân tích thị trường": "text-[#37C0FF]",
-  "Chuyển đổi số trong ngành bán lẻ": "text-[#FF8C42]",
-  "Phát triển bền vững và môi trường": "text-[#4CAF50]",
-  "Công nghệ AI và tương lai công việc": "text-[#A855F7]",
-  "Hướng dẫn": "text-[#F59E0B]",
-  "Công nghệ tài chính": "text-[#06B6D4]",
-  "Chiến lược giao dịch": "text-[#EC4899]",
-};
+import { NEWS_CATEGORIES as CATEGORIES, CATEGORY_COLORS } from "@/lib/constants";
 
 export function NewsList() {
   const [active, setActive] = useState("Tất cả");

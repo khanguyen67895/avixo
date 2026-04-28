@@ -6,31 +6,7 @@ import Tag from "@/components/ui/tag";
 import Image from "next/image";
 import Text from "@/components/ui/label";
 import { GlowBackground } from "@/components/common/GlowBackground";
-
-
-const bots = [
-  {
-    type: "FULL AUTO BOT",
-    name: "AUTO BMR & SMN MGH Pro",
-    desc: "Hệ thống giao dịch tự động hoàn toàn với mô hình PAMM/MAM, copy trade và drawdown thấp, phù hợp nhà đầu tư thụ động.",
-    button: "Tìm hiểu ngay",
-    icon: "/images/ic_full_auto.png",
-  },
-  {
-    type: "SEMI BOT",
-    name: "Semi Boomerang & Smart Money",
-    desc: "Chiến lược hồi giá kết hợp tư duy Smart Money / Liquidity / Order Flow. Công cụ hỗ trợ phân tích vùng cung-cầu, BOS, CHoCH — nhà đầu tư chủ động quyết định lệnh.",
-    button: "Tìm hiểu ngay",
-    icon: "/images/ic_semibot.png",
-  },
-  {
-    type: "FULL AUTO BOT",
-    name: "Arrow Big Trend & AI Trading Swing",
-    desc: "Thuật toán AI phát hiện xu hướng lớn kết hợp chiến lược swing và position trading trên các thị trường quốc tế.",
-    button: "Tìm hiểu ngay",
-    icon: "/images/ic_full_auto2.png",
-  },
-];
+import { strategicBots as bots } from "@/lib/constants";
 
 export function StrategicSolutions() {
   const [activeIdx, setActiveIdx] = useState(1);

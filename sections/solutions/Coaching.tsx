@@ -4,38 +4,21 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Text from "@/components/ui/label";
 import Button from "@/components/ui/button";
-
-function Tag({ label }: { label: string }) {
-  return (
-    <span className="inline-flex items-center gap-1 text-xs font-semibold px-3 py-1 rounded-full bg-[#E8F9FF] text-[#0090cc] border border-[#b3e8ff]">
-      + {label}
-    </span>
-  );
-}
-
-const steps = [
-  { icon: "/images/ic_application_ai.png", title: "Đánh giá năng lực",    desc: "Phân tích lịch sử giao dịch bằng AI để tìm ra điểm yếu." },
-  { icon: "/images/ic_mindset.png",         title: "Thiết lập chiến lược", desc: "Xây dựng hệ thống giao dịch phù hợp với tính cách." },
-  { icon: "/images/ic_ibglobal.png",        title: "Thực chiến 1:1",       desc: "Giao dịch trực tiếp dưới sự giám sát của chuyên gia." },
-  { icon: "/images/ic_investor.png",        title: "Tối ưu hiệu suất",     desc: "Đánh giá định kỳ và tinh chỉnh thuật toán cá nhân." },
-];
-
-const leftFeatures = [
-  { icon: "/images/ic_mindset.png",  title: "Tâm lý giao dịch", desc: "Kiểm soát cảm xúc bằng AI phân tích hành vi." },
-  { icon: "/images/ic_ibglobal.png", title: "Quản trị rủi ro",  desc: "Kiểm soát cảm xúc bằng AI phân tích hành vi." },
-];
+import Tag from "@/components/ui/tag";
+import { GlowBackground } from "@/components/common/GlowBackground";
+import { coachingSteps as steps, coachingLeftFeatures as leftFeatures } from "@/lib/constants";
 
 export function Coaching() {
   return (
-    <section className="w-full bg-white py-20">
-      <div className="max-w-6xl mx-auto px-6 text-center mb-16">
+    <GlowBackground src="/images/ic_bg1.png" as="section" className="w-full pb-24 bg-white flex flex-col items-center overflow-hidden">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 text-center mb-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <Text as="h2" className="text-3xl md:text-5xl font-bold text-zinc-900 mb-4">
+          <Text as="h2" className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
             AI Trade Coaching 1:1
           </Text>
           <p className="text-zinc-500 text-base md:text-lg max-w-2xl mx-auto">
@@ -44,7 +27,7 @@ export function Coaching() {
         </motion.div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row gap-12 items-start">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 flex flex-col md:flex-row gap-12 items-start">
         {/* left */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
@@ -63,9 +46,9 @@ export function Coaching() {
           <div className="flex flex-col gap-6 mb-8">
             {leftFeatures.map((f, i) => (
               <div key={i} className="flex gap-3 items-start">
-                <div className="shrink-0 w-9 h-9 rounded-full bg-[#E8F9FF] flex items-center justify-center">
-                  <Image src={f.icon} alt="" width={20} height={20} className="w-5 h-5 object-contain" />
-                </div>
+                {/* <div className="w-12 h-12 border-2 rounded-full bg-[#FFFFFF] flex items-center justify-center"> */}
+                  <Image src={f.icon} alt="" width={12} height={12} className="w-5 h-5 object-contain" />
+                {/* </div> */}
                 <div>
                   <p className="font-semibold text-zinc-900 text-sm">{f.title}</p>
                   <p className="text-zinc-500 text-xs mt-0.5">{f.desc}</p>
@@ -75,19 +58,20 @@ export function Coaching() {
           </div>
 
           <div className="flex flex-wrap gap-2 mb-8">
-            {["1:1 Mentoring", "Risk Management", "Scalp"].map(t => <Tag key={t} label={t} />)}
+            {["1:1 Mentoring", "Risk Management", "Scalp"].map(t => <Tag key={t}>{t}</Tag>)}
           </div>
-
-          <Button href="#">Huấn luyện chuyên sâu ngay</Button>
+          <div className="flex-1">
+            <Button href="#" className="w-3/4">Huấn luyện chuyên sâu ngay</Button>
+          </div>
         </motion.div>
 
-        {/* right — 2×2 grid */}
+        {/* right — vertical stepper */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="flex-1 grid grid-cols-2 gap-4"
+          className="flex-1 flex flex-col gap-0"
         >
           {steps.map((s, i) => (
             <motion.div
@@ -96,17 +80,26 @@ export function Coaching() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bg-[#F5F8FF] rounded-2xl p-5 flex flex-col gap-3"
+              className="flex gap-4 items-start"
             >
-              <div className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center">
-                <Image src={s.icon} alt="" width={22} height={22} className="object-contain" />
+              {/* icon + connector line */}
+              <div className="flex flex-col items-center">
+                <div className="w-12 h-12 rounded-full bg-[#EAF4FF] border border-[#c8e4ff] flex items-center justify-center shrink-0">
+                  <Image src={s.icon} alt="" width={24} height={24} className="object-contain w-12 h-12" />
+                </div>
+                {i < steps.length - 1 && (
+                  <div className="w-px flex-1 min-h-8 bg-[#c8e4ff] my-1" />
+                )}
               </div>
-              <p className="font-semibold text-zinc-900 text-sm">{s.title}</p>
-              <p className="text-zinc-500 text-xs leading-relaxed">{s.desc}</p>
+              {/* text */}
+              <div className="pb-6">
+                <p className="font-semibold text-zinc-900 text-sm">{s.title}</p>
+                <p className="text-zinc-500 text-xs mt-1 leading-relaxed">{s.desc}</p>
+              </div>
             </motion.div>
           ))}
         </motion.div>
       </div>
-    </section>
+    </GlowBackground>
   );
 }

@@ -5,29 +5,13 @@ import Image from "next/image";
 import Text from "@/components/ui/label";
 import Button from "@/components/ui/button";
 import Tag from "@/components/ui/tag";
-
-const features = [
-  {
-    icon: "/images/ic_mindset.png",
-    title: "Smart Money Insights",
-    desc: "Tự động nhận diện cấu trúc Market (BOS,CHoCH) và các vùng thanh khoản tiềm năng của dòng tiền lớn.",
-  },
-  {
-    icon: "/images/ic_application_ai.png",
-    title: "Boomerang Strategy",
-    desc: "Thuật toán bắt điểm xoay chiều cực đại khi giá rời xa giá trị trung bình, tối ưu điểm entry với R:R cao.",
-  },
-  {
-    icon: "/images/ic_ibglobal.png",
-    title: "Hybrid Control",
-    desc: "Công cụ hỗ trợ tính toán khối lượng và quản lý lệnh tự động sau khi trader xác nhận tín hiệu.",
-  },
-];
+import { GlowBackground } from "@/components/common/GlowBackground";
+import { semiBotFeatures as features } from "@/lib/constants";
 
 export function SemiBot() {
   return (
-    <section className="w-full bg-white py-20">
-      <div className="max-w-6xl mx-auto px-6 text-center mb-16">
+    <GlowBackground src="/images/ic_bg1.png" as="section" className="w-full bg-white pb-20 mt-10">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 text-center mb-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -46,7 +30,7 @@ export function SemiBot() {
         </motion.div>
       </div>
 
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-32">
+      <div className="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row gap-32">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -71,9 +55,7 @@ export function SemiBot() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="flex gap-3 items-start"
               >
-                <div className="shrink-0 w-9 h-9 rounded-full bg-[#E8F9FF] flex items-center justify-center">
-                  <Image src={f.icon} alt="" width={20} height={20} className="w-5 h-5 object-contain" />
-                </div>
+                <Image src={f.icon} alt="" width={20} height={20} className="w-5 h-5 object-contain" />
                 <div>
                   <p className="font-semibold text-zinc-900 text-sm">{f.title}</p>
                   <p className="text-zinc-500 text-xs mt-0.5 leading-relaxed">{f.desc}</p>
@@ -87,7 +69,7 @@ export function SemiBot() {
           </div>
 
           <div className="flex-1">
-            <Button href="#" className="w-1/2  ml-35">Download now</Button>
+            <Button href="#" className="w-1/2 ml-35">Download now</Button>
           </div>
         </motion.div>
 
@@ -103,6 +85,6 @@ export function SemiBot() {
           </div>
         </motion.div>
       </div>
-    </section>
+    </GlowBackground>
   );
 }

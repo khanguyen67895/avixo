@@ -7,11 +7,7 @@ import Image from "next/image";
 import { createPortal } from "react-dom";
 import { useContactModal } from "./contact-context";
 
-const SUBJECTS = [
-  { value: "investor", label: "Đầu tư Cá nhân" },
-  { value: "ib", label: "Đối tác IB" },
-  { value: "strategic", label: "Đầu tư chiến lược" },
-];
+import { CONTACT_SUBJECTS as SUBJECTS } from "@/lib/constants";
 
 function AnimatedCard({ close }: { close: () => void }) {
   const cardRef = useRef<HTMLDivElement>(null);

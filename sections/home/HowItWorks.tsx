@@ -4,37 +4,14 @@ import Text from "@/components/ui/label";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { Cpu, Brain, Globe } from "lucide-react";
 import { GlowBackground } from "@/components/common/GlowBackground";
-
-const steps = [
-  {
-    bg: "/images/ic_bg_application_ai.png",
-    line: "/images/ic_line_application_ai.png",
-    title: "Ứng dụng công nghệ AI và Big data",
-    desc: "Khai thác sức mạnh của Big Data và AI để phân tích hàng triệu biến số thị trường trong thời gian thực, loại bỏ hoàn toàn yếu tố cảm xúc trong quyết định đầu tư.",
-    Icon: Cpu,
-  },
-  {
-    bg: "/images/ic_bg_mindset.png",
-    line: "/images/ic_line_mindset.png",
-    title: "Huấn luyện tư duy đầu tư chuyên nghiệp",
-    desc: "Chuyển giao phương pháp luận và tư duy định lượng cho cộng đồng, giúp nhà đầu tư làm chủ tài chính một cách khoa học.",
-    Icon: Brain,
-  },
-  {
-    bg: "/images/ic_bg_ibglobal.png",
-    line: "/images/ic_line_ibglobal.png",
-    title: "Phát triển mạng lưới IB Global",
-    desc: "Xây dựng hệ sinh thái liên kết toàn cầu, hỗ trợ các đối tác phát triển bền vững dựa trên giá trị thực và tính minh bạch tuyệt đối.",
-    Icon: Globe,
-  },
-];
-
-const CARD_H = 540;
-const STEP_Y = [108, 270, 432];
-const TEXT_Y = [108, 200, 300];
-const CARD_W = 45;
+import {
+  howItWorksSteps as steps,
+  HOW_IT_WORKS_CARD_H as CARD_H,
+  HOW_IT_WORKS_STEP_Y as STEP_Y,
+  HOW_IT_WORKS_TEXT_Y as TEXT_Y,
+  HOW_IT_WORKS_CARD_W as CARD_W,
+} from "@/lib/constants";
 
 export function HowItWorks() {
   const [active, setActive] = useState(0);

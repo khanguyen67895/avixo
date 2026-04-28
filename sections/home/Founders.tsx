@@ -4,27 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Text from "@/components/ui/label";
 import { GlowBackground } from "@/components/common/GlowBackground";
-
-const founders = [
-  {
-    name: "Nguyễn Tiến Dũng",
-    role: "Định hướng Trading & AI",
-    desc: "15 năm thực chiến Forex, Gold, Crypto, hàng hóa. Kiến tạo hệ sinh thái giao dịch cho 63K+ khách hàng.",
-    avatar: "/images/ic_profile1.png",
-  },
-  {
-    name: "Nguyễn Quang Việt",
-    role: "Xây dựng mạng lưới IB toàn cầu",
-    desc: "Nhà sáng lập Interlink Community. Chuyên gia phát triển traffic và hệ thống khách hàng quy mô lớn.",
-    avatar: "/images/ic_profile2.png",
-  },
-  {
-    name: "Trần Đại Nghĩa",
-    role: "Mở rộng quan hệ đối tác quốc tế",
-    desc: "Chuyên gia kết nối nhà đầu tư và đối tác chiến lược. Xây dựng network đầu tư và hệ sinh thái tài chính.",
-    avatar: "/images/ic_profile3.png",
-  },
-];
+import { homeFounders as founders } from "@/lib/constants";
 
 export function Founders() {
   return (
@@ -64,7 +44,7 @@ export function Founders() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="bg-white rounded-[24px] shadow-[0_4px_24px_rgba(0,0,0,0.07)] overflow-hidden text-left"
+              className="bg-white rounded-3xl shadow-[0_4px_24px_rgba(0,0,0,0.07)] overflow-hidden text-left"
             >
               {/* Avatar */}
               <div

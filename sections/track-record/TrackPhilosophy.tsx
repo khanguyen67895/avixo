@@ -1,30 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle2, Clock, Wallet, ShieldCheck } from "lucide-react";
-
-const features = [
-  {
-    Icon: CheckCircle2,
-    title: "Xác thực 100%",
-    desc: "Mọi con số đều có thể kiểm chứng thông qua các cổng dữ liệu độc lập và báo cáo kiểm toán nội bộ.",
-  },
-  {
-    Icon: Clock,
-    title: "Live performance",
-    desc: "Sự tin cậy được xây dựng từ hệ thống báo cáo và dữ liệu công khai, trung thực.",
-  },
-  {
-    Icon: Wallet,
-    title: "Verified live account",
-    desc: "Cung cấp theo yêu cầu cho các nhà đầu tư tổ chức và cá nhân có nhu cầu thẩm định sâu.",
-  },
-  {
-    Icon: ShieldCheck,
-    title: "Nguồn gốc rõ ràng",
-    desc: "Hiệu suất phải đi kèm chú thích nguồn gốc và điều kiện thực hiện cụ thể cho từng thị trường.",
-  },
-];
+import { trackPhilosophyFeatures as features } from "@/lib/constants";
 
 export function TrackPhilosophy() {
   return (

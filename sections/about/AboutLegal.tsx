@@ -1,38 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { TrendingUp, Network, Globe } from "lucide-react";
-
-const mainCards = [
-  {
-    Icon: TrendingUp,
-    title: "Cơ sở pháp lý",
-    desc: "Mọi hoạt động thương mại và vận hành của AVIXO được thực hiện dựa trên sự tuân thủ nghiêm ngặt hệ thống pháp luật hiện hành.",
-  },
-  {
-    Icon: Network,
-    title: "Quan hệ đối tác Broker",
-    desc: "AVIXO thiết lập quan hệ đối tác chiến lược với các sàn giao dịch quốc tế sở hữu giấy phép uy tín (FCA, ASIC, CySEC) trong vai trò Introducing Broker (IB). Mối quan hệ này dựa trên các thỏa thuận minh bạch và được kiểm soát chặt chẽ.",
-  },
-];
-
-const subCards = [
-  {
-    Icon: Globe,
-    title: "Xác minh thực tế",
-    desc: "Sẵn sàng công khai đối soát tài khoản Live đã được xác minh theo yêu cầu của đối tác và khách hàng chiến lược.",
-  },
-  {
-    Icon: Globe,
-    title: "Chỉ số rủi ro",
-    desc: "Công bố chi tiết Maximum Drawdown và các tham số quản trị rủi ro cho từng dòng sản phẩm.",
-  },
-  {
-    Icon: Globe,
-    title: "Lợi nhuận trung bình",
-    desc: "Báo cáo hiệu suất hàng tháng dựa trên dữ liệu lịch sử thực tế, cung cấp cái nhìn khách quan về kỳ vọng đầu tư.",
-  },
-];
+import { aboutMainCards as mainCards, aboutSubCards as subCards } from "@/lib/constants";
 
 export function AboutLegal() {
   return (

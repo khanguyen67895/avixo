@@ -1,30 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Cpu, Brain, User, RefreshCw } from "lucide-react";
-
-const values = [
-  {
-    Icon: Cpu,
-    title: "Data & AI First",
-    desc: "Mọi quyết định đều dựa trên phân tích dữ liệu thực và trí tuệ nhân tạo, loại bỏ yếu tố cảm xúc trong giao dịch.",
-  },
-  {
-    Icon: Brain,
-    title: "Minh bạch tuyệt đối",
-    desc: "Sự tin cậy được xây dựng từ hệ thống báo cáo và dữ liệu công khai, trung thực.",
-  },
-  {
-    Icon: User,
-    title: "Con người làm chủ",
-    desc: "Lấy con người làm trung tâm của mọi sự phát triển và giá trị tạo ra. Công nghệ hỗ trợ cho nhà đầu tư quyết định cuối cùng.",
-  },
-  {
-    Icon: RefreshCw,
-    title: "Bền vững dài hạn",
-    desc: "Chúng tôi không tìm kiếm lợi nhuận tức thời, mà tập trung vào sự phát triển ổn định kiểm soát rủi ro.",
-  },
-];
+import { aboutValues as values } from "@/lib/constants";
 
 export function AboutValues() {
   return (

@@ -2,13 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-
-const stats = [
-  { value: "63K+", label: "Global users" },
-  { value: "6+", label: "Live products" },
-  { value: "15+", label: "Years experience" },
-  { value: "5+", label: "Global market" },
-];
+import { aboutStats as stats } from "@/lib/constants";
 
 export function AboutHero() {
   return (
@@ -39,7 +33,7 @@ export function AboutHero() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="flex-1"
           >
-            <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden">
+            <div className="relative w-full aspect-4/3 rounded-3xl overflow-hidden">
               <Image src="/images/ic_about_team.png" alt="AVIXO Team" fill className="object-cover" priority />
             </div>
           </motion.div>

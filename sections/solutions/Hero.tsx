@@ -6,7 +6,7 @@ import Text from "@/components/ui/label";
 
 export function Hero() {
   return (
-    <section className="relative w-full h-200 bg-black flex items-center overflow-hidden">
+    <section className="relative w-full h-180 bg-black flex items-center overflow-hidden">
       {/* dot-grid background */}
       <div
         className="absolute inset-0 bg-center bg-cover bg-no-repeat"
@@ -40,10 +40,10 @@ export function Hero() {
           <Image
             src="/images/bg_solution_tab.png"
             alt=""
-            width={720}
-            height={720}
+            width={350}
+            height={350}
             priority
-            className="w-full max-w-220"
+            className="w-full max-w-200"
           />
         </motion.div>
       </div>

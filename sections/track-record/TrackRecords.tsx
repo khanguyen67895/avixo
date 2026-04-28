@@ -2,27 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-
-const records = [
-  {
-    phone: "/images/ic_phone1.png",
-    roi: "+12,4%",
-    drawdown: "-4,2%",
-    desc: "Chiến lược định lượng đa tài sản tập trung vào khai thác sự kém hiệu quả của thị trường trong ngắn hạn.\nĐo lường liên tục từ 2021.",
-  },
-  {
-    phone: "/images/ic_phone2.png",
-    roi: "+28,4%",
-    drawdown: "-1,2%",
-    desc: "Chiến lược trung lập rủi ro, tận dụng sự chênh lệch giá giữa các sàn giao dịch lớn toàn cầu.\nChu kỳ đo lường: Hàng tháng.",
-  },
-  {
-    phone: "/images/ic_phone3.png",
-    roi: "+18,2%",
-    drawdown: "-7,2%",
-    desc: "Kết hợp phân tích cơ bản và tín hiệu on-chain để dự báo xu hướng dài hạn.\nGiai đoạn đo lường: Từ 2018 đến nay.",
-  },
-];
+import { trackRecords as records } from "@/lib/constants";
 
 function BlueStar({ className = "" }: { className?: string }) {
   return (

@@ -4,26 +4,22 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { InvestorTab } from "./InvestorTab";
 import { IBTab } from "./IBTab";
+import { StrategicTab } from "./StrategicTab";
+import { PARTNERS_TABS, type PartnersTabId } from "@/lib/constants";
 
-const TABS = [
-  { id: "investor", label: "Nhà đầu tư" },
-  { id: "ib", label: "Cộng đồng IB" },
-  { id: "strategic", label: "Đối tác chiến lược" },
-] as const;
-
-type TabId = (typeof TABS)[number]["id"];
+type TabId = PartnersTabId;
 
 export function Partners() {
   const [active, setActive] = useState<TabId>("investor");
 
   return (
-    <section className="w-full bg-white pt-16 pb-20">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="w-full bg-white pt-16">
+      <div className="max-w-full mx-auto">
 
         {/* Tab bar */}
-        <div className="flex justify-center mb-16">
+        <div className="flex justify-center">
           <div className="inline-flex items-center gap-1 bg-white border border-zinc-200 rounded-full p-1 shadow-sm">
-            {TABS.map((tab) => (
+            {PARTNERS_TABS.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActive(tab.id)}
@@ -32,7 +28,7 @@ export function Partners() {
                 {active === tab.id && (
                   <motion.span
                     layoutId="tab-pill"
-                    className="absolute inset-0 rounded-full bg-gradient-to-r from-[#37C0FF] to-[#0076FF]"
+                    className="absolute inset-0 rounded-full bg-linear-to-r from-[#37C0FF] to-[#0076FF]"
                     transition={{ type: "spring", stiffness: 400, damping: 30 }}
                   />
                 )}
@@ -59,7 +55,7 @@ export function Partners() {
           >
             {active === "investor" && <InvestorTab />}
             {active === "ib" && <IBTab />}
-            {active === "strategic" && <ComingSoon label="Đối tác chiến lược" />}
+            {active === "strategic" && <StrategicTab />}
           </motion.div>
         </AnimatePresence>
       </div>
@@ -67,10 +63,3 @@ export function Partners() {
   );
 }
 
-function ComingSoon({ label }: { label: string }) {
-  return (
-    <div className="flex flex-col items-center justify-center py-24 text-zinc-400">
-      <p className="text-lg font-medium">{label} — sắp ra mắt</p>
-    </div>
-  );
-}

@@ -2,13 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-
-const stats = [
-  { value: "63K+", label: "GLOBAL USER" },
-  { value: "6+", label: "LIVE PRODUCTS" },
-  { value: "15+", label: "YEARS EXPERIENCE" },
-  { value: "5+", label: "GLOBAL MARKET" },
-];
+import { trackStats as stats } from "@/lib/constants";
 
 export function TrackHero() {
   return (

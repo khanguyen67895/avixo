@@ -4,24 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Text from "@/components/ui/label";
 import { GlowBackground } from "@/components/common/GlowBackground";
-
-const articles = [
-  {
-    img: "/images/news1.png",
-    title: "Nâng cao chuẩn mực về trách nhiệm với AI trong lĩnh vực crypto",
-    desc: "Binance nhận chứng chỉ ISO/IEC 42001. Binance đã đạt được chứng chỉ ISO/IEC 42001, ...",
-  },
-  {
-    img: "/images/news2.png",
-    title: "Nâng cao chuẩn mực về trách nhiệm với AI trong lĩnh vực crypto",
-    desc: "Binance nhận chứng chỉ ISO/IEC 42001. Binance đã đạt được chứng chỉ ISO/IEC 42001, ...",
-  },
-  {
-    img: "/images/news3.png",
-    title: "Nâng cao chuẩn mực về trách nhiệm với AI trong lĩnh vực crypto",
-    desc: "Binance nhận chứng chỉ ISO/IEC 42001. Binance đã đạt được chứng chỉ ISO/IEC 42001, ...",
-  },
-];
+import { homeArticles as articles } from "@/lib/constants";
 
 export function News() {
   return (

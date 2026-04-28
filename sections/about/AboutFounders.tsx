@@ -3,33 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-
-const founders = [
-  {
-    img: "/images/ic_profile1.png",
-    badge: "Founder · AI & Trading Strategy",
-    name: "Nguyễn Tiến Dũng",
-    role: "Chief AI & Trading Strategist",
-    desc: "15 năm thực chiến Forex, Gold, Crypto, hàng hóa. Kiến tạo hệ sinh thái giao dịch định lượng cho 63K+ khách hàng. Người đứng sau các thuật toán lõi của AVIXO.",
-    stats: [{ value: "63K+", label: "Khách hàng" }, { value: "15+", label: "Năm kinh nghiệm" }],
-  },
-  {
-    img: "/images/ic_profile2.png",
-    badge: "Founder · IB Global Network",
-    name: "Nguyễn Quang Việt",
-    role: "Chief Network & Growth Officer",
-    desc: "Nhà sáng lập Interlink Community. Chuyên gia phát triển traffic và hệ thống IB quy mô lớn. Xây dựng mạng lưới đối tác toàn cầu cho AVIXO.",
-    stats: [{ value: "500+", label: "Đối tác IB" }, { value: "20+", label: "Quốc gia" }],
-  },
-  {
-    img: "/images/ic_profile3.png",
-    badge: "Founder · Strategic Network & Partnership",
-    name: "Trần Đại Nghĩa",
-    role: "Strategic Partner & Ecosystem Developer",
-    desc: "Chuyên gia kết nối nhà đầu tư và đối tác chiến lược. Kinh nghiệm xây dựng network đầu tư và hệ sinh thái tài chính. Mở rộng quan hệ đối tác quốc tế tại AVIXO.\nMạng lưới nhà đầu tư, đối tác sàn và nguồn vốn chiến lược — lợi thế cạnh tranh dài hạn của AVIXO.",
-    stats: [{ value: "200+", label: "Đối tác và tổ chức" }, { value: "15+", label: "Quốc gia hiện diện" }],
-  },
-];
+import { aboutFounders as founders } from "@/lib/constants";
 
 export function AboutFounders() {
   const [active, setActive] = useState(2);

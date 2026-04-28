@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle2, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import Text from "@/components/ui/label";
 import { GlowBackground } from "@/components/common/GlowBackground";
@@ -37,11 +36,15 @@ export function Transparency() {
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-8 md:gap-16">
               <div className="flex items-center gap-3">
-                <CheckCircle2 className="w-6 h-6 text-[#00b4ff]" />
+                <div className="relative shrink-0 w-5 h-5 mt-0.5">
+                  <Image src="/images/ic_tick.png" alt="" fill className="object-contain" />
+                </div>
                 <span className="text-white font-semibold text-lg">Track Record & Minh bạch</span>
               </div>
               <div className="flex items-center gap-3">
-                <ShieldCheck className="w-6 h-6 text-[#00b4ff]" />
+                <div className="relative shrink-0 w-5 h-5 mt-0.5">
+                  <Image src="/images/ic_commit.png" alt="" fill className="object-contain" />
+                </div>
                 <span className="text-white font-semibold text-lg">Pháp lý & cam kết</span>
               </div>
             </div>
