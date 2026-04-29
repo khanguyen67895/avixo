@@ -24,11 +24,11 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <Text as="h1" className="text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight text-white mb-2 font-science">
-            Công nghệ Định lượng
+          <Text as="h2" className="text-3xl sm:text-4xl md:text-6xl tracking-tight text-white mb-2 font-science">
+            Công Nghệ Định Lượng
           </Text>
-          <Text as="h2" className="text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight text-[#37C0FF] mb-4">
-            Tài chính toàn cầu
+          <Text as="h2" className="text-3xl sm:text-4xl md:text-6xl tracking-tight text-[#37C0FF] mb-4">
+            Tài Chính Toàn Cầu
           </Text>
           <h2 className="max-w-3xl mx-auto text-sm sm:text-base md:text-lg text-white mb-6 px-2">
             Hệ sinh thái đầu tư thông minh ứng dụng Big Data & AI, có 15 năm kinh nghiệm thực chiến, phục vụ nhà đầu tư cá nhân, tổ chức và cộng đồng IB toàn cầu
@@ -55,10 +55,10 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center w-full max-w-[500px] mx-auto"
+          className="flex flex-col sm:flex-row gap-4 justify-center w-full max-w-125 mx-auto"
         >
-          <Button href="/explore">Khám phá AVIXO</Button>
-          <Button href="/investors" variant="outline">Tìm hiểu nhà đầu tư</Button>
+          <Button href="/about">Khám phá AVIXO</Button>
+          <Button href="/solutions" variant="outline">Tìm hiểu nhà đầu tư</Button>
         </motion.div>
       </div>
 

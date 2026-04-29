@@ -23,7 +23,7 @@ export function AboutEvents() {
         </div>
 
         <div className="flex justify-center mt-8">
-          <Button variant="primary">Xem thêm</Button>
+          <Button variant="primary" href="/news">Xem thêm</Button>
         </div>
 
       </div>

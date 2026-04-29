@@ -9,7 +9,7 @@ import { GlowBackground } from "@/components/common/GlowBackground";
 
 export function FullAutoBot() {
   return (
-    <GlowBackground src="/images/ic_bg1.png" as="section" className="w-full bg-white pb-20">
+    <GlowBackground id="full-auto-bot" src="/images/ic_bg1.png" as="section" className="w-full bg-white pb-20">
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -54,6 +54,7 @@ export function FullAutoBot() {
               {["PAMM/MAM", "Copy Trade", "Low DD"].map(t => <Tag key={t}>{t}</Tag>)}
             </div>
             <div className="flex-1">
+              {/* TODO: add download link */}
               <Button href="#" className=" w-1/2">Download now</Button>
             </div>
           </div>
@@ -61,6 +62,7 @@ export function FullAutoBot() {
 
         {/* Bot 2 — text left, phone right */}
         <motion.div
+          id="arrow-big-trend"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -83,6 +85,7 @@ export function FullAutoBot() {
               {["AI-powered", "Swing", "Position"].map(t => <Tag key={t}>{t}</Tag>)}
             </div>
             <div className="flex-1">
+              {/* TODO: add download link */}
               <Button href="#" className=" w-1/2">Download now</Button>
             </div>
           </div>

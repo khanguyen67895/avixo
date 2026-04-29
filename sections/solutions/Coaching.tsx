@@ -7,8 +7,10 @@ import Button from "@/components/ui/button";
 import Tag from "@/components/ui/tag";
 import { GlowBackground } from "@/components/common/GlowBackground";
 import { coachingSteps as steps, coachingLeftFeatures as leftFeatures } from "@/lib/constants";
+import { useContactModal } from "@/components/common/contact-context";
 
 export function Coaching() {
+  const { open } = useContactModal();
   return (
     <GlowBackground src="/images/ic_bg1.png" as="section" className="w-full pb-24 bg-white flex flex-col items-center overflow-hidden">
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center mb-16">
@@ -61,7 +63,7 @@ export function Coaching() {
             {["1:1 Mentoring", "Risk Management", "Scalp"].map(t => <Tag key={t}>{t}</Tag>)}
           </div>
           <div className="flex-1">
-            <Button href="#" className="w-3/4">Huấn luyện chuyên sâu ngay</Button>
+            <Button onClick={open} className="w-3/4">Huấn luyện chuyên sâu ngay</Button>
           </div>
         </motion.div>
 

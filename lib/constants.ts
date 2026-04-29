@@ -221,6 +221,7 @@ export const strategicBots = [
     name: "AUTO BMR & SMN MGH Pro",
     desc: "Hệ thống giao dịch tự động hoàn toàn với mô hình PAMM/MAM, copy trade và drawdown thấp, phù hợp nhà đầu tư thụ động.",
     button: "Tìm hiểu ngay",
+    href: "/solutions#full-auto-bot",
     icon: "/images/ic_full_auto.png",
   },
   {
@@ -228,6 +229,7 @@ export const strategicBots = [
     name: "Semi Boomerang & Smart Money",
     desc: "Chiến lược hồi giá kết hợp tư duy Smart Money / Liquidity / Order Flow. Công cụ hỗ trợ phân tích vùng cung-cầu, BOS, CHoCH — nhà đầu tư chủ động quyết định lệnh.",
     button: "Tìm hiểu ngay",
+    href: "/solutions#semi-bot",
     icon: "/images/ic_semibot.png",
   },
   {
@@ -235,6 +237,7 @@ export const strategicBots = [
     name: "Arrow Big Trend & AI Trading Swing",
     desc: "Thuật toán AI phát hiện xu hướng lớn kết hợp chiến lược swing và position trading trên các thị trường quốc tế.",
     button: "Tìm hiểu ngay",
+    href: "/solutions#arrow-big-trend",
     icon: "/images/ic_full_auto2.png",
   },
 ];
@@ -243,16 +246,19 @@ export const strategicBots = [
 
 export const homeArticles = [
   {
+    slug: "gia-bitcoin-tang-vuot-76000",
     img: "/images/news1.png",
     title: "Nâng cao chuẩn mực về trách nhiệm với AI trong lĩnh vực crypto",
     desc: "Binance nhận chứng chỉ ISO/IEC 42001. Binance đã đạt được chứng chỉ ISO/IEC 42001, ...",
   },
   {
+    slug: "nang-cao-chuan-muc-ai-crypto",
     img: "/images/news2.png",
     title: "Nâng cao chuẩn mực về trách nhiệm với AI trong lĩnh vực crypto",
     desc: "Binance nhận chứng chỉ ISO/IEC 42001. Binance đã đạt được chứng chỉ ISO/IEC 42001, ...",
   },
   {
+    slug: "phan-tich-bien-dong-chau-a",
     img: "/images/news3.png",
     title: "Nâng cao chuẩn mực về trách nhiệm với AI trong lĩnh vực crypto",
     desc: "Binance nhận chứng chỉ ISO/IEC 42001. Binance đã đạt được chứng chỉ ISO/IEC 42001, ...",

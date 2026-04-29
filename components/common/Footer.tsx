@@ -3,8 +3,10 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from 'next/image';
+import { useContactModal } from "@/components/common/contact-context";
 
 export function Footer() {
+  const { open } = useContactModal();
   return (
     <footer className="w-full flex flex-col">
       {/* CTA Section */}
@@ -42,13 +44,13 @@ export function Footer() {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <Link
-              href="/explore"
+              href="/about"
               className="w-full sm:w-auto px-8 py-3 rounded-full bg-[#00b4ff] hover:bg-[#0090cc] text-white font-semibold transition-all hover:scale-105 active:scale-95"
             >
               Khám phá AVIXO ngay
             </Link>
             <Link
-              href="/investors"
+              href="/partners?tab=investo"
               className="w-full sm:w-auto px-8 py-3 rounded-full bg-transparent border border-white/20 hover:border-white/40 text-white font-semibold transition-all hover:scale-105 active:scale-95"
             >
               Hồ sơ nhà đầu tư
@@ -75,23 +77,23 @@ export function Footer() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-16">
             <div className="flex flex-col gap-4">
               <h4 className="text-white font-bold text-lg mb-2">Giải pháp</h4>
-              <Link href="/nha-dau-tu" className="text-zinc-400 hover:text-[#00b4ff] text-sm transition-colors">Nhà đầu tư</Link>
-              <Link href="/cong-dong-ib" className="text-zinc-400 hover:text-[#00b4ff] text-sm transition-colors">Cộng đồng IB</Link>
-              <Link href="/doi-tac" className="text-zinc-400 hover:text-[#00b4ff] text-sm transition-colors">Đối tác chiến lược</Link>
+              <Link href="/partners?tab=investo" className="text-zinc-400 hover:text-[#00b4ff] text-sm transition-colors">Nhà đầu tư</Link>
+              <Link href="/partners?tab=ib" className="text-zinc-400 hover:text-[#00b4ff] text-sm transition-colors">Cộng đồng IB</Link>
+              <Link href="/partners?tab=strategic" className="text-zinc-400 hover:text-[#00b4ff] text-sm transition-colors">Đối tác chiến lược</Link>
             </div>
             
             <div className="flex flex-col gap-4">
               <h4 className="text-white font-bold text-lg mb-2">Sản phẩm</h4>
-              <Link href="/semi-bot" className="text-zinc-400 hover:text-[#00b4ff] text-sm transition-colors">SEMI - BOT</Link>
-              <Link href="/full-auto-bot" className="text-zinc-400 hover:text-[#00b4ff] text-sm transition-colors">FULL - AUTO BOT</Link>
-              <Link href="/ai-coaching" className="text-zinc-400 hover:text-[#00b4ff] text-sm transition-colors">AI Coaching</Link>
+              <Link href="/solutions" className="text-zinc-400 hover:text-[#00b4ff] text-sm transition-colors">SEMI - BOT</Link>
+              <Link href="/solutions" className="text-zinc-400 hover:text-[#00b4ff] text-sm transition-colors">FULL - AUTO BOT</Link>
+              <Link href="/solutions" className="text-zinc-400 hover:text-[#00b4ff] text-sm transition-colors">AI Coaching</Link>
             </div>
 
             <div className="flex flex-col gap-4 col-span-2 md:col-span-1">
               <h4 className="text-white font-bold text-lg mb-2">Pháp lý</h4>
-              <Link href="/legal" className="text-zinc-400 hover:text-[#00b4ff] text-sm transition-colors">Legal Policy</Link>
-              <Link href="/privacy" className="text-zinc-400 hover:text-[#00b4ff] text-sm transition-colors">Privacy</Link>
-              <Link href="/contact" className="text-zinc-400 hover:text-[#00b4ff] text-sm transition-colors">Liên hệ</Link>
+              <Link href="/" className="text-zinc-400 hover:text-[#00b4ff] text-sm transition-colors">Legal Policy</Link>
+              <Link href="/" className="text-zinc-400 hover:text-[#00b4ff] text-sm transition-colors">Privacy</Link>
+              <button onClick={open} className="text-zinc-400 hover:text-[#00b4ff] text-sm transition-colors text-left">Liên hệ</button>
             </div>
           </div>
           

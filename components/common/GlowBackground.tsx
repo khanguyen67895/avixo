@@ -10,6 +10,7 @@ type Props = {
   glowRadius?: number;
   variant?: "cursor" | "perimeter";
   as?: React.ElementType;
+  id?: string;
 };
 
 function posAt(d: number, W: number, H: number) {
@@ -28,6 +29,7 @@ export function GlowBackground({
   glowRadius = 120,
   variant = "perimeter",
   as: Tag = "div",
+  id,
 }: Props) {
   // Measurement div sits absolute inset-0 — its bounding rect == Tag's bounding rect
   const measureRef = useRef<HTMLDivElement>(null);
@@ -104,6 +106,7 @@ export function GlowBackground({
 
   return (
     <Tag
+      id={id}
       className={`relative ${className}`}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}

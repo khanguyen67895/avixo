@@ -10,8 +10,10 @@ import {
   strategicStats as stats,
   strategicCoopModels as coopModels,
 } from "@/lib/constants";
+import { useContactModal } from "@/components/common/contact-context";
 
 export function StrategicTab() {
+  const { open } = useContactModal();
   return (
     <div className="w-full">
 
@@ -70,7 +72,7 @@ export function StrategicTab() {
               Hệ thống báo cáo minh bạch cho phép đối tác tổ chức truy xuất và thẩm định dữ liệu vận hành thời gian thực.
             </p>
             <div className="flex-1">
-              <Button href="/contact" className="w-1/2">Liên hệ kết nối</Button>
+              <Button onClick={open} className="w-1/2">Liên hệ kết nối</Button>
             </div>
           </motion.div>
 

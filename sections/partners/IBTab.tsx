@@ -6,8 +6,10 @@ import Button from "@/components/ui/button";
 import Image from "next/image";
 import { GlowBackground } from "@/components/common/GlowBackground";
 import { ibHighlights as highlights, ibValues as values, ibTools as tools } from "@/lib/constants";
+import { useContactModal } from "@/components/common/contact-context";
 
 export function IBTab() {
+  const { open } = useContactModal();
   return (
     <div className="w-full">
 
@@ -112,7 +114,7 @@ export function IBTab() {
               chuyển đổi hiệu quả nhất.
             </p>
             <div className="flex-1">
-              <Button href="/contact" className="w-1/2">Liên hệ hợp tác IB</Button>
+              <Button onClick={open} className="w-1/2">Liên hệ hợp tác IB</Button>
             </div>
           </motion.div>
 

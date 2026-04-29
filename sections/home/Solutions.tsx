@@ -15,6 +15,7 @@ export function Solutions() {
       title: "Nhà đầu tư",
       description: "Công cụ quản lý danh mục tự động và AI coaching dành cho tài khoản cá nhân.",
       buttonText: "Bắt đầu",
+      href: "/partners?tab=investor",
       icon: "/images/ic_investor.png",
       glow: "#85FF8A",
       glowPos: "top-0 -left-30",
@@ -26,6 +27,7 @@ export function Solutions() {
       title: "Cộng đồng IB",
       description: "Nền tảng hạ tầng và công cụ hỗ trợ phát triển hệ thống khách hàng toàn cầu.",
       buttonText: "Tìm hiểu",
+      href: "/partners?tab=ib",
       icon: "/images/ic_ib.png",
       glow: "#FBE5CA",
       glowPos: "bottom-0 -right-10",
@@ -37,6 +39,7 @@ export function Solutions() {
       title: "Đối tác chiến lược",
       description: "Hợp tác cung cấp thanh khoản và phát triển giải pháp Quant Technology độc bản.",
       buttonText: "Hợp tác",
+      href: "/partners?tab=strategic",
       icon: "/images/ic_partners.png",
       glow: "#AED7F6",
       glowPos: "top-0 -right-30",
@@ -62,8 +65,8 @@ export function Solutions() {
           transition={{ duration: 0.8 }}
           className="text-center"
         >
-          <Text className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight text-zinc-900 mb-6">
-            Giải pháp cho mọi đối tác
+          <Text className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 mb-6">
+            Giải Pháp Cho Mọi Đối Tác
           </Text>
           <p className="max-w-2xl mx-auto text-base md:text-lg text-[#505050] px-2">
             AVIXO là hệ sinh thái toàn diện nơi công nghệ, dữ liệu và con người cùng tạo giá trị dài hạn trên Forex, Gold, Crypto, Chứng khoán và Hàng hóa.
@@ -107,7 +110,7 @@ export function Solutions() {
                 />
                 <h3 className="text-2xl font-bold text-zinc-900 mb-3">{card.title}</h3>
                 <p className="text-zinc-500 text-sm leading-relaxed mb-8 flex-1">{card.description}</p>
-                <Button variant={isHovered ? "primary" : "light"} fullWidth>
+                <Button variant={isHovered ? "primary" : "light"} fullWidth href={card.href}>
                   {card.buttonText}
                 </Button>
               </motion.div>

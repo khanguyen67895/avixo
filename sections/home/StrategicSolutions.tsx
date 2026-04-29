@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import Tag from "@/components/ui/tag";
 import Image from "next/image";
 import Text from "@/components/ui/label";
@@ -29,7 +30,7 @@ export function StrategicSolutions() {
           className="text-center mt-10"
         >
           <Text as="h2" className="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900">
-            Giải pháp chiến lược
+            Giải Pháp Chiến Lược
           </Text>
           <p className="max-w-2xl mx-auto text-lg text-zinc-500">
             Các thuật toán được tinh chỉnh qua 15 năm thực chiến trên thị trường quốc tế.
@@ -82,9 +83,9 @@ export function StrategicSolutions() {
                 {/* Mobile: always show content */}
                 <div className="md:hidden relative z-10">
                   <p className="text-sm text-zinc-500 leading-relaxed mb-6">{bot.desc}</p>
-                  <button className="w-fit mx-auto flex bg-linear-to-r from-[#37C0FF] to-[#0090cc] hover:opacity-90 text-white px-8 py-3 rounded-full font-semibold transition-opacity text-sm">
+                  <Link href={bot.href} className="w-fit mx-auto flex bg-linear-to-r from-[#37C0FF] to-[#0090cc] hover:opacity-90 text-white px-8 py-3 rounded-full font-semibold transition-opacity text-sm">
                     {bot.button}
-                  </button>
+                  </Link>
                 </div>
 
                 {/* Desktop: expand on hover */}
@@ -99,9 +100,9 @@ export function StrategicSolutions() {
                       className="hidden md:block relative z-10 overflow-hidden"
                     >
                       <p className="text-sm text-zinc-500 leading-relaxed mb-6">{bot.desc}</p>
-                      <button className="w-fit mx-auto flex bg-linear-to-r from-[#37C0FF] to-[#0090cc] hover:opacity-90 text-white px-8 py-3 rounded-full font-semibold transition-opacity text-sm">
+                      <Link href={bot.href} className="w-fit mx-auto flex bg-linear-to-r from-[#37C0FF] to-[#0090cc] hover:opacity-90 text-white px-8 py-3 rounded-full font-semibold transition-opacity text-sm">
                         {bot.button}
-                      </button>
+                      </Link>
                     </motion.div>
                   )}
                 </AnimatePresence>
