@@ -84,9 +84,9 @@ export function Footer() {
             
             <div className="flex flex-col gap-4">
               <h4 className="text-white font-bold text-lg mb-2">Sản phẩm</h4>
-              <Link href="/solutions" className="text-zinc-400 hover:text-[#00b4ff] text-sm transition-colors">SEMI - BOT</Link>
-              <Link href="/solutions" className="text-zinc-400 hover:text-[#00b4ff] text-sm transition-colors">FULL - AUTO BOT</Link>
-              <Link href="/solutions" className="text-zinc-400 hover:text-[#00b4ff] text-sm transition-colors">AI Coaching</Link>
+              <Link href="/solutions#semi-bot" className="text-zinc-400 hover:text-[#00b4ff] text-sm transition-colors">SEMI - BOT</Link>
+              <Link href="/solutions#full-auto-bot" className="text-zinc-400 hover:text-[#00b4ff] text-sm transition-colors">FULL - AUTO BOT</Link>
+              <Link href="/solutions#arrow-big-trend" className="text-zinc-400 hover:text-[#00b4ff] text-sm transition-colors">AI Coaching</Link>
             </div>
 
             <div className="flex flex-col gap-4 col-span-2 md:col-span-1">
