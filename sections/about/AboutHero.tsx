@@ -21,7 +21,7 @@ export function AboutHero() {
             transition={{ duration: 0.7 }}
             className="flex-1 pt-4"
           >
-            <Text as="h1" className="text-5xl md:text-4xl text-zinc-900 leading-tight mb-6">
+            <Text as="h1" className="text-3xl md:text-4xl text-zinc-900 leading-tight mb-6">
               Tầm nhìn<br />& Sứ mệnh
             </Text>
             <p className="text-[#505050] text-base leading-relaxed max-w-sm">
@@ -45,8 +45,8 @@ export function AboutHero() {
           </motion.div>
         </div>
 
-        {/* Center logo ball */}
-        <div className="flex justify-center -mt-6 mb-0 relative z-10">
+        {/* Center logo ball — hidden on mobile */}
+        <div className="hidden md:flex justify-center -mt-6 mb-0 relative z-10">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -54,7 +54,6 @@ export function AboutHero() {
             className="w-80 h-80 absolute -top-30 bottom-0 bg-transparent flex items-center justify-center"
           >
             <Image src="/images/ic_logo.png" alt="AVIXO" fill className="object-contain" />
-
           </motion.div>
         </div>
       </div>

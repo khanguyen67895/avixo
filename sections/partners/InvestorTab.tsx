@@ -55,7 +55,7 @@ export function InvestorTab() {
       </GlowBackground>
 
       {/* ── ProductsForYou heading ── */}
-      <div className="text-center max-w-7xl mx-auto px-6 -mb-30">
+      <div className="text-center max-w-7xl mx-auto px-6 md:-mb-30">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -74,7 +74,7 @@ export function InvestorTab() {
 
       {/* ── ProductsForYou items ── */}
       {products.map((p, i) => {
-        const my = i === 1 ? "-mt-20 -mb-50" : "mt-50 mb-20";
+        const my = i === 1 ? "md:-mt-20 md:-mb-50" : "md:mt-50 md:mb-20";
         const inner = (
           <div
             className={`relative z-10 max-w-7xl mx-auto px-6 py-0 flex flex-col md:flex-row items-center ${my} gap-8 md:gap-16 ${
@@ -88,7 +88,7 @@ export function InvestorTab() {
               transition={{ duration: 0.7, delay: 0.1 }}
               className="flex-1 flex"
             >
-              <div className="relative w-120 h-120">
+              <div className="relative w-full max-w-xs md:w-120 md:h-120 aspect-square">
                 <Image src={p.img} alt={p.title} fill className="object-contain" />
               </div>
             </motion.div>

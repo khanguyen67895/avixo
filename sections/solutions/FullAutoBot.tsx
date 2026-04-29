@@ -29,17 +29,17 @@ export function FullAutoBot() {
         </motion.div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto flex flex-col pt-40">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 flex flex-col pt-10 md:pt-40 gap-16 md:gap-0">
         {/* Bot 1 — phone left, text right */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="flex flex-col md:flex-row items-center gap-32"
+          className="flex flex-col md:flex-row items-center gap-8 md:gap-32"
         >
           <div className="flex-1 flex justify-center">
-            <div className="relative w-full max-w-200 aspect-4/3">
+            <div className="relative w-full max-w-sm md:max-w-none aspect-4/3">
               <Image src="/images/ic_phone2.png" alt="Auto BMR App" fill className="object-contain" />
             </div>
           </div>
@@ -53,10 +53,7 @@ export function FullAutoBot() {
             <div className="flex flex-wrap gap-2 mb-8">
               {["PAMM/MAM", "Copy Trade", "Low DD"].map(t => <Tag key={t}>{t}</Tag>)}
             </div>
-            <div className="flex-1">
-              {/* TODO: add download link */}
-              <Button href="#" className=" w-1/2">Download now</Button>
-            </div>
+            <Button href="#" fullWidth>Download now</Button>
           </div>
         </motion.div>
 
@@ -67,10 +64,10 @@ export function FullAutoBot() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="flex flex-col md:flex-row-reverse items-center gap-12"
+          className="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-12"
         >
           <div className="flex-1 flex justify-center">
-            <div className="relative w-full max-w-200 aspect-4/3">
+            <div className="relative w-full max-w-sm md:max-w-none aspect-4/3">
               <Image src="/images/ic_phone3.png" alt="Arrow Big Trend App" fill className="object-contain p-6" />
             </div>
           </div>
@@ -84,10 +81,7 @@ export function FullAutoBot() {
             <div className="flex flex-wrap gap-2 mb-8">
               {["AI-powered", "Swing", "Position"].map(t => <Tag key={t}>{t}</Tag>)}
             </div>
-            <div className="flex-1">
-              {/* TODO: add download link */}
-              <Button href="#" className=" w-1/2">Download now</Button>
-            </div>
+            <Button href="#" fullWidth>Download now</Button>
           </div>
         </motion.div>
       </div>

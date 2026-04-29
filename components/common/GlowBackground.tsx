@@ -114,9 +114,9 @@ export function GlowBackground({
       {/* Invisible measurement layer — no ref on dynamic Tag */}
       <div ref={measureRef} className="absolute inset-0 pointer-events-none" />
       {/* Static bg */}
-      <Image src={src} alt="" fill className="object-center pointer-events-none" />
+      <Image src={src} alt="" fill className="object-center pointer-events-none opacity-20 md:opacity-100" />
       {/* Glow layer */}
-      <div ref={glowRef} className="absolute inset-0 pointer-events-none">
+      <div ref={glowRef} className="absolute inset-0 pointer-events-none hidden md:block">
         <Image src={src} alt="" fill className="object-center" />
       </div>
       {children}

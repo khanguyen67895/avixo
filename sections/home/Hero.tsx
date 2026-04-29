@@ -40,7 +40,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-6 md:gap-16 mb-10 md:mb-16"
+          className="flex flex-wrap justify-center gap-6 md:gap-16 mb-10 md:mb-16 px-4 md:px-0"
         >
           {stats.map((stat, index) => (
             <div key={index} className="flex flex-col items-start">
@@ -55,24 +55,24 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center w-full max-w-125 mx-auto"
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-125 mx-auto"
         >
-          <Button href="/about">Khám phá AVIXO</Button>
-          <Button href="/solutions" variant="outline">Tìm hiểu nhà đầu tư</Button>
+          <Button href="/about" fullWidth>Khám phá AVIXO</Button>
+          <Button href="/solutions" variant="outline" fullWidth>Tìm hiểu nhà đầu tư</Button>
         </motion.div>
       </div>
 
-      {/* Hero Border Arc */}
-      <div className="order-1 md:order-2 w-full flex items-center justify-center relative z-20 pointer-events-none">
+      {/* Hero Border Arc — hidden on mobile */}
+      <div className="hidden md:flex order-1 md:order-2 w-full items-center justify-center relative z-20 pointer-events-none">
         <Image src="/images/ic_border_hero.png" alt="Border" width={1920} height={400} className="w-full h-auto brightness-150 contrast-125 drop-shadow-[0_0_25px_rgba(0,180,255,0.8)] mix-blend-screen" />
       </div>
 
-      {/* Globe Video */}
+      {/* Globe Video — hidden on mobile */}
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 0.6 }}
-        className="absolute bottom-[-20%] sm:bottom-[-40%] md:bottom-[-70%] left-1/2 -translate-x-1/2 w-full h-[115%] flex items-start"
+        className="hidden md:flex absolute bottom-[-70%] left-1/2 -translate-x-1/2 w-full h-[115%] items-start"
       >
         <div className="relative w-full aspect-video mix-blend-screen opacity-90">
           <video

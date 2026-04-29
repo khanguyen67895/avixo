@@ -30,7 +30,7 @@ export function SemiBot() {
         </motion.div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row gap-32">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 flex flex-col md:flex-row gap-8 md:gap-32">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -55,7 +55,7 @@ export function SemiBot() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="flex gap-3 items-start"
               >
-                <Image src={f.icon} alt="" width={20} height={20} className="w-5 h-5 object-contain" />
+                <Image src={f.icon} alt="" width={20} height={20} className="w-5 h-5 object-contain shrink-0" />
                 <div>
                   <p className="font-semibold text-zinc-900 text-sm">{f.title}</p>
                   <p className="text-zinc-500 text-xs mt-0.5 leading-relaxed">{f.desc}</p>
@@ -64,14 +64,11 @@ export function SemiBot() {
             ))}
           </div>
 
-          <div className="flex flex-wrap gap-2 mb-8 ml-30">
+          <div className="flex flex-wrap gap-2 mb-8">
             {["Mean Reversion", "Order Flow", "Intraday"].map(t => <Tag key={t}>{t}</Tag>)}
           </div>
 
-          <div className="flex-1">
-            {/* TODO: add download link */}
-            <Button href="#" className="w-1/2 ml-35">Download now</Button>
-          </div>
+          <Button href="#" fullWidth>Download now</Button>
         </motion.div>
 
         <motion.div
@@ -79,9 +76,9 @@ export function SemiBot() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="flex-1 flex"
+          className="flex-1 flex justify-center"
         >
-          <div className="relative w-full max-w-200 aspect-4/3">
+          <div className="relative w-full max-w-sm md:max-w-none aspect-4/3">
             <Image src="/images/ic_phone1.png" alt="Semi Bot App" fill className="object-contain" />
           </div>
         </motion.div>

@@ -156,7 +156,7 @@ export function IBTab() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="bg-[#0D1B3E] rounded-4xl px-10 py-14"
+            className="relative overflow-hidden bg-[#0D1B3E] rounded-4xl px-6 py-10 md:px-10 md:py-14"
           >
             <Image
               src="/images/ic_pixels.png"
