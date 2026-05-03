@@ -108,8 +108,8 @@ export function Solutions() {
                   height={130}
                   className="mb-6 object-contain"
                 />
-                <h3 className="text-2xl font-bold text-zinc-900 mb-3">{card.title}</h3>
-                <p className="text-zinc-500 text-sm leading-relaxed mb-8 flex-1">{card.description}</p>
+                <Text className="text-[18px] font-bold text-zinc-900 mb-3">{card.title}</Text>
+                <p className="text-zinc-500 text-[16px] leading-relaxed mb-8 flex-1">{card.description}</p>
                 <Button variant={isHovered ? "primary" : "light"} fullWidth href={card.href}>
                   {card.buttonText}
                 </Button>

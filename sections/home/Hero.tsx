@@ -40,7 +40,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-6 md:gap-16 mb-10 md:mb-16 px-4 md:px-0"
+          className="font-manrope flex flex-wrap justify-center gap-6 md:gap-16 mb-10 md:mb-16 px-4 md:px-0"
         >
           {stats.map((stat, index) => (
             <div key={index} className="flex flex-col items-start">
@@ -57,8 +57,8 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-125 mx-auto"
         >
-          <Button href="/about" fullWidth>Khám phá AVIXO</Button>
-          <Button href="/solutions" variant="outline" fullWidth>Tìm hiểu nhà đầu tư</Button>
+          <Button href="/about" fullWidth className="font-manrope font-semibold">Khám phá AVIXO</Button>
+          <Button href="/solutions" variant="outline" fullWidth className="font-manrope font-semibold">Tìm hiểu nhà đầu tư</Button>
         </motion.div>
       </div>
 

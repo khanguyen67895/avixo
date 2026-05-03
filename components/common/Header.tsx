@@ -38,14 +38,14 @@ export function Header() {
               <Link
                 key={href}
                 href={href}
-                className={`relative py-2 text-sm font-medium transition-colors ${
+                className={`relative py-2 text-[16px] font-medium transition-colors ${
                   isActive
                     ? "bg-clip-text text-transparent bg-linear-to-r from-[#37C0FF] to-[#0076FF]"
                     : "text-zinc-400 hover:text-white"
                 }`}
               >
                 {isActive && (
-                  <Image src="/images/ic_sparkle.png" alt="" width={20} height={20} className="absolute -left-5 top-2.5 w-5 h-5" />
+                  <Image src="/images/ic_sparkle.png" alt="" width={20} height={20} className="absolute -left-5 top-3.5 w-5 h-5" />
                 )}
                 {label}
               </Link>
@@ -55,23 +55,23 @@ export function Header() {
 
         {/* Right actions */}
         <div className="flex items-center gap-2 md:gap-4">
-          <div className="hidden sm:block">
+          {/* <div className="hidden sm:block">
             <Button onClick={openContact}>Liên hệ ngay</Button>
           </div>
 
           <div className="hidden md:flex items-center gap-2">
             <Image src="/images/ic_dark_mode.png" alt="Dark mode" width={36} height={36} className="w-9 h-9" />
             <Image src="/images/ic_lang.png" alt="Language" width={30} height={30} className="w-7 h-7" />
-          </div>
+          </div> */}
 
           {/* Hamburger — mobile */}
-          <button
+          {/* <button
             className="flex md:hidden items-center justify-center w-9 h-9 rounded-lg text-white"
             onClick={() => setMenuOpen(o => !o)}
             aria-label="Toggle menu"
           >
             {menuOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
+          </button> */}
         </div>
       </div>
 

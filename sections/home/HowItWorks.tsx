@@ -126,7 +126,7 @@ export function HowItWorks() {
                 transition={{ duration: 0.5 }}
                 className="absolute inset-0"
               >
-                <Image src={steps[active].bg} alt="" fill />
+                <Image src={steps[active].bg} className="object-contain mix-blend-multiply" alt="" fill />
               </motion.div>
             </AnimatePresence>
           </div>
