@@ -9,12 +9,46 @@ import { GlowBackground } from "@/components/common/GlowBackground";
 
 const topics = ["Đầu tư Cá nhân", "Đối tác IB", "Đầu tư chiến lược"];
 
+const TOPIC_TO_VALUE: Record<string, string> = {
+  "Đầu tư Cá nhân": "investor",
+  "Đối tác IB": "ib",
+  "Đầu tư chiến lược": "strategic",
+};
+
 export function AboutContact() {
   const [topic, setTopic] = useState("Đầu tư Cá nhân");
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({ name: "", phone: "", email: "", message: "" });
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
     e.preventDefault();
+    setLoading(true);
+    setStatus("idle");
+    try {
+      const res = await fetch("http://localhost:4000/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          subject: TOPIC_TO_VALUE[topic] || topic,
+          name: form.name,
+          phone: form.phone,
+          email: form.email,
+          message: form.message,
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setStatus("success");
+        setForm({ name: "", phone: "", email: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -65,6 +99,18 @@ export function AboutContact() {
               />
             </div>
 
+            {/* Phone */}
+            <div className="flex flex-col gap-1.5">
+              <label className="text-sm text-zinc-700">Số điện thoại</label>
+              <input
+                type="tel"
+                value={form.phone}
+                onChange={e => setForm(f => ({ ...f, phone: e.target.value }))}
+                placeholder="0912 345 678"
+                className="border border-zinc-200 rounded-xl px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-300 focus:outline-none focus:border-[#37C0FF] transition-colors"
+              />
+            </div>
+
             {/* Email */}
             <div className="flex flex-col gap-1.5">
               <label className="text-sm text-zinc-700">Email Liên hệ</label>
@@ -91,7 +137,16 @@ export function AboutContact() {
               />
             </div>
 
-            <Button type="submit" variant="primary">Gửi yêu cầu</Button>
+            {status === "success" && (
+              <p className="text-sm text-green-600 font-medium">✅ Yêu cầu đã được gửi thành công!</p>
+            )}
+            {status === "error" && (
+              <p className="text-sm text-red-500 font-medium">❌ Có lỗi xảy ra, vui lòng thử lại.</p>
+            )}
+
+            <Button type="submit" variant="primary" disabled={loading}>
+              {loading ? "Đang gửi..." : "Gửi yêu cầu"}
+            </Button>
           </form>
 
         </div>

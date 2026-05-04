@@ -12,8 +12,36 @@ import { CONTACT_SUBJECTS as SUBJECTS } from "@/lib/constants";
 function AnimatedCard({ close }: { close: () => void }) {
   const [subject, setSubject] = useState("investor");
   const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+
+  async function handleSubmit() {
+    if (!name.trim() || !email.trim() || !message.trim()) return;
+    setLoading(true);
+    setStatus("idle");
+    try {
+      const res = await fetch("http://localhost:4000/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ subject, name, phone, email, message }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setStatus("success");
+        setName(""); setPhone(""); setEmail(""); setMessage("");
+        setTimeout(() => close(), 2000);
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    } finally {
+      setLoading(false);
+    }
+  }
 
   return (
     <motion.div
@@ -98,6 +126,18 @@ function AnimatedCard({ close }: { close: () => void }) {
           />
         </div>
 
+        {/* Phone */}
+        <div>
+          <label className="block text-sm font-medium text-zinc-700 mb-1.5">Số điện thoại</label>
+          <input
+            type="tel"
+            placeholder="0912 345 678"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            className="w-full rounded-xl border border-zinc-200 px-4 py-3 text-sm text-zinc-800 placeholder:text-zinc-400 outline-none focus:border-[#37C0FF] focus:ring-1 focus:ring-[#37C0FF]/30 transition bg-white/90"
+          />
+        </div>
+
         {/* Email */}
         <div>
           <label className="block text-sm font-medium text-zinc-700 mb-1.5">Email Liên hệ</label>
@@ -122,12 +162,22 @@ function AnimatedCard({ close }: { close: () => void }) {
           />
         </div>
 
+        {/* Status messages */}
+        {status === "success" && (
+          <p className="text-sm text-green-600 font-medium text-center">✅ Yêu cầu đã được gửi thành công!</p>
+        )}
+        {status === "error" && (
+          <p className="text-sm text-red-500 font-medium text-center">❌ Có lỗi xảy ra, vui lòng thử lại.</p>
+        )}
+
         {/* Submit */}
         <button
           type="button"
-          className="w-full py-3.5 rounded-full bg-gradient-to-r from-[#37C0FF] to-[#0076FF] text-white font-semibold text-sm hover:opacity-90 active:scale-[0.98] transition-all shadow-[0_4px_20px_rgba(55,192,255,0.35)]"
+          onClick={handleSubmit}
+          disabled={loading}
+          className="w-full py-3.5 rounded-full bg-gradient-to-r from-[#37C0FF] to-[#0076FF] text-white font-semibold text-sm hover:opacity-90 active:scale-[0.98] transition-all shadow-[0_4px_20px_rgba(55,192,255,0.35)] disabled:opacity-60 disabled:cursor-not-allowed"
         >
-          Gửi tin nhắn ngay
+          {loading ? "Đang gửi..." : "Gửi tin nhắn ngay"}
         </button>
       </div>
     </motion.div>

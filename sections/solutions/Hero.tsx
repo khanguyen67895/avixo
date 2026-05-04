@@ -6,7 +6,7 @@ import Text from "@/components/ui/label";
 
 export function Hero() {
   return (
-    <section className="relative w-full min-h-[60vw] md:h-180 bg-black flex items-center overflow-hidden py-24 md:py-0">
+    <section className="relative w-full md:h-180 bg-black flex items-center overflow-hidden py-24 md:py-0">
       {/* dot-grid background */}
       <div
         className="absolute inset-0 bg-center bg-cover bg-no-repeat"

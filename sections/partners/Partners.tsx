@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { InvestorTab } from "./InvestorTab";
@@ -12,14 +12,13 @@ type TabId = PartnersTabId;
 
 export function Partners() {
   const searchParams = useSearchParams();
-  const [active, setActive] = useState<TabId>("investor");
 
-  useEffect(() => {
+  const initialTab = (() => {
     const tab = searchParams.get("tab") as TabId | null;
-    if (tab && PARTNERS_TABS.some((t) => t.id === tab)) {
-      setActive(tab);
-    }
-  }, [searchParams]);
+    return tab && PARTNERS_TABS.some((t) => t.id === tab) ? tab : "investor";
+  })();
+
+  const [active, setActive] = useState<TabId>(initialTab);
 
   return (
     <section className="w-full bg-white pt-16">

@@ -74,7 +74,7 @@ export function Solutions() {
         </motion.div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 md:px-0">
           {cards.map((card, index) => {
             const isHovered = hoveredIndex === index;
             return (

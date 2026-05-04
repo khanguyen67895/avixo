@@ -24,10 +24,10 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <Text as="h2" className="text-3xl sm:text-4xl md:text-6xl tracking-tight text-white mb-2 font-science">
+          <Text as="h2" className="text-3xl sm:text-4xl md:text-6xl tracking-tight text-white font-normal mb-2 font-science">
             Công Nghệ Định Lượng
           </Text>
-          <Text as="h2" className="text-3xl sm:text-4xl md:text-6xl tracking-tight text-[#37C0FF] mb-4">
+          <Text as="h2" className="text-3xl sm:text-4xl md:text-6xl tracking-tight text-[#37C0FF] mb-4 font-normal">
             Tài Chính Toàn Cầu
           </Text>
           <h2 className="max-w-3xl mx-auto text-sm sm:text-base md:text-lg text-white mb-6 px-2">

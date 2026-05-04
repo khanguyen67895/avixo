@@ -3,11 +3,20 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { useQuery } from "@tanstack/react-query";
 import Text from "@/components/ui/label";
 import { GlowBackground } from "@/components/common/GlowBackground";
-import { homeArticles as articles } from "@/lib/constants";
+import { fetchNews } from "@/lib/newsApi";
+
+const FALLBACK_IMG = "/images/news1.png";
 
 export function News() {
+  const { data: articles = [] } = useQuery({
+    queryKey: ["news", "Tất cả"],
+    queryFn: fetchNews,
+    select: data => data.slice(0, 3),
+  });
+
   return (
     <GlowBackground src="/images/ic_bg1.png" variant="perimeter" as="section" className="w-full bg-white">
       <div className="relative z-10 w-full max-w-6xl mx-auto px-4">
@@ -31,7 +40,7 @@ export function News() {
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-30">
           {articles.map((article, i) => (
-            <Link key={i} href={`/news/${article.slug}`}>
+            <Link key={article.id} href={`/news/${article.id}`}>
               <motion.div
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -41,7 +50,7 @@ export function News() {
               >
                 <div className="relative w-full aspect-video bg-zinc-900">
                   <Image
-                    src={article.img}
+                    src={article.imageUrl ?? FALLBACK_IMG}
                     alt={article.title}
                     fill
                     className="object-cover"
@@ -52,7 +61,7 @@ export function News() {
                     {article.title}
                   </h3>
                   <p className="text-sm text-zinc-500 leading-relaxed line-clamp-2">
-                    {article.desc}
+                    {article.description}
                   </p>
                 </div>
               </motion.div>
