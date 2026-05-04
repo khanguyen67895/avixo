@@ -5,6 +5,7 @@ import { StrategicSolutions } from "@/sections/home/StrategicSolutions";
 import { Transparency } from "@/sections/home/Transparency";
 import { Founders } from "@/sections/home/Founders";
 import { News } from "@/sections/home/News";
+import { CTA } from "@/sections/home/CTA";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Transparency />
       <Founders />
       <News />
+      <CTA />
     </>
   );
 }
