@@ -55,7 +55,7 @@ export function NewsList() {
         {isLoading ? (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {Array.from({ length: 6 }).map((_, i) => (
-              <div key={i} className="bg-zinc-100 rounded-2xl animate-pulse aspect-[4/3]" />
+              <div key={i} className="bg-zinc-100 rounded-2xl animate-pulse aspect-4/3" />
             ))}
           </div>
         ) : (
