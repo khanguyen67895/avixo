@@ -65,13 +65,13 @@ export function Header() {
           </div> */}
 
           {/* Hamburger — mobile */}
-          {/* <button
+           <button
             className="flex md:hidden items-center justify-center w-9 h-9 rounded-lg text-white"
             onClick={() => setMenuOpen(o => !o)}
             aria-label="Toggle menu"
           >
             {menuOpen ? <X size={22} /> : <Menu size={22} />}
-          </button> */}
+          </button>
         </div>
       </div>
 
