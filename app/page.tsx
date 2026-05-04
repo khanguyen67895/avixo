@@ -9,7 +9,9 @@ import { News } from "@/sections/home/News";
 export default function Home() {
   return (
     <>
-      <Hero />
+      <div className="hidden md:block">
+        <Hero />
+      </div>
       <Solutions />
       <HowItWorks />
       <StrategicSolutions />

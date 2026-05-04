@@ -27,7 +27,7 @@ export default function Button({
 
     const variants: Record<Variant, string> = {
         primary:
-            "bg-gradient-to-r from-[#37C0FF] to-[#0076FF] text-white hover:opacity-90 hover:scale-105 shadow-[0_0_15px_rgba(55,192,255,0.3)]",
+            "bg-gradient-to-r from-[#37C0FF] to-[#0076FF] text-white hover:opacity-90 border border-[#0076FF] hover:scale-105 shadow-[0_0_15px_rgba(55,192,255,0.3)]",
         outline:
             "bg-[#0a0f1c] border border-[#00b4ff]/40 text-white hover:bg-[#0f172a] hover:border-[#00b4ff]/70 hover:scale-105",
         light:

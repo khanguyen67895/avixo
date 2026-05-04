@@ -8,7 +8,7 @@ import { GlowBackground } from "@/components/common/GlowBackground";
 
 export function TrackRecords() {
   return (
-    <GlowBackground src="/images/ic_bg1.png" className="w-full pt-12 pb-24 overflow-hidden">
+    <GlowBackground src="/images/ic_bg1.png" className="w-full py-24 overflow-hidden">
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         {/* Heading */}
         <motion.div
@@ -36,7 +36,7 @@ export function TrackRecords() {
               className="flex flex-col items-center gap-6 h-full"
             >
               {/* Phone mockup */}
-              <div className="relative w-56 h-105">
+              <div className="relative w-[313.5px] h-[654.96px]">
                 <Image src={r.phone} alt="trading screen" fill className="object-contain drop-shadow-xl" />
               </div>
 
@@ -44,12 +44,12 @@ export function TrackRecords() {
               <div className="w-full flex-1 rounded-2xl border border-zinc-100 bg-white shadow-[0_4px_24px_0_rgba(0,0,0,0.07)] p-6">
                 <div className="flex items-center justify-between mb-4">
                   <div>
-                    <p className="text-xs text-[#505050] mb-1">ROI</p>
-                    <Text className="text-xl text-[#4CAF50]">{r.roi}</Text>
+                    <p className="text-[14px] text-[#505050] mb-1">ROI</p>
+                    <Text className="text-[24px] text-[#4CAF50]">{r.roi}</Text>
                   </div>
                   <div className="text-right">
-                    <p className="text-xs text-[#505050] mb-1">Max drawdown</p>
-                    <Text className={`text-xl ${i === 1 ? "text-[#FF6900]" : "text-[#FF4D4D]"}`}>{r.drawdown}</Text>
+                    <p className="text-[14px] text-[#505050] mb-1">Max drawdown</p>
+                    <Text className={`text-[24px] ${i === 1 ? "text-[#FF6900]" : "text-[#FF4D4D]"}`}>{r.drawdown}</Text>
                   </div>
                 </div>
                 <p className="text-sm text-[#1D1D1D] leading-relaxed whitespace-pre-line">{r.desc}</p>

@@ -74,7 +74,7 @@ export function Solutions() {
         </motion.div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 md:px-0">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 px-4 md:px-0">
           {cards.map((card, index) => {
             const isHovered = hoveredIndex === index;
             return (
@@ -87,7 +87,7 @@ export function Solutions() {
                 whileHover={{ y: -8, scale: 1.02 }}
                 onHoverStart={() => setHoveredIndex(index)}
                 onHoverEnd={() => setHoveredIndex(null)}
-                className="relative rounded-3xl bg-white flex flex-col items-center text-center px-8 pt-20 pb-8 mt-20"
+                className="relative rounded-3xl bg-white flex flex-col items-center text-center px-8 pt-20 pb-8 mt-2 md:mt-20"
                 style={{
                   boxShadow: isHovered
                     ? "0 0 0 1px #37C0FF, 0 20px 40px rgba(55,192,255,0.15)"

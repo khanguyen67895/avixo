@@ -49,7 +49,7 @@ export function Coaching() {
             {leftFeatures.map((f, i) => (
               <div key={i} className="flex gap-3 items-start">
                 {/* <div className="w-12 h-12 border-2 rounded-full bg-[#FFFFFF] flex items-center justify-center"> */}
-                  <Image src={f.icon} alt="" width={12} height={12} className="w-5 h-5 object-contain" />
+                  <Image src={f.icon} alt="" width={15} height={15} className="w-15 h-15 object-contain -mt-5" />
                 {/* </div> */}
                 <div>
                   <p className="font-semibold text-zinc-900 text-sm">{f.title}</p>
@@ -60,7 +60,7 @@ export function Coaching() {
           </div>
 
           <div className="flex flex-wrap gap-2 mb-8">
-            {["1:1 Mentoring", "Risk Management", "Scalp"].map(t => <Tag key={t}>{t}</Tag>)}
+            {["1:1 Mentoring", "Risk Management", "Scalp"].map(t => <Tag bordered hasZap={false} key={t}>{t}</Tag>)}
           </div>
           <div className="flex-1">
             <Button onClick={open} className="w-3/4">Huấn luyện chuyên sâu ngay</Button>

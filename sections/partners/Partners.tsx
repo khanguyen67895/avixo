@@ -36,13 +36,13 @@ export function Partners() {
                 {active === tab.id && (
                   <motion.span
                     layoutId="tab-pill"
-                    className="absolute inset-0 rounded-full bg-linear-to-r from-[#37C0FF] to-[#0076FF]"
+                    className="absolute inset-0 rounded-full bg-linear-to-r from-[#37C0FF] to-[#0076FF] border border-[#0076FF]"
                     transition={{ type: "spring", stiffness: 400, damping: 30 }}
                   />
                 )}
                 <span
-                  className={`relative z-10 transition-colors duration-200 ${
-                    active === tab.id ? "text-white" : "text-zinc-500 hover:text-zinc-800"
+                  className={`relative z-10 transition-colors duration-200 text-[22px] font-semibold ${
+                    active === tab.id ? "text-white" : "text-[#1D1D1D] hover:text-zinc-800"
                   }`}
                 >
                   {tab.label}

@@ -142,10 +142,10 @@ export function InvestorTab() {
             className="bg-white rounded-4xl border border-zinc-100 shadow-[0_4px_40px_rgba(0,0,0,0.06)] px-8 md:px-14 py-12"
           >
             <div className="text-center mb-4">
-              <Text as="h2" className="text-2xl md:text-3xl font-bold text-zinc-900 mb-3 leading-snug">
+              <Text as="h2" className="text-2xl md:text-3xl font-semibold text-zinc-900 mb-3 leading-snug">
                 Những gì cần hiểu trước khi sử dụng
               </Text>
-              <p className="text-zinc-500 text-sm leading-relaxed max-w-xl mx-auto">
+              <p className="text-[#505050] text-sm leading-relaxed max-w-xl mx-auto">
                 Tại AVIXO, chúng tôi ưu tiên sự minh bạch và trách nhiệm. Đầu tư tài chính
                 luôn đi kèm với những biến động không lường trước được.
               </p>
@@ -159,12 +159,12 @@ export function InvestorTab() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="flex gap-5 items-start bg-[#F8FAFC] rounded-2xl px-6 py-5"
+                  className="flex gap-5 items-center bg-[#F2F2F2] rounded-2xl px-6 py-5"
                 >
-                  <span className="shrink-0 w-8 h-8 rounded-full bg-white border border-zinc-100 shadow-sm flex items-center justify-center text-xs font-bold text-[#37C0FF]">
+                  <span className="items-center justify-center text-lg font-semibold text-[#0076FF]">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <p className="text-zinc-600 text-sm leading-relaxed">{text}</p>
+                  <p className="text-[#131313] text-sm leading-relaxed">{text}</p>
                 </motion.div>
               ))}
             </div>

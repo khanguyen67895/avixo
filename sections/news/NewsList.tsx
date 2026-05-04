@@ -40,10 +40,10 @@ export function NewsList() {
             <button
               key={cat}
               onClick={() => { setActive(cat); setShowAll(false); }}
-              className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
+              className={`px-5 py-2.5 rounded-full text-[18px] font-semibold transition-all border border-[#0076FF] ${
                 active === cat
                   ? "bg-[#37C0FF] text-white shadow-md"
-                  : "bg-white border border-zinc-200 text-zinc-600 hover:border-[#37C0FF] hover:text-[#37C0FF]"
+                  : "bg-[#EFEFEF] border border-[#F9F9F9] text-zinc-600 hover:border-[#37C0FF] hover:text-[#37C0FF]"
               }`}
             >
               {cat}
@@ -66,25 +66,24 @@ export function NewsList() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: i * 0.05 }}
-                  className="bg-white rounded-2xl border border-zinc-100 shadow-sm overflow-hidden hover:shadow-md transition-shadow group"
+                  className="bg-white p-2 rounded-2xl border border-[#E5E5E5] shadow-sm overflow-hidden hover:shadow-md transition-shadow group"
                 >
-                  <div className="relative w-full aspect-video bg-zinc-100">
                     <Image
                       src={article.imageUrl ?? FALLBACK_IMG}
                       alt={article.title}
-                      fill
-                      className="object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                      width={367}
+                      height={140}
+                      className="object-cover h-35 rounded-2xl group-hover:scale-[1.03] transition-transform duration-500"
                     />
-                  </div>
-                  <div className="p-5">
+                  <div className="py-5 px-2">
                     <div className="flex items-center justify-between mb-2">
-                      <span className={`text-[10px] font-bold uppercase tracking-wide ${CATEGORY_COLORS[article.category] ?? "text-[#37C0FF]"}`}>
+                      <span className={`text-[10px] uppercase tracking-wide ${CATEGORY_COLORS[article.category] ?? "text-[#0076FF]"}`}>
                         {article.source}
                       </span>
-                      <span className="text-[10px] text-zinc-400">{formatDate(article.publishedAt)}</span>
+                      <span className="text-[10px] text-[#A6A6A6]">{formatDate(article.publishedAt)}</span>
                     </div>
-                    <h3 className="font-bold text-zinc-900 text-sm leading-snug mb-2 line-clamp-2">{article.title}</h3>
-                    <p className="text-xs text-zinc-500 leading-relaxed line-clamp-3">{article.description}</p>
+                    <h3 className="font-semibold text-[#1D1D1D] text-sm leading-snug mb-2 line-clamp-2">{article.title}</h3>
+                    <p className="text-[14px] text-[#505050] leading-relaxed line-clamp-3">{article.description}</p>
                   </div>
                 </motion.div>
               </Link>

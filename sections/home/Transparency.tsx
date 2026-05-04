@@ -15,14 +15,14 @@ export function Transparency() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative bg-[#050b14] rounded-[40px] py-12 md:py-20 text-center overflow-hidden"
+          className="relative bg-[#1D1D1D] rounded-[40px] py-12 md:py-14 text-center overflow-hidden"
         >
           {/* Pixel background */}
           <Image
             src="/images/ic_pixels.png"
             alt=""
             fill
-            className="object-cover opacity-30 pointer-events-none"
+            className="object-cover opacity-50 pointer-events-none"
           />
           
           <div className="relative z-10 max-w-3xl mx-auto">
@@ -30,7 +30,7 @@ export function Transparency() {
               Minh bạch là nền tảng của<br />mọi niềm tin
             </Text>
             
-            <p className="text-[#8ba3c7] text-lg mb-12 max-w-2xl mx-auto">
+            <p className="text-white text-[16px] mb-12 max-w-2xl mx-auto">
               Tại AVIXO, chúng tôi cam kết cung cấp dữ liệu xác thực, được kiểm chứng qua các nền tảng Myfxbook công khai. Mọi thuật toán đều dựa trên logic toán học, không phải phỏng đoán.
             </p>
             

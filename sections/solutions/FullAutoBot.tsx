@@ -18,7 +18,7 @@ export function FullAutoBot() {
           transition={{ duration: 0.7 }}
         >
           <div className="flex justify-center mb-4">
-            <Tag bg="bg-[#FFE1CC]">FULL AUTO BOT</Tag>
+            <Tag bordered border="#FFA852" bg="bg-[#FFD395]">FULL AUTO BOT</Tag>
           </div>
           <Text as="h2" className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
             Hệ Thống Giao Dịch Tự Động
@@ -51,9 +51,11 @@ export function FullAutoBot() {
               Boomerang Reversal kiểm soát Drawdown, Smart Money bám sát dòng tiền lớn, kết hợp MGH Multi-layer Hedging giúp giảm thiểu rủi ro tối đa trong giai đoạn thị trường biến động mạnh.
             </p>
             <div className="flex flex-wrap gap-2 mb-8">
-              {["PAMM/MAM", "Copy Trade", "Low DD"].map(t => <Tag key={t}>{t}</Tag>)}
+              {["PAMM/MAM", "Copy Trade", "Low DD"].map(t => <Tag bordered hasZap={false} key={t}>{t}</Tag>)}
             </div>
-            <Button href="#" fullWidth>Download now</Button>
+             <div className="flex-1">
+              <Button href="#" className="w-1/2">Download now</Button>
+            </div>
           </div>
         </motion.div>
 
@@ -79,9 +81,11 @@ export function FullAutoBot() {
               Bot bắt xu hướng lớn kết hợp AI phân tích đa khung thời gian, tự động điều chỉnh tham số theo chu kỳ thị trường, tối ưu tỉ lệ R:R dài hạn cho các vị thế lớn.
             </p>
             <div className="flex flex-wrap gap-2 mb-8">
-              {["AI-powered", "Swing", "Position"].map(t => <Tag key={t}>{t}</Tag>)}
+              {["AI-powered", "Swing", "Position"].map(t => <Tag bordered hasZap={false} key={t}>{t}</Tag>)}
             </div>
-            <Button href="#" fullWidth>Download now</Button>
+            <div className="flex-1">
+              <Button href="#" className="w-1/2">Download now</Button>
+            </div>
           </div>
         </motion.div>
       </div>

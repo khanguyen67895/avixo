@@ -103,10 +103,10 @@ export function IBTab() {
             transition={{ duration: 0.7 }}
             className="flex-1"
           >
-            <Text as="h2" className="text-3xl md:text-4xl font-bold mb-2">
+            <Text as="h2" className="text-3xl text-[#1D1D1D] md:text-4xl font-semibold  mb-2">
               IB Solution Toolset
             </Text>
-            <Text as="h2" className="text-3xl md:text-4xl font-bold leading-tight mb-5">
+            <Text as="h2" className="text-3xl md:text-4xl font-semibold leading-tight mb-5">
               <span className="bg-linear-to-r from-[#37C0FF] to-[#0076FF] bg-clip-text text-transparent">Hệ thống phễu <br />Công cụ</span>
             </Text>
             <p className="text-zinc-500 text-sm leading-relaxed mb-8 max-w-xs">
@@ -133,17 +133,17 @@ export function IBTab() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="flex items-start gap-4 bg-white border border-zinc-100 rounded-2xl px-5 py-4 shadow-sm"
+                className="flex items-center gap-4 bg-white "
               >
                 <div className="shrink-0 relative w-12 h-12">
-                  <div className="absolute inset-0 rounded-full border border-[#c8e8f8]" />
+                  {/* <div className="absolute inset-0 rounded-full border border-[#c8e8f8]" /> */}
                   <div className="absolute inset-1.5 rounded-full border border-[#daeefa] bg-[#f0f8ff] flex items-center justify-center">
                     <t.Icon size={18} className="text-[#37C0FF]" strokeWidth={1.7} />
                   </div>
                 </div>
-                <div>
-                  <p className="font-bold text-zinc-900 text-sm mb-1">{t.title}</p>
-                  <p className="text-zinc-500 text-xs leading-relaxed">{t.desc}</p>
+                <div className="rounded-2xl px-5 py-4 border border-[#E5E5E5] shadow-sm">
+                  <p className="font-bold text-[#1D1D1D] text-sm mb-1">{t.title}</p>
+                  <p className="text-[#505050] text-xs leading-relaxed">{t.desc}</p>
                 </div>
               </motion.div>
             ))}
