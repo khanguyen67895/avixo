@@ -1,7 +1,7 @@
 "use client";
+/* eslint-disable @next/next/no-img-element */
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Text from "@/components/ui/label";
 import Button from "@/components/ui/button";
 import Tag from "@/components/ui/tag";
@@ -20,10 +20,10 @@ export function FullAutoBot() {
           <div className="flex justify-center mb-4">
             <Tag bordered border="#FFA852" bg="bg-[#FFD395]">FULL AUTO BOT</Tag>
           </div>
-          <Text as="h2" className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
+          <Text as="h2" className="text-3xl md:text-4xl text-[#1D1D1D] leading-16">
             Hệ Thống Giao Dịch Tự Động
           </Text>
-          <p className="text-zinc-500 text-base md:text-lg max-w-2xl mx-auto">
+          <p className="text-[#505050] text-base md:text-lg max-w-2xl mx-auto">
             Phù hợp với người muốn hệ thống hóa quy trình, tối ưu thời gian và loại bỏ hoàn toàn yếu tố cảm xúc trong giao dịch.
           </p>
         </motion.div>
@@ -36,18 +36,18 @@ export function FullAutoBot() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="flex flex-col md:flex-row items-center gap-8 md:gap-32"
+          className="flex flex-col md:flex-row items-center gap-8 md:gap-32 mb-30"
         >
           <div className="flex-1 flex justify-center">
             <div className="relative w-full max-w-sm md:max-w-none aspect-4/3">
-              <Image src="/images/ic_phone2.png" alt="Auto BMR App" fill className="object-contain" />
+              <img src="/images/ic_phone2.png" alt="Auto BMR App" className="object-contain w-147 h-96 rounded-[48px]" />
             </div>
           </div>
           <div className="flex-1">
-            <Text as="h3" className="text-xl md:text-2xl font-bold text-zinc-900 mb-3">
+            <Text as="h3" className="text-xl md:text-2xl font-semibold text-[#1D1D1D] leading-8">
               AUTO BMR<br />&amp; SMN · MGH Pro
             </Text>
-            <p className="text-zinc-500 text-sm leading-relaxed mb-8">
+            <p className="text-[#505050] text-sm mb-8 leading-5">
               Boomerang Reversal kiểm soát Drawdown, Smart Money bám sát dòng tiền lớn, kết hợp MGH Multi-layer Hedging giúp giảm thiểu rủi ro tối đa trong giai đoạn thị trường biến động mạnh.
             </p>
             <div className="flex flex-wrap gap-2 mb-8">
@@ -70,14 +70,14 @@ export function FullAutoBot() {
         >
           <div className="flex-1 flex justify-center">
             <div className="relative w-full max-w-sm md:max-w-none aspect-4/3">
-              <Image src="/images/ic_phone3.png" alt="Arrow Big Trend App" fill className="object-contain p-6" />
+              <img src="/images/ic_phone3.png" alt="Arrow Big Trend App" className="object-contain w-147 h-96 rounded-[48px]" />
             </div>
           </div>
           <div className="flex-1">
-            <Text as="h3" className="text-xl md:text-2xl font-bold text-zinc-900 mb-3">
+            <Text as="h3" className="text-xl md:text-2xl font-semibold text-[#1D1D1D] leading-8">
               Arrow Big Trend<br />&amp; AI Trading Swing
             </Text>
-            <p className="text-zinc-500 text-sm leading-relaxed mb-8">
+            <p className="text-[#505050] text-sm mb-8 leading-5">
               Bot bắt xu hướng lớn kết hợp AI phân tích đa khung thời gian, tự động điều chỉnh tham số theo chu kỳ thị trường, tối ưu tỉ lệ R:R dài hạn cho các vị thế lớn.
             </p>
             <div className="flex flex-wrap gap-2 mb-8">

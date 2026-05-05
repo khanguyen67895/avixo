@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { useQuery } from "@tanstack/react-query";
 import { NEWS_CATEGORIES as CATEGORIES, CATEGORY_COLORS } from "@/lib/constants";
 import { fetchNews, fetchNewsByCategory } from "@/lib/newsApi";
+import { CTA } from "./CTA";
 
 const FALLBACK_IMG = "/images/news1.png";
 
@@ -82,8 +83,8 @@ export function NewsList() {
                       </span>
                       <span className="text-[10px] text-[#A6A6A6]">{formatDate(article.publishedAt)}</span>
                     </div>
-                    <h3 className="font-semibold text-[#1D1D1D] text-sm leading-snug mb-2 line-clamp-2">{article.title}</h3>
-                    <p className="text-[14px] text-[#505050] leading-relaxed line-clamp-3">{article.description}</p>
+                    <h3 className="font-semibold text-[#1D1D1D] text-lg leading-snug mb-2 line-clamp-2">{article.title}</h3>
+                    <p className="text-sm text-[#505050] leading-relaxed line-clamp-3">{article.description}</p>
                   </div>
                 </motion.div>
               </Link>

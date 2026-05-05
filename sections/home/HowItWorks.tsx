@@ -76,13 +76,11 @@ export function HowItWorks() {
               <button
                 key={i}
                 onClick={() => setActive(i)}
-                className={`w-14 h-14 rounded-full flex items-center justify-center transition-all ${
-                  isActive
-                    ? "bg-[#37C0FF] text-white shadow-md"
-                    : "bg-zinc-100 text-zinc-400"
-                }`}
+                className="flex flex-col items-center gap-1.5 transition-all"
+                style={{ opacity: isActive ? 1 : 0.45 }}
               >
-                <step.Icon size={22} />
+                <img src={step.stepIcon} alt="" className="w-24 h-24 object-contain" />
+                <div className={`h-0.5 rounded-full transition-all duration-300 ${isActive ? "w-8 bg-[#0076FF]" : "w-0 bg-transparent"}`} />
               </button>
             );
           })}

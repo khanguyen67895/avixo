@@ -1,9 +1,9 @@
 "use client";
+/* eslint-disable @next/next/no-img-element */
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
-import Image from "next/image";
 import { createPortal } from "react-dom";
 import { useContactModal } from "./contact-context";
 
@@ -51,7 +51,7 @@ function AnimatedCard({ close }: { close: () => void }) {
       transition={{ duration: 0.28, ease: "easeOut" }}
       className="relative w-full max-w-4xl rounded-[28px] overflow-hidden shadow-2xl flex flex-col md:flex-row bg-white"
     >
-      {/* <Image src="/images/ic_bg1.png" alt="" fill className="object-cover pointer-events-none" /> */}
+      {/* <img src="/images/ic_bg1.png" alt="" className="object-cover pointer-events-none absolute inset-0 w-full h-full" /> */}
 
       {/* Close button */}
       <button
@@ -64,10 +64,10 @@ function AnimatedCard({ close }: { close: () => void }) {
       {/* ── Left panel ── transparent, bg shows through */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center px-10 py-12 md:w-[40%]">
         <div className="relative w-36 h-36 mb-6">
-          <Image
+          <img
             src="/images/ic_investor.png"
             alt="AVIXO"
-            fill
+            style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
             className="object-contain"
           />
         </div>

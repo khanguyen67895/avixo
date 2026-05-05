@@ -25,7 +25,6 @@ export function CTA({ title, titleButtonLeft, titleButtonRight, hrefButtonLeft, 
           transition={{ duration: 0.6 }}
         >
           <Text as="h2" className="text-[36px] md:text-[56px] tracking-tight text-white mb-6">
-            {/* Sẵn sàng để tối ưu hóa <br /> danh mục đầu tư? */}
             {title}
           </Text>
         </motion.div>

@@ -1,7 +1,7 @@
 "use client";
+/* eslint-disable @next/next/no-img-element */
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Text from "@/components/ui/label";
 import Button from "@/components/ui/button";
 import Tag from "@/components/ui/tag";
@@ -20,10 +20,10 @@ export function Coaching() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <Text as="h2" className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
+          <Text as="h2" className="text-3xl md:text-4xl text-[#1D1D1D] leading-16">
             AI Trade Coaching 1:1
           </Text>
-          <p className="text-zinc-500 text-base md:text-lg max-w-2xl mx-auto">
+          <p className="text-[#505050] text-base md:text-lg max-w-2xl mx-auto">
             Phù hợp với nhà đầu tư mới hoặc người cần sự đồng hành, huấn luyện cá nhân hóa để xây dựng sự nghiệp trading bền vững.
           </p>
         </motion.div>
@@ -38,22 +38,21 @@ export function Coaching() {
           transition={{ duration: 0.7 }}
           className="flex-1"
         >
-          <Text as="h3" className="text-xl md:text-2xl font-bold text-zinc-900 mb-2">
+          <Text as="h3" className="text-xl md:text-2xl font-semibold text-[#1D1D1D] mb-2">
             Cá nhân hóa theo chuẩn quỹ
           </Text>
-          <p className="text-zinc-500 text-sm leading-relaxed mb-8">
+          <p className="text-[#505050] text-sm leading-relaxed mb-8">
             Sự kết hợp hoàn hảo giữa trí tuệ nhân tạo (GPT) và chuyên gia đầu tư để huấn luyện cá nhân hóa theo phong cách giao dịch, quy mô vốn và mục tiêu riêng biệt của từng nhà đầu tư.
           </p>
 
           <div className="flex flex-col gap-6 mb-8">
             {leftFeatures.map((f, i) => (
               <div key={i} className="flex gap-3 items-start">
-                {/* <div className="w-12 h-12 border-2 rounded-full bg-[#FFFFFF] flex items-center justify-center"> */}
-                  <Image src={f.icon} alt="" width={15} height={15} className="w-15 h-15 object-contain -mt-5" />
-                {/* </div> */}
+                <img src={f.icon} alt="" className="w-15 h-15 object-contain -mt-3" />
+           
                 <div>
-                  <p className="font-semibold text-zinc-900 text-sm">{f.title}</p>
-                  <p className="text-zinc-500 text-xs mt-0.5">{f.desc}</p>
+                  <p className="font-semibold text-[#1D1D1D] text-lg">{f.title}</p>
+                  <p className="text-[#505050] text-sm mt-0.5">{f.desc}</p>
                 </div>
               </div>
             ))}
@@ -86,17 +85,17 @@ export function Coaching() {
             >
               {/* icon + connector line */}
               <div className="flex flex-col items-center">
-                <div className="w-12 h-12 rounded-full bg-[#EAF4FF] border border-[#c8e4ff] flex items-center justify-center shrink-0">
-                  <Image src={s.icon} alt="" width={24} height={24} className="object-contain w-12 h-12" />
-                </div>
+                {/* <div className="w-12 h-12 rounded-full bg-[#EAF4FF] border border-[#c8e4ff] flex items-center justify-center shrink-0"> */}
+                <img src={s.icon} alt="" className="object-contain w-24 h-24" />
+                {/* </div> */}
                 {i < steps.length - 1 && (
                   <div className="w-px flex-1 min-h-8 bg-[#c8e4ff] my-1" />
                 )}
               </div>
               {/* text */}
-              <div className="pb-6">
-                <p className="font-semibold text-zinc-900 text-sm">{s.title}</p>
-                <p className="text-zinc-500 text-xs mt-1 leading-relaxed">{s.desc}</p>
+              <div className="md:w-112.25 pb-6 p-4 bg-neutral-50 rounded-[20px] outline-1 -outline-offset-1 outline-neutral-200 flex flex-col gap-2">
+                <p className="font-semibold text-[#1D1D1D] text-lg leading-8">{s.title}</p>
+                <p className="text-[#505050] text-sm leading-5">{s.desc}</p>
               </div>
             </motion.div>
           ))}

@@ -1,7 +1,7 @@
 "use client";
+/* eslint-disable @next/next/no-img-element */
 
 import Link from "next/link";
-import Image from 'next/image';
 import { useContactModal } from "@/components/common/contact-context";
 import Text from "@/components/ui/label";
 
@@ -17,7 +17,7 @@ export function Footer() {
           {/* Logo & Copyright */}
           <div className="flex flex-col justify-between">
             <Link href="/" className="flex items-center gap-2 mb-12 md:mb-0">
-              <Image src="/images/logo-avixo.png" alt="AVIXO Logo" width={120} height={40} className="h-10 w-auto" />
+              <img src="/images/logo-avixo.png" alt="AVIXO Logo" width={120} height={40} className="h-10 w-auto" />
             </Link>
             <p className="text-zinc-500 text-sm hidden md:block">
               © 2024 AVIXO Capital Management. All rights reserved.

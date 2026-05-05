@@ -1,6 +1,6 @@
 "use client";
+/* eslint-disable @next/next/no-img-element */
 
-import Image from "next/image";
 import { useRef, useEffect } from "react";
 
 type Props = {
@@ -114,10 +114,10 @@ export function GlowBackground({
       {/* Invisible measurement layer — no ref on dynamic Tag */}
       <div ref={measureRef} className="absolute inset-0 pointer-events-none" />
       {/* Static bg */}
-      <Image src={src} alt="" fill className="object-center pointer-events-none opacity-20 md:opacity-100" />
+      <img src={src} alt="" className="absolute inset-0 w-full h-full object-center pointer-events-none opacity-20 md:opacity-100" />
       {/* Glow layer */}
       <div ref={glowRef} className="absolute inset-0 pointer-events-none hidden md:block">
-        <Image src={src} alt="" fill className="object-center" />
+        <img src={src} alt="" className="absolute inset-0 w-full h-full object-center" />
       </div>
       {children}
     </Tag>

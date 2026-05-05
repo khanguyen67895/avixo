@@ -25,13 +25,13 @@ export function Partners() {
       <div className="max-w-full mx-auto">
 
         {/* Tab bar */}
-        <div className="flex justify-center">
-          <div className="inline-flex items-center gap-1 bg-white border border-zinc-200 rounded-full p-1 shadow-sm">
+        <div className="flex justify-center px-4">
+          <div className="inline-flex items-center gap-1 bg-white border border-[#E5E5E5] rounded-full p-1.5 shadow-sm w-full max-w-sm md:w-auto md:max-w-none">
             {PARTNERS_TABS.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActive(tab.id)}
-                className="relative px-7 py-2.5 rounded-full text-sm font-medium transition-colors duration-200"
+                className="relative flex-1 md:flex-none h-10 md:h-11.25 px-3 md:px-7 rounded-full text-sm font-medium transition-colors duration-200"
               >
                 {active === tab.id && (
                   <motion.span
@@ -41,7 +41,7 @@ export function Partners() {
                   />
                 )}
                 <span
-                  className={`relative z-10 transition-colors duration-200 text-[22px] font-semibold ${
+                  className={`relative z-10 transition-colors duration-200 text-sm md:text-[22px] font-semibold whitespace-nowrap ${
                     active === tab.id ? "text-white" : "text-[#1D1D1D] hover:text-zinc-800"
                   }`}
                 >

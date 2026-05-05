@@ -108,21 +108,25 @@ export const ibValues = [
 export const ibTools = [
   {
     Icon: Cpu,
+    icon: "/images/ic_global_border1.png",
     title: "Semi-auto",
     desc: "Công cụ hỗ trợ phân tích chủ động, giúp nhà đầu tư ra quyết định chính xác hơn.",
   },
   {
     Icon: BrainCircuit,
+    icon: "/images/ic_mindset.png",
     title: "Auto Bot",
     desc: "Giải pháp giao dịch tự động hoàn toàn với hiệu suất cao và ổn định.",
   },
   {
     Icon: LineChart,
+    icon: "/images/ic_global_border.png",
     title: "AI Swing Bot",
     desc: "Thuật toán AI tối ưu hóa lợi nhuận theo xu hướng thị trường trung hạn.",
   },
   {
     Icon: GraduationCap,
+    icon: "/images/ic_global_border.png",
     title: "Coaching cá nhân hóa",
     desc: "Làm việc trực tiếp cùng chuyên gia để tinh chỉnh hệ thống giao dịch của riêng bạn.",
   },
@@ -202,10 +206,10 @@ export const semiBotFeatures = [
 // ─── Solutions / Coaching ─────────────────────────────────────────────────────
 
 export const coachingSteps = [
-  { icon: "/images/ic_application_ai.png", title: "Đánh giá năng lực",    desc: "Phân tích lịch sử giao dịch bằng AI để tìm ra điểm yếu." },
+  { icon: "/images/ic_global_border1.png", title: "Đánh giá năng lực",    desc: "Phân tích lịch sử giao dịch bằng AI để tìm ra điểm yếu." },
   { icon: "/images/ic_mindset.png",         title: "Thiết lập chiến lược", desc: "Xây dựng hệ thống giao dịch phù hợp với tính cách." },
-  { icon: "/images/ic_ibglobal.png",        title: "Thực chiến 1:1",       desc: "Giao dịch trực tiếp dưới sự giám sát của chuyên gia." },
-  { icon: "/images/ic_ibglobal.png",        title: "Tối ưu hiệu suất",     desc: "Đánh giá định kỳ và tinh chỉnh thuật toán cá nhân." },
+  { icon: "/images/ic_global_border.png",        title: "Thực chiến 1:1",       desc: "Giao dịch trực tiếp dưới sự giám sát của chuyên gia." },
+  { icon: "/images/ic_global_border.png",        title: "Tối ưu hiệu suất",     desc: "Đánh giá định kỳ và tinh chỉnh thuật toán cá nhân." },
 ];
 
 export const coachingLeftFeatures = [
@@ -274,6 +278,7 @@ export const howItWorksSteps = [
     title: "Ứng dụng công nghệ AI và Big data",
     desc: "Khai thác sức mạnh của Big Data và AI để phân tích hàng triệu biến số thị trường trong thời gian thực, loại bỏ hoàn toàn yếu tố cảm xúc trong quyết định đầu tư.",
     Icon: Cpu,
+    stepIcon: "/images/ic_global_border1.png",
   },
   {
     bg: "/images/ic_bg_mindset.png",
@@ -281,6 +286,7 @@ export const howItWorksSteps = [
     title: "Huấn luyện tư duy đầu tư chuyên nghiệp",
     desc: "Chuyển giao phương pháp luận và tư duy định lượng cho cộng đồng, giúp nhà đầu tư làm chủ tài chính một cách khoa học.",
     Icon: Brain,
+    stepIcon: "/images/ic_global_border2.png",
   },
   {
     bg: "/images/ic_bg_ibglobal.png",
@@ -288,6 +294,7 @@ export const howItWorksSteps = [
     title: "Phát triển mạng lưới IB Global",
     desc: "Xây dựng hệ sinh thái liên kết toàn cầu, hỗ trợ các đối tác phát triển bền vững dựa trên giá trị thực và tính minh bạch tuyệt đối.",
     Icon: Globe,
+    stepIcon: "/images/ic_global_border.png",
   },
 ];
 

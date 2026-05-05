@@ -37,7 +37,7 @@ export function Founders() {
         </motion.div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 place-items-center md:place-items-stretch">
           {founders.map((founder, index) => (
             <motion.div
               key={index}

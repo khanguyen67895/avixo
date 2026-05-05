@@ -21,14 +21,14 @@ export function PartnersHero() {
           transition={{ duration: 0.9 }}
           className="flex-1 flex flex-col px-6 md:pl-80"
         >
-          <Text as="h1" className="text-3xl md:text-5xl font-bold text-white leading-tight mb-4">
+          <Text as="h1" className="text-5xl md:text-6xl text-white leading-tight mb-4">
             AVIXO Giải pháp<br />đầu tư ứng dụng<br />
             <span className="bg-linear-to-r from-[#37C0FF] to-[#0076FF] bg-clip-text text-transparent">
               Big Data &amp; AI
             </span>
           </Text>
-          <p className="text-white text-sm md:text-base">
-            Phục vụ nhà đầu tư cá nhân với độ chính xác lượng tử, tối ưu hóa lợi nhuận
+          <p className="text-white text-base md:text-base">
+            Phục vụ nhà đầu tư cá nhân với độ chính xác lượng tử, tối ưu hóa lợi nhuận<br />
             thông qua phân tích dữ liệu thời gian thực và quản trị rủi ro tự động.
           </p>
         </motion.div>

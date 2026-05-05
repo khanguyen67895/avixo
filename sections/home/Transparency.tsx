@@ -24,7 +24,7 @@ export function Transparency() {
             className="object-cover opacity-50 pointer-events-none absolute inset-0 w-full h-full"
           />
 
-          <div className="relative z-10 max-w-3xl mx-auto">
+          <div className="relative z-10 max-w-3xl mx-auto px-6 md:px-0">
             <Text as="h2" className="text-2xl sm:text-3xl md:text-4xl tracking-tight text-white mb-6 leading-16">
               Minh bạch là nền tảng của<br />mọi niềm tin
             </Text>

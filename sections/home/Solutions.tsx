@@ -56,7 +56,7 @@ export function Solutions() {
       className="w-full pb-24 mt-10 flex flex-col items-center overflow-hidden"
     >
 
-      <div className="relative z-10 w-full max-w-6xl">
+      <div className="relative z-10 w-full max-w-6xl py-6 md:py-0">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -68,7 +68,7 @@ export function Solutions() {
           <Text className="text-2xl sm:text-3xl md:text-4xl leading-16 tracking-tight text-[#1D1D1D]">
             Giải pháp cho mọi đối tác
           </Text>
-          <p className="max-w-2xl mx-auto text-base md:text-lg text-[#505050] px-2">
+          <p className="max-w-2xl mx-auto text-base md:text-lg text-[#505050] px-2 pb-6 md:pb-0">
             AVIXO là hệ sinh thái toàn diện nơi công nghệ, dữ liệu và con người cùng tạo giá trị dài hạn trên Forex, Gold, Crypto, Chứng khoán và Hàng hóa.
           </p>
         </motion.div>

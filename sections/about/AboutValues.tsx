@@ -1,6 +1,6 @@
 "use client";
+/* eslint-disable @next/next/no-img-element */
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { aboutValues as values } from "@/lib/constants";
 import Text from "@/components/ui/label";
@@ -17,9 +17,9 @@ export function AboutValues() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="md:w-80 shrink-0"
+            className="md:w-80 shrink-0 self-center"
           >
-            <Text className="text-4xl md:text-4xl text-zinc-900 leading-tight mb-6">
+            <Text className="text-4xl md:text-4xl text-[#1D1D1D] leading-tight mb-6">
               Giá trị cốt lõi<br />tại AVIXO
             </Text>
             <p className="text-[#505050] text-base leading-relaxed">
@@ -36,14 +36,14 @@ export function AboutValues() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="flex items-start gap-5 bg-white border border-zinc-100 rounded-2xl p-6 shadow-sm"
+                className="flex items-center gap-5 bg-white p-5"
               >
-                <div className="relative w-18 h-18 shrink-0">
-                  <Image src={icon} alt="" fill className="object-contain" />
+                <div className="relative w-24 h-24 shrink-0">
+                  <img src={icon} alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }} className="object-contain" />
                 </div>
-                <div>
-                  <h3 className="font-bold text-zinc-900 mb-1">{title}</h3>
-                  <p className="text-sm text-zinc-500 leading-relaxed">{desc}</p>
+                <div className="flex flex-col bg-white border border-zinc-100 rounded-2xl p-6 shadow-sm">
+                  <h3 className="font-semibold text-lg text-[#1D1D1D] mb-1">{title}</h3>
+                  <p className="text-sm text-[#505050] leading-relaxed">{desc}</p>
                 </div>
               </motion.div>
             ))}

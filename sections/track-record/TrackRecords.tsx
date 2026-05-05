@@ -1,6 +1,6 @@
 "use client";
+/* eslint-disable @next/next/no-img-element */
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { trackRecords as records } from "@/lib/constants";
 import Text from "@/components/ui/label";
@@ -18,10 +18,10 @@ export function TrackRecords() {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <Text as="h2" className="text-3xl md:text-4xl text-zinc-900 leading-tight mb-4">
+          <Text as="h2" className="text-2xl md:text-4xl text-[#1D1D1D] leading-16 mb-4">
             Những con số minh bạch<br />có thể kiểm chứng.
           </Text>
-          <p className="text-zinc-500 text-base">Kết quả giao dịch thực tế từ hệ thống AVIXO.</p>
+          <p className="text-[#505050] text-base">Kết quả giao dịch thực tế từ hệ thống AVIXO.</p>
         </motion.div>
 
         {/* Phone + stat cards */}
@@ -37,7 +37,7 @@ export function TrackRecords() {
             >
               {/* Phone mockup */}
               <div className="relative w-[313.5px] h-[654.96px]">
-                <Image src={r.phone} alt="trading screen" fill className="object-contain drop-shadow-xl" />
+                <img src={r.phone} alt="trading screen" style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }} className="object-contain drop-shadow-xl" />
               </div>
 
               {/* Stat card */}

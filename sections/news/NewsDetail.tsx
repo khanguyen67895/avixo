@@ -7,6 +7,7 @@ import { useQuery } from "@tanstack/react-query";
 import Tag from "@/components/ui/tag";
 import { type ApiArticleDetailResponse, fetchNews } from "@/lib/newsApi";
 import Text from "@/components/ui/label";
+import { CTA } from "./CTA";
 
 type ArticleDetail = ApiArticleDetailResponse["article"];
 
@@ -42,7 +43,7 @@ export function NewsDetail({ article }: { article: ArticleDetail }) {
           <div className="flex-2 min-w-0">
 
             {/* Back */}
-            <Link href="/news" className="inline-flex items-center gap-1.5 text-sm text-zinc-500 hover:text-zinc-800 transition-colors mb-6">
+            <Link href="/news" className="inline-flex items-center gap-1.5 text-sm text-[#A6A6A6] hover:text-zinc-800 transition-colors mb-6">
               <ArrowLeft size={15} />
               Quay lại
             </Link>
@@ -118,11 +119,11 @@ export function NewsDetail({ article }: { article: ArticleDetail }) {
             {/* Related articles */}
             {related.length > 0 && (
               <div className="mt-12">
-                <h2 className="text-xl font-bold text-zinc-900 mb-6">Tin cùng thể loại</h2>
+                <Text className="text-3xl font-bold text-[#1D1D1D] mb-6">Tin cùng thể loại</Text>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
                   {related.map(item => (
-                    <Link key={item.id} href={`/news/${item.id}`} className="group block">
-                      <div className="relative w-full aspect-4/3 rounded-xl overflow-hidden bg-zinc-100 mb-3">
+                    <Link key={item.id} href={`/news/${item.id}`} className="group flex flex-col bg-white border border-[#E5E5E5] rounded-2xl p-2 hover:shadow-md transition-shadow">
+                      <div className="relative w-full aspect-4/3 rounded-xl overflow-hidden bg-zinc-100">
                         <Image
                           src={item.imageUrl ?? FALLBACK_IMG}
                           alt={item.title}
@@ -130,10 +131,12 @@ export function NewsDetail({ article }: { article: ArticleDetail }) {
                           className="object-cover group-hover:scale-[1.03] transition-transform duration-400"
                         />
                       </div>
-                      <h4 className="text-sm font-bold text-zinc-900 leading-snug mb-1 line-clamp-3 group-hover:text-[#37C0FF] transition-colors">
-                        {item.title}
-                      </h4>
-                      <p className="text-xs text-zinc-400 line-clamp-2">{item.description}</p>
+                      <div className="flex flex-col p-1 mt-2">
+                        <h4 className="text-sm font-bold text-[#1D1D1D] leading-snug mb-1 line-clamp-3 group-hover:text-[#37C0FF] transition-colors">
+                          {item.title}
+                        </h4>
+                        <p className="text-xs text-[#505050] line-clamp-2">{item.description}</p>
+                      </div>
                     </Link>
                   ))}
                 </div>
@@ -144,11 +147,11 @@ export function NewsDetail({ article }: { article: ArticleDetail }) {
           {/* ── Sidebar: Tin Hot ── */}
           <div className="lg:w-72 shrink-0">
             <div className="sticky top-24">
-              <Text className="text-[32px] font-bold text-[#1D1D1D] mb-5">Tin Hot</Text>
+              <Text className="text-[32px] font-semibold text-[#1D1D1D] mb-5">Tin Hot</Text>
               <div className="flex flex-col gap-5">
                 {hot.map(item => (
-                  <Link key={item.id} href={`/news/${item.id}`} className="group block">
-                    <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-zinc-100 mb-3">
+                  <Link key={item.id} href={`/news/${item.id}`} className="group flex flex-col bg-white border border-[#E5E5E5] rounded-2xl p-2 hover:shadow-md transition-shadow">
+                    <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-zinc-100">
                       <Image
                         src={item.imageUrl ?? FALLBACK_IMG}
                         alt={item.title}
@@ -156,10 +159,12 @@ export function NewsDetail({ article }: { article: ArticleDetail }) {
                         className="object-cover group-hover:scale-[1.03] transition-transform duration-400"
                       />
                     </div>
-                    <h4 className="text-sm font-bold text-zinc-900 leading-snug mb-1 line-clamp-2 group-hover:text-[#37C0FF] transition-colors">
-                      {item.title}
-                    </h4>
-                    <p className="text-xs text-zinc-400 line-clamp-2">{item.description}</p>
+                    <div className="flex flex-col p-1 mt-2">
+                      <h4 className="text-sm font-bold text-[#1D1D1D] leading-snug mb-1 line-clamp-2 group-hover:text-[#37C0FF] transition-colors">
+                        {item.title}
+                      </h4>
+                      <p className="text-xs text-[#505050] line-clamp-2">{item.description}</p>
+                    </div>
                   </Link>
                 ))}
               </div>
@@ -168,6 +173,7 @@ export function NewsDetail({ article }: { article: ArticleDetail }) {
 
         </div>
       </div>
+      <CTA />
     </div>
   );
 }

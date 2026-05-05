@@ -1,6 +1,6 @@
 "use client";
+/* eslint-disable @next/next/no-img-element */
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -27,7 +27,7 @@ export function Header() {
       <div className="mx-auto flex h-16 w-full items-center justify-between px-4 md:px-10 lg:px-12">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 shrink-0">
-          <Image src="/images/logo-avixo.png" alt="AVIXO Logo" width={120} height={32} className="h-7 md:h-8 w-auto" />
+          <img src="/images/logo-avixo.png" alt="AVIXO Logo" width={120} height={32} className="h-7 md:h-8 w-auto" />
         </Link>
 
         {/* Navigation — desktop */}
@@ -45,7 +45,7 @@ export function Header() {
                 }`}
               >
                 {isActive && (
-                  <Image src="/images/ic_sparkle.png" alt="" width={20} height={20} className="absolute -left-5 top-3.5 w-5 h-5" />
+                  <img src="/images/ic_sparkle.png" alt="" width={20} height={20} className="absolute -left-5 top-3.5 w-5 h-5" />
                 )}
                 {label}
               </Link>
@@ -60,8 +60,8 @@ export function Header() {
           </div>
 
           <div className="hidden md:flex items-center gap-2">
-            <Image src="/images/ic_dark_mode.png" alt="Dark mode" width={36} height={36} className="w-9 h-9" />
-            <Image src="/images/ic_lang.png" alt="Language" width={30} height={30} className="w-7 h-7" />
+            <img src="/images/ic_dark_mode.png" alt="Dark mode" width={36} height={36} className="w-9 h-9" />
+            <img src="/images/ic_lang.png" alt="Language" width={30} height={30} className="w-7 h-7" />
           </div> */}
 
           {/* Hamburger — mobile */}

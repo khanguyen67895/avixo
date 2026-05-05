@@ -1,6 +1,6 @@
 "use client";
+/* eslint-disable @next/next/no-img-element */
 
-import Image from "next/image";
 import founderImg from "@/public/images/founder.png";
 import { GlowBackground } from "@/components/common/GlowBackground";
 import Text from "@/components/ui/label";
@@ -12,12 +12,12 @@ export function AboutFounders() {
 
         {/* Heading */}
         <div className="text-center mb-16">
-          <Text className="text-4xl md:text-5xl text-zinc-900 mb-3">Đội ngũ sáng lập</Text>
-          <p className="text-zinc-400">Ba Founders — ba thế mạnh bổ trợ nhau — một hệ sinh thái không thể sao chép.</p>
+          <Text className="text-4xl md:text-4xl text-[#1D1D1D] leading-16 mb-3">Đội ngũ sáng lập</Text>
+          <p className="text-[#505050] text-base leading-6">Ba Founders — ba thế mạnh bổ trợ nhau — một hệ sinh thái không thể sao chép.</p>
         </div>
 
         <div className="relative w-full">
-          <Image src={founderImg} alt="Founders" className="w-full h-auto object-contain" />
+          <img src={founderImg.src} alt="Founders" className="w-full h-auto object-contain" />
         </div>
 
       </div>

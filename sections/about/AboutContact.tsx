@@ -1,6 +1,6 @@
 "use client";
+/* eslint-disable @next/next/no-img-element */
 
-import Image from "next/image";
 import { useState } from "react";
 import ic_logo2 from "@/public/images/ic_logo2.png";
 import Button from "@/components/ui/button";
@@ -52,20 +52,20 @@ export function AboutContact() {
   }
 
   return (
-    <GlowBackground src="/images/ic_bg1.png" className="w-full pb-24 pt-56 -mt-32">
+    <GlowBackground src="/images/ic_bg1.png" className="w-full pb-20 mt-30">
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
           {/* Left */}
           <div className="flex flex-col items-center text-center gap-4">
-            <Image src={ic_logo2} alt="AVIXO" className="w-56 h-56 object-contain" />
-            <Text as="h2" className="text-4xl text-zinc-900">Liên hệ với AVIXO</Text>
-            <p className="text-[#505050] max-w-xs">Chúng tôi luôn sẵn sàng lắng nghe và đồng hành cùng sự phát triển của bạn.</p>
+            <img src={ic_logo2.src} alt="AVIXO" className="w-56 h-56 object-contain" />
+            <Text as="h2" className="text-4xl text-[#1D1D1D]">Liên hệ với AVIXO</Text>
+            <p className="text-[#505050] text-base max-w-xs">Chúng tôi luôn sẵn sàng lắng nghe và đồng hành cùng sự phát triển của bạn.</p>
           </div>
 
           {/* Right: form */}
           <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-            <Text as="h3" className="text-2xl text-zinc-900">Gửi yêu cầu hỗ trợ</Text>
+            <Text as="h3" className="text-2xl font-semibold text-[#1D1D1D]">Gửi yêu cầu hỗ trợ</Text>
 
             {/* Topic */}
             <div className="flex flex-col gap-2">

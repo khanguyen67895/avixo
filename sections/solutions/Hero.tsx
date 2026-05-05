@@ -6,7 +6,7 @@ import Text from "@/components/ui/label";
 
 export function Hero() {
   return (
-    <section className="relative w-full md:h-auto bg-black flex items-center overflow-hidden pt-20">
+    <section className="hidden md:flex relative w-full md:h-auto bg-black items-center overflow-hidden pt-20">
       {/* dot-grid background */}
       <div
         className="absolute inset-0 bg-center bg-cover bg-no-repeat"
@@ -22,11 +22,11 @@ export function Hero() {
           transition={{ duration: 0.9 }}
           className="w-full md:flex-1 md:pl-80 text-center md:text-left"
         >
-          <Text as="h1" className="text-3xl md:text-5xl font-bold text-white leading-tight mb-5">
+          <Text as="h1" className="text-5xl md:text-6xl text-white leading-18 mb-4">
             Giải pháp<br />và công nghệ
           </Text>
-          <p className="text-zinc-300 text-base md:text-lg leading-relaxed max-w-sm mx-auto md:mx-0">
-            Bộ công cụ toàn diện — từ semi-auto đến AI trading — kiểm chứng 15 năm thực chiến trên 5 thị trường tài chính khốc liệt nhất.
+          <p className="text-white text-base md:text-lg leading-6 mx-auto md:mx-0">
+            Bộ công cụ toàn diện — từ semi-auto đến AI trading — kiểm <br /> chứng 15 năm thực chiến trên 5 thị trường tài chính khốc liệt nhất.
           </p>
         </motion.div>
 

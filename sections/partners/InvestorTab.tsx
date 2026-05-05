@@ -1,7 +1,7 @@
 "use client";
+/* eslint-disable @next/next/no-img-element */
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Text from "@/components/ui/label";
 import Button from "@/components/ui/button";
 import Tag from "@/components/ui/tag";
@@ -26,10 +26,10 @@ export function InvestorTab() {
             transition={{ duration: 0.6 }}
             className="text-center pb-12 mb-12"
           >
-            <Text as="h2" className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
+            <Text as="h2" className="text-3xl md:text-4xl text-[#1D1D1D] leading-16">
               Nhà đầu tư được gì từ AVIXO?
             </Text>
-            <p className="text-[#505050] text-base max-w-2xl mx-auto leading-relaxed">
+            <p className="text-[#505050] text-base max-w-2xl mx-auto leading-6">
               Phục vụ nhà đầu tư cá nhân với độ chính xác lượng tử, tối ưu hóa lợi nhuận
               thông qua phân tích dữ liệu thời gian thực và quản trị rủi ro tự động.
             </p>
@@ -45,10 +45,10 @@ export function InvestorTab() {
                 className="flex flex-col items-center text-center px-8 pt-10 pb-10 rounded-2xl bg-white border border-zinc-200 shadow-[0_4px_24px_0_rgba(0,0,0,0.07)]"
               >
                 <div className="relative w-48 h-48 shrink-0">
-                  <Image src={f.icon} alt="" fill className="object-contain" />
+                  <img src={f.icon} alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }} className="object-contain" />
                 </div>
-                <p className="font-bold text-zinc-900 text-base mt-6 mb-2">{f.title}</p>
-                <p className="text-zinc-500 text-sm leading-relaxed">{f.desc}</p>
+                <p className="font-bold text-[#1D1D1D] text-lg mt-6 mb-2">{f.title}</p>
+                <p className="text-[#505050] text-base leading-relaxed">{f.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -64,10 +64,10 @@ export function InvestorTab() {
           transition={{ duration: 0.7 }}
           className="relative z-10"
         >
-          <Text as="h2" className="text-3xl md:text-4xl text-center font-bold text-zinc-900 mb-4">
+          <Text as="h2" className="text-3xl md:text-4xl text-[#1D1D1D] leading-16">
             Sản phẩm dành cho bạn
           </Text>
-          <p className="text-zinc-500 text-base text-center leading-relaxed">
+          <p className="text-[#505050] text-base max-w-2xl mx-auto leading-6">
             Cá nhân hóa lộ trình đầu tư dựa trên mục tiêu <br /> tài chính và khẩu vị rủi ro của bạn.
           </p>
         </motion.div>
@@ -90,7 +90,7 @@ export function InvestorTab() {
               className="flex-1 flex"
             >
               <div className="relative w-full max-w-xs md:w-120 md:h-120 aspect-square">
-                <Image src={p.img} alt={p.title} fill className="object-contain" />
+                <img src={p.img} alt={p.title} style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }} className="object-contain" />
               </div>
             </motion.div>
 
@@ -101,10 +101,10 @@ export function InvestorTab() {
               transition={{ duration: 0.7, delay: 0.15 }}
               className="flex-1 flex flex-col justify-center"
             >
-              <Text as="h3" className="text-2xl md:text-3xl font-bold text-zinc-900 mb-3 leading-snug">
+              <Text as="h3" className="text-2xl md:text-2xl font-semibold text-[#1D1D1D] mb-3 leading-8">
                 {p.title}
               </Text>
-              <p className="text-zinc-500 text-sm md:text-base leading-relaxed mb-6 max-w-sm">
+              <p className="text-[#505050] text-sm md:text-base leading-5 mb-6 max-w-sm">
                 {p.desc}
               </p>
               <div className="flex flex-wrap gap-2 mb-8">
@@ -131,10 +131,10 @@ export function InvestorTab() {
       {/* ── RiskDisclaimer ── */}
       <GlowBackground src="/images/ic_bg4.png" className="relative w-full pb-20 overflow-hidden">
         <div className="absolute left-90 bottom-1 hidden lg:block pointer-events-none">
-          <Image src="/images/ic_bg_understand.png" alt="" width={280} height={580} className="w-100 h-100 object-contain" />
+          <img src="/images/ic_bg_understand.png" alt="" width={280} height={580} className="w-100 h-100 object-contain" />
         </div>
 
-        <div className="relative z-10 max-w-3xl mx-auto px-6">
+        <div className="relative z-10 max-w-3xl mx-auto px-6 mt-12 md:mt-0">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -143,10 +143,10 @@ export function InvestorTab() {
             className="bg-white rounded-4xl border border-zinc-100 shadow-[0_4px_40px_rgba(0,0,0,0.06)] px-8 md:px-14 py-12"
           >
             <div className="text-center mb-4">
-              <Text as="h2" className="text-2xl md:text-3xl font-semibold text-zinc-900 mb-3 leading-snug">
+              <Text as="h2" className="text-2xl md:text-2xl font-semibold text-[#1D1D1D] mb-3 leading-8">
                 Những gì cần hiểu trước khi sử dụng
               </Text>
-              <p className="text-[#505050] text-sm leading-relaxed max-w-xl mx-auto">
+              <p className="text-[#505050] text-sm leading-5 max-w-xl mx-auto">
                 Tại AVIXO, chúng tôi ưu tiên sự minh bạch và trách nhiệm. Đầu tư tài chính
                 luôn đi kèm với những biến động không lường trước được.
               </p>
@@ -171,16 +171,16 @@ export function InvestorTab() {
             </div>
 
             <div className="mt-10 text-center">
-              <p className="text-xs tracking-widest text-zinc-400 uppercase font-medium">
+              <p className="text-xs tracking-widest text-gray-400 font-['Manrope'] uppercase">
                 Vui lòng xác nhận bạn đã hiểu các rủi ro trên
               </p>
             </div>
           </motion.div>
         </div>
       </GlowBackground>
-      <CTA 
-        title={`Sẵn sàng để tối ưu hóa \n danh mục đầu tư?`} 
-        titleButtonLeft="Xem giải pháp" 
+      <CTA
+        title={`Sẵn sàng để tối ưu hóa \n danh mục đầu tư?`}
+        titleButtonLeft="Xem giải pháp"
         titleButtonRight="Đăng ký tư vấn" />
     </div>
   );

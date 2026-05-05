@@ -1,6 +1,6 @@
 "use client";
+/* eslint-disable @next/next/no-img-element */
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useQuery } from "@tanstack/react-query";
@@ -8,12 +8,6 @@ import Text from "@/components/ui/label";
 import { fetchNews } from "@/lib/newsApi";
 
 const FALLBACK_IMG = "/images/news1.png";
-
-function formatDate(iso: string) {
-  return new Date(iso).toLocaleDateString("vi-VN", {
-    day: "numeric", month: "long", year: "numeric",
-  });
-}
 
 export function NewsHero() {
   const { data: articles = [] } = useQuery({
@@ -38,19 +32,19 @@ export function NewsHero() {
             transition={{ duration: 0.5 }}
             className="flex-3 flex flex-col"
           >
-            <Text className="text-[32px] font-bold text-[#1D1D1D] mb-4">Tin Mới</Text>
+            <Text className="text-[32px] font-semibold text-[#1D1D1D] mb-4">Tin Mới</Text>
             <Link href={`/news/${featured.id}`} className="relative p-2 rounded-2xl overflow-hidden group flex-1 flex flex-col bg-white border border-[#E5E5E5] shadow-sm hover:shadow-md transition-shadow">
               <div className="relative w-full aspect-video">
-                <Image
+                <img
                   src={featured.imageUrl ?? FALLBACK_IMG}
                   alt={featured.title}
-                  fill
+                  style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
                   className="object-cover rounded-2xl he-[382px]"
                 />
               </div>
               <div className="py-6 px-2 flex flex-col flex-1">
-                <Text className="text-xl font-bold text-[#1D1D1D] leading-snug mb-3 line-clamp-2">{featured.title}</Text>
-                <p className="text-sm text-[#1D1D1D] leading-relaxed line-clamp-3">{featured.description}</p>
+                <Text className="text-2xl font-semibold text-[#1D1D1D] leading-8 mb-3 line-clamp-2">{featured.title}</Text>
+                <p className="text-lg text-[#1D1D1D] leading-relaxed line-clamp-3">{featured.description}</p>
               </div>
             </Link>
           </motion.div>
@@ -62,7 +56,7 @@ export function NewsHero() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="flex-2 flex flex-col"
           >
-            <Text className="text-[32px] font-bold text-[#1D1D1D] mb-4">Tin Hot</Text>
+            <Text className="text-[32px] font-semibold text-[#1D1D1D] mb-4">Tin Hot</Text>
             <div className="flex flex-col gap-4">
               {hot.map(item => (
                 <Link
@@ -70,8 +64,8 @@ export function NewsHero() {
                   href={`/news/${item.id}`}
                   className="flex bg-white border border-[#E5E5E5] rounded-2xl p-2 hover:shadow-md transition-shadow flex-col"
                 >
-                  <div className="relative w-91.25 h-35 rounded-xl overflow-hidden">
-                    <Image src={item.imageUrl ?? FALLBACK_IMG} alt={item.title} fill className="object-cover w-91.25 h-35" />
+                  <div className="relative w-full h-35 rounded-xl overflow-hidden">
+                    <img src={item.imageUrl ?? FALLBACK_IMG} alt={item.title} style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }} className="object-cover" />
                   </div>
                   <div className="flex flex-col p-1">
                     <h4 className="text-[16px] text-[#1D1D1D] leading-snug mt-2 line-clamp-2">{item.title}</h4>

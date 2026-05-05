@@ -1,7 +1,7 @@
 "use client";
+/* eslint-disable @next/next/no-img-element */
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Text from "@/components/ui/label";
 import Button from "@/components/ui/button";
 import Tag from "@/components/ui/tag";
@@ -21,10 +21,10 @@ export function SemiBot() {
           <div className="flex justify-center mb-4">
             <Tag bordered>SEMI BOT</Tag>
           </div>
-          <Text as="h2" className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
+          <Text as="h2" className="text-3xl md:text-4xl text-[#1D1D1D] leading-16">
             Giải pháp giao dịch bán tự động
           </Text>
-          <p className="text-zinc-500 text-base md:text-lg max-w-2xl mx-auto">
+          <p className="text-[#505050] text-base md:text-lg max-w-2xl mx-auto leading-6">
             Phù hợp với nhà đầu tư đã có kinh nghiệm, muốn giữ quyền quyết định cuối cùng và cần công cụ trợ lực mạnh mẽ.
           </p>
         </motion.div>
@@ -38,10 +38,10 @@ export function SemiBot() {
           transition={{ duration: 0.7 }}
           className="flex-1"
         >
-          <Text as="h3" className="text-2xl md:text-3xl font-bold text-zinc-900 mb-2">
+          <Text as="h3" className="text-2xl md:text-2xl font-semibold text-[#1D1D1D] mb-2">
             Semi Boomerang<br />&amp; Smart Money
           </Text>
-          <p className="text-[#505050] text-[16px] mb-8 leading-relaxed">
+          <p className="text-[#505050] text-[16px] mb-8 leading-6">
             Chiến lược hồi giá kết hợp Smart Money / Liquidity / Order Flow. Hỗ trợ phân tích vùng cung cầu, BOS, CHoCH
           </p>
 
@@ -55,9 +55,9 @@ export function SemiBot() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="flex gap-3 items-start"
               >
-                <Image src={f.icon} alt="" width={20} height={20} className="w-5 h-5 object-contain shrink-0 mt-1" />
+                <img src={f.icon} alt="" className="w-6 h-6 object-contain shrink-0 mt-1" />
                 <div>
-                  <p className="font-semibold text-[#1B1B1B] text-[18px]">{f.title}</p>
+                  <p className="font-semibold text-zinc-900 text-lg">{f.title}</p>
                   <p className="text-[#505050] text-[14px] mt-0.5 leading-relaxed">{f.desc}</p>
                 </div>
               </motion.div>
@@ -80,7 +80,7 @@ export function SemiBot() {
           className="flex-1 flex justify-center"
         >
           <div className="relative w-full max-w-sm md:max-w-none aspect-4/3">
-            <Image src="/images/ic_phone1.png" alt="Semi Bot App" fill className="object-contain" />
+            <img src="/images/ic_phone1.png" alt="Semi Bot App" className="object-contain w-157.25 h-117.75 rounded-[40px]" />
           </div>
         </motion.div>
       </div>
