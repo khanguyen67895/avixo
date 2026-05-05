@@ -29,10 +29,10 @@ export function News() {
           transition={{ duration: 0.8 }}
           className="text-center mt-8"
         >
-          <Text as="h2" className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 mb-3">
+          <Text as="h2" className="text-2xl sm:text-3xl md:text-4xl tracking-tight text-[#1D1D1D] leading-16">
             Tin tức mới nhất
           </Text>
-          <p className="text-zinc-500 text-base max-w-xl mx-auto">
+          <p className="text-[#505050] text-base leading-6">
             Thông tin mới nhất, được tổng hợp từ kinh nghiệm và dữ liệu thực tiễn quốc tế.
           </p>
         </motion.div>
@@ -46,21 +46,20 @@ export function News() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-white rounded-[20px] shadow-[0_2px_16px_rgba(0,0,0,0.07)] overflow-hidden cursor-pointer hover:shadow-[0_4px_24px_rgba(0,0,0,0.12)] transition-shadow"
+                className="bg-white h-69.5 rounded-[20px] shadow-[0_2px_16px_rgba(0,0,0,0.07)] overflow-hidden cursor-pointer hover:shadow-[0_4px_24px_rgba(0,0,0,0.12)] transition-shadow p-2"
               >
-                <div className="relative w-full aspect-video bg-zinc-900">
                   <Image
                     src={article.imageUrl ?? FALLBACK_IMG}
                     alt={article.title}
-                    fill
-                    className="object-cover"
+                    height={365}
+                    width={140}
+                    className="object-cover rounded-2xl w-91.25 h-35"
                   />
-                </div>
                 <div className="p-5">
-                  <h3 className="font-bold text-zinc-900 text-base leading-snug mb-2">
+                  <h3 className="text-[#1D1D1D] text-base leading-snug mb-2">
                     {article.title}
                   </h3>
-                  <p className="text-sm text-zinc-500 leading-relaxed line-clamp-2">
+                  <p className="text-sm text-[#505050] leading-relaxed line-clamp-2">
                     {article.description}
                   </p>
                 </div>
@@ -84,7 +83,7 @@ export function News() {
           transition={{ duration: 0.7 }}
           className="px-8 pt-8 pb-20 text-center"
         >
-          <Text as="h3" className="text-2xl font-bold text-zinc-900 mb-2">
+          <Text as="h3" className="text-2xl font-semibold text-[#1D1D1D] mb-2">
             Nhận tin mới nhất từ chúng tôi
           </Text>
           <p className="text-zinc-500 text-sm mb-8">

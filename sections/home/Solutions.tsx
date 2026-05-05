@@ -65,8 +65,8 @@ export function Solutions() {
           transition={{ duration: 0.8 }}
           className="text-center"
         >
-          <Text className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 mb-6">
-            Giải Pháp Cho Mọi Đối Tác
+          <Text className="text-2xl sm:text-3xl md:text-4xl leading-16 tracking-tight text-[#1D1D1D]">
+            Giải pháp cho mọi đối tác
           </Text>
           <p className="max-w-2xl mx-auto text-base md:text-lg text-[#505050] px-2">
             AVIXO là hệ sinh thái toàn diện nơi công nghệ, dữ liệu và con người cùng tạo giá trị dài hạn trên Forex, Gold, Crypto, Chứng khoán và Hàng hóa.
@@ -108,8 +108,8 @@ export function Solutions() {
                   height={130}
                   className="mb-6 object-contain"
                 />
-                <Text className="text-[18px] font-bold text-zinc-900 mb-3">{card.title}</Text>
-                <p className="text-zinc-500 text-[16px] leading-relaxed mb-8 flex-1">{card.description}</p>
+                <Text className="text-2xl font-semibold text-[#1D1D1D] mb-3">{card.title}</Text>
+                <p className="text-[#505050] text-base leading-relaxed mb-8 flex-1">{card.description}</p>
                 <Button variant={isHovered ? "primary" : "light"} fullWidth href={card.href}>
                   {card.buttonText}
                 </Button>

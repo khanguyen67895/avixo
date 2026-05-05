@@ -1,8 +1,8 @@
 "use client";
+/* eslint-disable @next/next/no-img-element */
 
 import Button from "@/components/ui/button";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Text from "@/components/ui/label";
 
 export function Hero() {
@@ -24,14 +24,14 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <Text as="h2" className="text-3xl sm:text-4xl md:text-6xl tracking-tight text-white font-normal mb-2 font-science">
+          <Text as="h2" className="text-3xl sm:text-4xl md:text-6xl leading-18 tracking-tight text-white font-normal mb-2">
             Công Nghệ Định Lượng
           </Text>
           <Text as="h2" className="text-3xl sm:text-4xl md:text-6xl tracking-tight text-[#37C0FF] mb-4 font-normal">
             Tài Chính Toàn Cầu
           </Text>
-          <h2 className="max-w-3xl mx-auto text-sm sm:text-base md:text-lg text-white mb-6 px-2">
-            Hệ sinh thái đầu tư thông minh ứng dụng Big Data & AI, có 15 năm kinh nghiệm thực chiến, phục vụ nhà đầu tư cá nhân, tổ chức và cộng đồng IB toàn cầu
+          <h2 className="max-w-3xl mx-auto text-sm sm:text-base md:text-lg leading-6 text-white mb-6 px-2">
+            Hệ sinh thái đầu tư thông minh ứng dụng Big Data & AI, có 15 năm kinh <br /> nghiệm thực chiến, phục vụ nhà đầu tư cá nhân, tổ chức và cộng đồng IB toàn cầu
           </h2>
         </motion.div>
 
@@ -64,7 +64,7 @@ export function Hero() {
 
       {/* Hero Border Arc — hidden on mobile */}
       <div className="hidden md:flex order-1 md:order-2 w-full items-center justify-center relative z-20 pointer-events-none">
-        <Image src="/images/ic_border_hero.png" alt="Border" width={1920} height={400} className="w-full h-auto brightness-150 contrast-125 drop-shadow-[0_0_25px_rgba(0,180,255,0.8)] mix-blend-screen" />
+        <img src="/images/ic_border_hero.png" alt="Border" width={1920} height={400} className="w-full h-auto brightness-150 contrast-125 drop-shadow-[0_0_25px_rgba(0,180,255,0.8)] mix-blend-screen" />
       </div>
 
       {/* Globe Video — hidden on mobile */}

@@ -1,8 +1,8 @@
 "use client";
+/* eslint-disable @next/next/no-img-element */
 
 import Text from "@/components/ui/label";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
 import { useState, useEffect } from "react";
 import { GlowBackground } from "@/components/common/GlowBackground";
 import {
@@ -37,10 +37,10 @@ export function HowItWorks() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12 md:mb-20"
         >
-          <Text className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 mb-4">
+          <Text className="text-2xl sm:text-3xl md:text-4xl tracking-tight text-[#1D1D1D] mb-4">
             Phương thức hoạt động của AVIXO
           </Text>
-          <p className="max-w-2xl mx-auto text-base text-zinc-500 px-2">
+          <p className="max-w-2xl mx-auto text-sm text-[#505050] px-2">
             Chúng tôi không chỉ cung cấp công cụ, chúng tôi xây dựng một nền tảng tư duy
             và công nghệ bền vững cho sự thịnh vượng tài chính toàn cầu.
           </p>
@@ -63,7 +63,7 @@ export function HowItWorks() {
               transition={{ duration: 0.5 }}
               className="absolute inset-0"
             >
-              <Image src={steps[active].bg} alt="" fill className="object-contain mix-blend-multiply" />
+              <img src={steps[active].bg} alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }} className="object-contain mix-blend-multiply" />
             </motion.div>
           </AnimatePresence>
         </div>
@@ -109,7 +109,7 @@ export function HowItWorks() {
       </div>
 
       {/* ── DESKTOP layout (md+) ── */}
-      <div className="hidden md:block relative z-10 w-full max-w-7xl mx-36 -mt-8 px-4">
+      <div className="hidden md:block relative z-10 w-full max-w-7xl mx-36 -mt-5 px-5">
         <div className="relative flex gap-0" style={{ height: CARD_H }}>
 
           {/* LEFT — image card */}
@@ -126,7 +126,7 @@ export function HowItWorks() {
                 transition={{ duration: 0.5 }}
                 className="absolute inset-0"
               >
-                <Image src={steps[active].bg} className="object-contain mix-blend-multiply" alt="" fill />
+                <img src={steps[active].bg} className="object-contain mix-blend-multiply" alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }} />
               </motion.div>
             </AnimatePresence>
           </div>
@@ -156,20 +156,16 @@ export function HowItWorks() {
                           initial={{ scale: 0.9 }}
                           animate={{ scale: 1 }}
                           transition={{ duration: 0.3 }}
-                          className="relative w-24 h-24 rounded-full flex items-center justify-center"
-                          style={{ background: "linear-gradient(135deg, #4299e1 0%, #38b2ac 55%, #68d391 100%)", padding: "2px" }}
+                          className="w-24 h-24 rounded-full p-px"
+                          style={{ background: "linear-gradient(135deg, #4299e1 0%, #38b2ac 55%, #68d391 100%)" }}
                         >
-                          <div className="w-full h-full rounded-full bg-[#f0f2f5] flex items-center justify-center">
-                            <div className="w-14 h-14 rounded-full bg-white shadow-md flex items-center justify-center">
-                              <step.Icon className="text-[#37C0FF]" size={24} />
-                            </div>
+                          <div className="w-full h-full rounded-full overflow-hidden" style={{ background: "#EFEFEF" }}>
+                            <img src={step.stepIcon} alt="" className="w-full h-full object-contain" />
                           </div>
                         </motion.div>
                       ) : (
-                        <div className="w-20 h-20 rounded-full bg-[#f0f2f5] flex items-center justify-center">
-                          <div className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center">
-                            <step.Icon className="text-zinc-400" size={20} />
-                          </div>
+                        <div className="w-24 h-24">
+                          <img src={step.stepIcon} alt="" className="w-full h-full object-contain" />
                         </div>
                       )}
                     </button>
@@ -183,7 +179,7 @@ export function HowItWorks() {
                           i === 0 ? "top-7" : i === 2 ? "bottom-7" : ""
                         }`}
                       >
-                        <Image src={step.line} alt="" fill className="object-contain object-left" />
+                        <img src={step.line} alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }} className="object-contain object-left" />
                       </motion.div>
                     )}
                   </div>
@@ -194,15 +190,38 @@ export function HowItWorks() {
 
           {/* RIGHT — text */}
           <div className="relative flex-1">
-            <div className="absolute top-6 right-2 pointer-events-none">
-              <Image src="/images/ic_earth_big.png" alt="" width={110} height={110} className="object-contain opacity-70" />
-            </div>
-            <div className="absolute top-24 right-24 pointer-events-none">
-              <Image src="/images/ic_earth.png" alt="" width={52} height={52} className="object-contain opacity-50" />
-            </div>
-            <div className="absolute bottom-16 right-8 pointer-events-none">
-              <Image src="/images/ic_earth.png" alt="" width={36} height={36} className="object-contain opacity-35" />
-            </div>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={`earth-big-${active}`}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 0.4 }}
+                className={`absolute pointer-events-none ${
+                  active === 0 ? "bottom-6 -right-4" :
+                  active === 1 ? "bottom-6 left-8" :
+                  "top-18 right-0"
+                }`}
+              >
+                <img src="/images/ic_earth_big.png" alt="" className="object-contain" />
+              </motion.div>
+            </AnimatePresence>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={`earth-${active}`}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 0.4, delay: 0.1 }}
+                className={`absolute pointer-events-none ${
+                  active === 0 ? "top-8 left-18" :
+                  active === 1 ? "top-8 right-18" :
+                  "top-60 left-18"
+                }`}
+              >
+                <img src="/images/ic_earth.png" alt="" className="object-contain" />
+              </motion.div>
+            </AnimatePresence>
 
             <AnimatePresence mode="wait">
               <motion.div
@@ -214,10 +233,10 @@ export function HowItWorks() {
                 className="absolute pr-4 bottom-10"
                 style={{ top: TEXT_Y[active], left: 144, right: 0, transform: "translateY(-50%)" }}
               >
-                <Text as="h3" className="text-2xl md:text-3xl font-bold text-zinc-900 mb-4 leading-snug">
+                <Text as="h3" className="text-2xl md:text-2xl font-semibold text-[#1D1D1D] mb-4 leading-8">
                   {steps[active].title}
                 </Text>
-                <p className="text-zinc-500 text-base leading-relaxed max-w-xs">
+                <p className="text-[#505050] text-base leading-relaxed max-w-xs">
                   {steps[active].desc}
                 </p>
               </motion.div>
