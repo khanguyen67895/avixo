@@ -10,7 +10,7 @@ import { semiBotFeatures as features } from "@/lib/constants";
 
 export function SemiBot() {
   return (
-    <GlowBackground src="/images/ic_bg1.png" as="section" id="semi-bot" className="w-full bg-white pb-20 mt-10">
+    <GlowBackground src="/images/ic_bg1.png" as="section" id="semi-bot" className="w-full pb-20 mt-10">
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center mb-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

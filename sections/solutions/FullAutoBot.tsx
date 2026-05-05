@@ -9,7 +9,7 @@ import { GlowBackground } from "@/components/common/GlowBackground";
 
 export function FullAutoBot() {
   return (
-    <GlowBackground id="full-auto-bot" src="/images/ic_bg1.png" as="section" className="w-full bg-white pb-20">
+    <GlowBackground id="full-auto-bot" src="/images/ic_bg1.png" as="section" className="w-full pb-20">
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

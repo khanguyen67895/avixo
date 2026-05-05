@@ -7,6 +7,7 @@ import Image from "next/image";
 import { GlowBackground } from "@/components/common/GlowBackground";
 import { ibHighlights as highlights, ibValues as values, ibTools as tools } from "@/lib/constants";
 import { useContactModal } from "@/components/common/contact-context";
+import { CTA } from "./CTA";
 
 export function IBTab() {
   const { open } = useContactModal();
@@ -199,6 +200,10 @@ export function IBTab() {
           </motion.div>
         </div>
 
+      <CTA 
+        title={`Nâng tầm sự nghiệp?`} 
+        titleButtonLeft="Liên hệ hợp tác" 
+        titleButtonRight="Xem pháp lý và minh bạch" />
     </div>
   );
 }

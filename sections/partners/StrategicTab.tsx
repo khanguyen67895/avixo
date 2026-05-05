@@ -115,7 +115,7 @@ export function StrategicTab() {
             transition={{ duration: 0.7 }}
             className="relative bg-white border border-zinc-100 rounded-4xl shadow-[0_4px_40px_rgba(0,0,0,0.06)] flex flex-col md:flex-row items-end gap-0"
           >
-            <div className="relative w-full md:w-80 shrink-0 self-end h-64 md:h-[480px] md:-mt-[100px]">
+            <div className="relative w-full md:w-80 shrink-0 self-end h-64 md:h-120 md:-mt-25">
               <Image src="/images/ic_profile4.png" alt="Trần Đại Nghĩa" fill className="object-contain object-bottom" />
             </div>
 

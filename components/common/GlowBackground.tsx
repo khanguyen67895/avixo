@@ -107,7 +107,7 @@ export function GlowBackground({
   return (
     <Tag
       id={id}
-      className={`relative ${className}`}
+      className={`relative bg-white ${className}`}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >

@@ -11,6 +11,7 @@ import {
   investorProducts as products,
   riskItems,
 } from "@/lib/constants";
+import { CTA } from "./CTA";
 
 export function InvestorTab() {
   return (
@@ -28,7 +29,7 @@ export function InvestorTab() {
             <Text as="h2" className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
               Nhà đầu tư được gì từ AVIXO?
             </Text>
-            <p className="text-zinc-500 text-base max-w-2xl mx-auto leading-relaxed">
+            <p className="text-[#505050] text-base max-w-2xl mx-auto leading-relaxed">
               Phục vụ nhà đầu tư cá nhân với độ chính xác lượng tử, tối ưu hóa lợi nhuận
               thông qua phân tích dữ liệu thời gian thực và quản trị rủi ro tự động.
             </p>
@@ -177,7 +178,10 @@ export function InvestorTab() {
           </motion.div>
         </div>
       </GlowBackground>
-
+      <CTA 
+        title={`Sẵn sàng để tối ưu hóa \n danh mục đầu tư?`} 
+        titleButtonLeft="Xem giải pháp" 
+        titleButtonRight="Đăng ký tư vấn" />
     </div>
   );
 }

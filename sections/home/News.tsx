@@ -18,7 +18,7 @@ export function News() {
   });
 
   return (
-    <GlowBackground src="/images/ic_bg1.png" variant="perimeter" as="section" className="w-full bg-white">
+    <GlowBackground src="/images/ic_bg1.png" variant="perimeter" as="section" className="w-full">
       <div className="relative z-10 w-full max-w-6xl mx-auto px-4">
 
         {/* Heading */}

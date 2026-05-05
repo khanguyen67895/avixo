@@ -53,7 +53,7 @@ export function Solutions() {
     <GlowBackground
       src="/images/ic_bg1.png"
       as="section"
-      className="w-full pb-24 mt-10 bg-white flex flex-col items-center overflow-hidden"
+      className="w-full pb-24 mt-10 flex flex-col items-center overflow-hidden"
     >
 
       <div className="relative z-10 w-full max-w-6xl">

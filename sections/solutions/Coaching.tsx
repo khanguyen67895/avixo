@@ -12,7 +12,7 @@ import { useContactModal } from "@/components/common/contact-context";
 export function Coaching() {
   const { open } = useContactModal();
   return (
-    <GlowBackground src="/images/ic_bg1.png" as="section" className="w-full pb-24 bg-white flex flex-col items-center overflow-hidden">
+    <GlowBackground src="/images/ic_bg1.png" as="section" className="w-full pb-24 flex flex-col items-center overflow-hidden">
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center mb-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

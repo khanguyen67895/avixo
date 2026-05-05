@@ -8,7 +8,7 @@ import { GlowBackground } from "@/components/common/GlowBackground";
 
 export function AboutLegal() {
   return (
-    <GlowBackground src="/images/ic_bg1.png" className="w-full bg-[#F8FAFC] py-24">
+    <GlowBackground src="/images/ic_bg1.png" className="w-full py-24">
       <div className="relative z-10 max-w-6xl mx-auto px-6">
 
         {/* Heading */}
