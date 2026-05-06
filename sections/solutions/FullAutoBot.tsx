@@ -6,8 +6,10 @@ import Text from "@/components/ui/label";
 import Button from "@/components/ui/button";
 import Tag from "@/components/ui/tag";
 import { GlowBackground } from "@/components/common/GlowBackground";
+import { useT } from "@/lib/i18n";
 
 export function FullAutoBot() {
+  const t = useT();
   return (
     <GlowBackground id="full-auto-bot" src="/images/ic_bg1.png" as="section" className="w-full pb-20">
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
@@ -21,10 +23,10 @@ export function FullAutoBot() {
             <Tag bordered border="#FFA852" bg="bg-[#FFD395]">FULL AUTO BOT</Tag>
           </div>
           <Text as="h2" className="text-3xl md:text-4xl text-[#1D1D1D] leading-16">
-            Hệ Thống Giao Dịch Tự Động
+            {t("Hệ Thống Giao Dịch Tự Động")}
           </Text>
           <p className="text-[#505050] text-base md:text-lg max-w-2xl mx-auto">
-            Phù hợp với người muốn hệ thống hóa quy trình, tối ưu thời gian và loại bỏ hoàn toàn yếu tố cảm xúc trong giao dịch.
+            {t("Phù hợp với người muốn hệ thống hóa quy trình, tối ưu thời gian và loại bỏ hoàn toàn yếu tố cảm xúc trong giao dịch.")}
           </p>
         </motion.div>
       </div>
@@ -45,16 +47,16 @@ export function FullAutoBot() {
           </div>
           <div className="flex-1">
             <Text as="h3" className="text-xl md:text-2xl font-semibold text-[#1D1D1D] leading-8">
-              AUTO BMR<br />&amp; SMN · MGH Pro
+              {t("AUTO BMR")}<br />&amp; {t("SMN · MGH Pro")}
             </Text>
             <p className="text-[#505050] text-sm mb-8 leading-5">
-              Boomerang Reversal kiểm soát Drawdown, Smart Money bám sát dòng tiền lớn, kết hợp MGH Multi-layer Hedging giúp giảm thiểu rủi ro tối đa trong giai đoạn thị trường biến động mạnh.
+              {t("Boomerang Reversal kiểm soát Drawdown, Smart Money bám sát dòng tiền lớn, kết hợp MGH Multi-layer Hedging giúp giảm thiểu rủi ro tối đa trong giai đoạn thị trường biến động mạnh.")}
             </p>
             <div className="flex flex-wrap gap-2 mb-8">
-              {["PAMM/MAM", "Copy Trade", "Low DD"].map(t => <Tag bordered hasZap={false} key={t}>{t}</Tag>)}
+              {["PAMM/MAM", "Copy Trade", "Low DD"].map(tag => <Tag bordered hasZap={false} key={tag}>{tag}</Tag>)}
             </div>
              <div className="flex-1">
-              <Button href="#" className="w-1/2">Download now</Button>
+              <Button href="#" className="w-1/2">{t("Download now")}</Button>
             </div>
           </div>
         </motion.div>
@@ -75,16 +77,16 @@ export function FullAutoBot() {
           </div>
           <div className="flex-1">
             <Text as="h3" className="text-xl md:text-2xl font-semibold text-[#1D1D1D] leading-8">
-              Arrow Big Trend<br />&amp; AI Trading Swing
+              {t("Arrow Big Trend")}<br />&amp; {t("AI Trading Swing")}
             </Text>
             <p className="text-[#505050] text-sm mb-8 leading-5">
-              Bot bắt xu hướng lớn kết hợp AI phân tích đa khung thời gian, tự động điều chỉnh tham số theo chu kỳ thị trường, tối ưu tỉ lệ R:R dài hạn cho các vị thế lớn.
+              {t("Bot bắt xu hướng lớn kết hợp AI phân tích đa khung thời gian, tự động điều chỉnh tham số theo chu kỳ thị trường, tối ưu tỉ lệ R:R dài hạn cho các vị thế lớn.")}
             </p>
             <div className="flex flex-wrap gap-2 mb-8">
-              {["AI-powered", "Swing", "Position"].map(t => <Tag bordered hasZap={false} key={t}>{t}</Tag>)}
+              {["AI-powered", "Swing", "Position"].map(tag => <Tag bordered hasZap={false} key={tag}>{tag}</Tag>)}
             </div>
             <div className="flex-1">
-              <Button href="#" className="w-1/2">Download now</Button>
+              <Button href="#" className="w-1/2">{t("Download now")}</Button>
             </div>
           </div>
         </motion.div>

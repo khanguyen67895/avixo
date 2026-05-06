@@ -6,6 +6,7 @@ import { useState } from "react";
 import { ContactProvider } from "@/components/common/contact-context";
 import { ContactModal } from "@/components/common/ContactModal";
 import { FloatingContact } from "@/components/common/FloatingContact";
+import { I18nProvider } from "@/lib/i18n";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   const [queryClient] = useState(
@@ -21,12 +22,14 @@ export function Providers({ children }: { children: React.ReactNode }) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <ContactProvider>
-        {children}
-        <ContactModal />
-        <FloatingContact />
-        <ReactQueryDevtools initialIsOpen={false} />
-      </ContactProvider>
+      <I18nProvider>
+        <ContactProvider>
+          {children}
+          <ContactModal />
+          <FloatingContact />
+          <ReactQueryDevtools initialIsOpen={false} />
+        </ContactProvider>
+      </I18nProvider>
     </QueryClientProvider>
   );
 }

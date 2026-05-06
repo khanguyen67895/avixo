@@ -5,9 +5,10 @@ import { motion } from "framer-motion";
 import Text from "@/components/ui/label";
 import { GlowBackground } from "@/components/common/GlowBackground";
 import { homeFounders as founders } from "@/lib/constants";
-import Button from "@/components/ui/button";
+import { useT } from "@/lib/i18n";
 
 export function Founders() {
+  const t = useT();
   return (
     <GlowBackground
       src="/images/ic_bg1.png"
@@ -28,11 +29,10 @@ export function Founders() {
             as="h2"
             className="text-2xl sm:text-3xl md:text-4xl tracking-tight text-[#1D1D1D] my-4 leading-16"
           >
-            Đội ngũ sáng lập
+            {t("Đội ngũ sáng lập")}
           </Text>
           <p className="text-[#505050] text-base leading-6">
-            Ba Founders — ba thế mạnh bổ trợ nhau — một hệ sinh thái không thể
-            sao chép.
+            {t("Ba Founders — ba thế mạnh bổ trợ nhau — một hệ sinh thái không thể sao chép.")}
           </p>
         </motion.div>
 
@@ -57,14 +57,14 @@ export function Founders() {
               {/* Content */}
               <div className="py-6 px-3">
                 <h3 className="text-lg font-semibold text-[#1D1D1D] leading-8 mb-2">
-                  {founder.name}
+                  {t(founder.name)}
                 </h3>
                 <p className="text-sm text-[#505050] leading-5 mb-6">
-                  {founder.desc}
+                  {t(founder.desc)}
                 </p>
                 <div className="flex justify-center">
                   <span className="w-70 text-center rounded-4xl shadow-[inset_0px_-2px_4px_0px_rgba(137,137,137,0.08)] bg-zinc-100 px-5 py-3 text-sm text-[#1D1D1D]">
-                    {founder.role}
+                    {t(founder.role)}
                   </span>
                 </div>
               </div>

@@ -7,8 +7,10 @@ import Button from "@/components/ui/button";
 import Tag from "@/components/ui/tag";
 import { GlowBackground } from "@/components/common/GlowBackground";
 import { semiBotFeatures as features } from "@/lib/constants";
+import { useT } from "@/lib/i18n";
 
 export function SemiBot() {
+  const t = useT();
   return (
     <GlowBackground src="/images/ic_bg1.png" as="section" id="semi-bot" className="w-full pb-20 mt-10">
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center mb-16">
@@ -22,10 +24,10 @@ export function SemiBot() {
             <Tag bordered>SEMI BOT</Tag>
           </div>
           <Text as="h2" className="text-3xl md:text-4xl text-[#1D1D1D] leading-16">
-            Giải pháp giao dịch bán tự động
+            {t("Giải pháp giao dịch bán tự động")}
           </Text>
           <p className="text-[#505050] text-base md:text-lg max-w-2xl mx-auto leading-6">
-            Phù hợp với nhà đầu tư đã có kinh nghiệm, muốn giữ quyền quyết định cuối cùng và cần công cụ trợ lực mạnh mẽ.
+            {t("Phù hợp với nhà đầu tư đã có kinh nghiệm, muốn giữ quyền quyết định cuối cùng và cần công cụ trợ lực mạnh mẽ.")}
           </p>
         </motion.div>
       </div>
@@ -39,10 +41,10 @@ export function SemiBot() {
           className="flex-1"
         >
           <Text as="h3" className="text-2xl md:text-2xl font-semibold text-[#1D1D1D] mb-2">
-            Semi Boomerang<br />&amp; Smart Money
+            {t("Semi Boomerang")}<br />&amp; {t("Smart Money")}
           </Text>
           <p className="text-[#505050] text-[16px] mb-8 leading-6">
-            Chiến lược hồi giá kết hợp Smart Money / Liquidity / Order Flow. Hỗ trợ phân tích vùng cung cầu, BOS, CHoCH
+            {t("Chiến lược hồi giá kết hợp Smart Money / Liquidity / Order Flow. Hỗ trợ phân tích vùng cung cầu, BOS, CHoCH")}
           </p>
 
           <div className="flex flex-col gap-6 mb-8">
@@ -57,8 +59,8 @@ export function SemiBot() {
               >
                 <img src={f.icon} alt="" className="w-6 h-6 object-contain shrink-0 mt-1" />
                 <div>
-                  <p className="font-semibold text-zinc-900 text-lg">{f.title}</p>
-                  <p className="text-[#505050] text-[14px] mt-0.5 leading-relaxed">{f.desc}</p>
+                  <p className="font-semibold text-zinc-900 text-lg">{t(f.title)}</p>
+                  <p className="text-[#505050] text-[14px] mt-0.5 leading-relaxed">{t(f.desc)}</p>
                 </div>
               </motion.div>
             ))}
@@ -68,7 +70,7 @@ export function SemiBot() {
             {["Mean Reversion", "Order Flow", "Intraday"].map(t => <Tag bordered key={t}>{t}</Tag>)}
           </div>
           <div className="flex-1 pl-25">
-            <Button href="#" className="w-1/2">Download now</Button>
+            <Button href="#" className="w-1/2">{t("Download now")}</Button>
           </div>
         </motion.div>
 

@@ -8,9 +8,11 @@ import { GlowBackground } from "@/components/common/GlowBackground";
 import { ibHighlights as highlights, ibValues as values, ibTools as tools } from "@/lib/constants";
 import { useContactModal } from "@/components/common/contact-context";
 import { CTA } from "./CTA";
+import { useT } from "@/lib/i18n";
 
 export function IBTab() {
   const { open } = useContactModal();
+  const t = useT();
   return (
     <div className="w-full">
 
@@ -24,11 +26,10 @@ export function IBTab() {
             className="text-center pb-12 mb-12"
           >
             <Text as="h2" className="text-3xl md:text-4xl text-[#1D1D1D] leading-16">
-              AVIXO phục vụ cộng đồng IB toàn cầu
+              {t("AVIXO phục vụ cộng đồng IB toàn cầu")}
             </Text>
             <p className="text-[#505050] text-base max-w-2xl mx-auto leading-6">
-              Nền tảng hội tụ công nghệ Quant Trading, hệ thống traffic và mạng lưới
-              chiến lược để nâng tầm sự nghiệp IB của bạn.
+              {t("Nền tảng hội tụ công nghệ Quant Trading, hệ thống traffic và mạng lưới chiến lược để nâng tầm sự nghiệp IB của bạn.")}
             </p>
           </motion.div>
 
@@ -44,8 +45,8 @@ export function IBTab() {
                 <div className="relative w-48 h-48 shrink-0">
                   <img src={f.icon} alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }} className="object-contain" />
                 </div>
-                <p className="font-bold text-[#1D1D1D] text-lg mt-6 mb-2">{f.title}</p>
-                <p className="text-[#505050] text-base leading-relaxed">{f.desc}</p>
+                <p className="font-bold text-[#1D1D1D] text-lg mt-6 mb-2">{t(f.title)}</p>
+                <p className="text-[#505050] text-base leading-relaxed">{t(f.desc)}</p>
               </motion.div>
             ))}
           </div>
@@ -63,10 +64,10 @@ export function IBTab() {
           className="text-center mb-20"
         >
           <Text as="h2" className="text-3xl md:text-4xl text-[#1D1D1D] leading-16">
-            Giá trị hệ sinh thái cho IB
+            {t("Giá trị hệ sinh thái cho IB")}
           </Text>
           <p className="text-[#505050] text-base max-w-2xl mx-auto leading-6">
-            Định vị vai trò và tối ưu hóa lợi thế cạnh tranh của bạn trong thị trường tài chính hiện đại.
+            {t("Định vị vai trò và tối ưu hóa lợi thế cạnh tranh của bạn trong thị trường tài chính hiện đại.")}
           </p>
         </motion.div>
 
@@ -85,8 +86,8 @@ export function IBTab() {
                 <div className="relative w-12 h-12 shrink-0">
                   <img src={v.icon} alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }} className="object-contain" />
                 </div>
-                <Text className="font-semibold text-[#1D1D1D] text-2xl leading-8">{v.title}</Text>
-                <p className="text-[#1D1D1D] text-base leading-5">{v.desc}</p>
+                <Text className="font-semibold text-[#1D1D1D] text-2xl leading-8">{t(v.title)}</Text>
+                <p className="text-[#1D1D1D] text-base leading-5">{t(v.desc)}</p>
               </motion.div>
             );
           })}
@@ -105,17 +106,16 @@ export function IBTab() {
             className="flex-1"
           >
             <Text as="h2" className="text-3xl text-[#1D1D1D] md:text-4xl font-semibold  mb-2">
-              IB Solution Toolset
+              {t("IB Solution Toolset")}
             </Text>
             <Text as="h2" className="text-3xl md:text-4xl leading-8 mb-5">
-              <span className="bg-linear-to-r from-[#37C0FF] to-[#0076FF] bg-clip-text text-transparent">Hệ thống phễu <br />Công cụ</span>
+              <span className="bg-linear-to-r from-[#37C0FF] to-[#0076FF] bg-clip-text text-transparent">{t("Hệ thống phễu")} <br />{t("Công cụ")}</span>
             </Text>
             <p className="text-[#505050] text-base leading-5 mb-8 max-w-xs">
-              Cung cấp kho vũ khí công nghệ để IB chăm sóc khách hàng và tối ưu tỷ lệ
-              chuyển đổi hiệu quả nhất.
+              {t("Cung cấp kho vũ khí công nghệ để IB chăm sóc khách hàng và tối ưu tỷ lệ chuyển đổi hiệu quả nhất.")}
             </p>
             <div className="flex-1">
-              <Button onClick={open} className="w-1/2">Liên hệ hợp tác IB</Button>
+              <Button onClick={open} className="w-1/2">{t("Liên hệ hợp tác IB")}</Button>
             </div>
           </motion.div>
 
@@ -127,19 +127,19 @@ export function IBTab() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="flex-1 flex flex-col gap-4"
           >
-            {tools.map((t, i) => (
+            {tools.map((tool, i) => (
               <motion.div
-                key={t.title}
+                key={tool.title}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
                 className="flex items-center gap-4 bg-white "
               >
-                <img src={t.icon} alt="" className="shrink-0 w-24 h-24 object-contain" />
+                <img src={tool.icon} alt="" className="shrink-0 w-24 h-24 object-contain" />
                 <div className="rounded-2xl px-5 py-4 border border-[#E5E5E5] shadow-sm">
-                  <p className="font-semibold text-[#1D1D1D] text-lg mb-1 leading-8">{t.title}</p>
-                  <p className="text-[#505050] text-sm leading-5">{t.desc}</p>
+                  <p className="font-semibold text-[#1D1D1D] text-lg mb-1 leading-8">{t(tool.title)}</p>
+                  <p className="text-[#505050] text-sm leading-5">{t(tool.desc)}</p>
                 </div>
               </motion.div>
             ))}
@@ -161,11 +161,10 @@ export function IBTab() {
             />
             <div className="text-center mb-10">
               <Text as="h2" className="text-3xl md:text-4xl text-white mb-4 leading-8">
-                Minh bạch &amp; Tuân thủ
+                {t("Minh bạch & Tuân thủ")}
               </Text>
               <p className="text-white text-sm leading-5">
-                Tại AVIXO, chúng tôi cam kết cung cấp dữ liệu xác thực, được kiểm chứng qua các nền tảng <br />
-                Myfxbook công khai. Mọi thuật toán đều dựa trên logic toán học, không phải phỏng đoán.
+                {t("Tại AVIXO, chúng tôi cam kết cung cấp dữ liệu xác thực, được kiểm chứng qua các nền tảng Myfxbook công khai. Mọi thuật toán đều dựa trên logic toán học, không phải phỏng đoán.")}
               </p>
             </div>
 
@@ -187,7 +186,7 @@ export function IBTab() {
                   <div className="relative shrink-0 w-5 h-5 mt-0.5">
                     <img src="/images/ic_tick.png" alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }} className="object-contain" />
                   </div>
-                  <p className="text-white text-sm leading-relaxed">{text}</p>
+                  <p className="text-white text-sm leading-relaxed">{t(text)}</p>
                 </motion.div>
               ))}
             </div>
@@ -195,9 +194,9 @@ export function IBTab() {
         </div>
 
       <CTA
-        title={`Nâng tầm sự nghiệp?`}
-        titleButtonLeft="Liên hệ hợp tác"
-        titleButtonRight="Xem pháp lý và minh bạch" />
+        title={t("Nâng tầm sự nghiệp?")}
+        titleButtonLeft={t("Liên hệ hợp tác")}
+        titleButtonRight={t("Xem pháp lý và minh bạch")} />
     </div>
   );
 }

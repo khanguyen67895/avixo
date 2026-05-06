@@ -4,8 +4,10 @@
 import { motion } from "framer-motion";
 import { trackStats as stats } from "@/lib/constants";
 import Text from "@/components/ui/label";
+import { useT } from "@/lib/i18n";
 
 export function TrackHero() {
+  const t = useT();
   return (
     <section className="relative w-full min-h-105 md:min-h-200 bg-[#000000] flex flex-col items-center justify-center overflow-hidden pb-20 md:pb-70">
       {/* Pixel overlay */}
@@ -39,7 +41,7 @@ export function TrackHero() {
 
       <div className="relative z-10 flex flex-col items-center text-center px-6">
         <Text as="h1" className="text-3xl sm:text-4xl md:text-6xl tracking-tight text-white mb-2 font-science">
-          Số liệu thực chiến
+          {t("Số liệu thực chiến")}
         </Text>
         <motion.p
           initial={{ opacity: 0, y: 16 }}
@@ -47,8 +49,7 @@ export function TrackHero() {
           transition={{ duration: 0.7, delay: 0.15 }}
           className="text-white text-base md:text-lg max-w-xl mb-14"
         >
-          Minh bạch là nền tảng niềm tin. Mọi con số đều có thể kiểm chứng<br className="hidden md:block" />
-          không phải backtest lý thuyết.
+          {t("Minh bạch là nền tảng niềm tin. Mọi con số đều có thể kiểm chứng không phải backtest lý thuyết.")}
         </motion.p>
 
         {/* Stat cards */}
@@ -64,7 +65,7 @@ export function TrackHero() {
               className="border border-[#213A9D]/40 rounded-[20px] p-6 flex flex-col gap-1 text-left backdrop-blur-sm" style={{ background: "rgba(19, 20, 34, 0.70)" }}
             >
               <Text className="text-3xl text-[#37C0FF] font-bold">{s.value}</Text>
-              <span className="text-xs font-semibold text-white tracking-widest uppercase">{s.label}</span>
+              <span className="text-xs font-semibold text-white tracking-widest uppercase">{t(s.label)}</span>
             </div>
           ))}
         </motion.div>

@@ -8,9 +8,11 @@ import Button from "@/components/ui/button";
 import Text from "@/components/ui/label";
 import { GlowBackground } from "@/components/common/GlowBackground";
 import { strategicBots as bots } from "@/lib/constants";
+import { useT } from "@/lib/i18n";
 
 export function StrategicSolutions() {
   const [activeIdx, setActiveIdx] = useState(1);
+  const t = useT();
 
   return (
     <GlowBackground
@@ -30,10 +32,10 @@ export function StrategicSolutions() {
           className="text-center mt-10"
         >
           <Text as="h2" className="text-3xl md:text-4xl tracking-tight text-[#1D1D1D] leading-16">
-            Giải pháp chiến lược
+            {t("Giải pháp chiến lược")}
           </Text>
           <p className="max-w-2xl mx-auto text-base text-[#505050] leading-6">
-            Các thuật toán được tinh chỉnh qua 15 năm thực chiến trên thị trường quốc tế.
+            {t("Các thuật toán được tinh chỉnh qua 15 năm thực chiến trên thị trường quốc tế.")}
           </p>
         </motion.div>
 
@@ -61,7 +63,7 @@ export function StrategicSolutions() {
                   {/* Badge — centered */}
                   <div className="relative z-10 mb-4 flex justify-center">
                     <Tag bg={isActive ? "bg-[#4CAF50]" : "bg-[#FFE1CC]"} className="transition-colors duration-300">
-                      {bot.type}
+                      {t(bot.type)}
                     </Tag>
                   </div>
 
@@ -72,13 +74,13 @@ export function StrategicSolutions() {
 
                   {/* Title */}
                   <h3 className="relative z-10 font-semibold text-[#1D1D1D] text-center leading-8 text-lg mb-3">
-                    {bot.name}
+                    {t(bot.name)}
                   </h3>
 
                   {/* Mobile: always show content */}
                   <div className="md:hidden relative z-10">
-                    <p className="text-sm text-[#1D1D1D] text-center leading-5 mb-6">{bot.desc}</p>
-                    <Button href={bot.href} className="mx-auto">{bot.button}</Button>
+                    <p className="text-sm text-[#1D1D1D] text-center leading-5 mb-6">{t(bot.desc)}</p>
+                    <Button href={bot.href} className="mx-auto">{t(bot.button)}</Button>
                   </div>
 
                   {/* Desktop: expand on hover */}
@@ -92,9 +94,9 @@ export function StrategicSolutions() {
                         transition={{ duration: 0.25 }}
                         className="hidden md:block relative z-10 overflow-hidden pb-4"
                       >
-                        <p className="text-sm text-[#1D1D1D] text-center leading-5 mb-6">{bot.desc}</p>
+                        <p className="text-sm text-[#1D1D1D] text-center leading-5 mb-6">{t(bot.desc)}</p>
                         <Button href={bot.href} className="mx-auto">
-                          {bot.button}
+                          {t(bot.button)}
                         </Button>
                       </motion.div>
                     )}

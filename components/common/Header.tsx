@@ -7,11 +7,14 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Button from "../ui/button";
 import { useContactModal } from "./contact-context";
+import { useT } from "@/lib/i18n";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export function Header() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const { open: openContact } = useContactModal();
+  const t = useT();
 
   const links = [
     { href: "/", label: "Trang Chủ" },
@@ -47,7 +50,7 @@ export function Header() {
                 {isActive && (
                   <img src="/images/ic_sparkle.png" alt="" width={20} height={20} className="absolute -left-5 top-3.5 w-5 h-5" />
                 )}
-                {label}
+                {t(label)}
               </Link>
             );
           })}
@@ -55,6 +58,7 @@ export function Header() {
 
         {/* Right actions */}
         <div className="flex items-center gap-2 md:gap-4">
+          <LanguageSwitcher />
           {/* <div className="hidden sm:block">
             <Button onClick={openContact}>Liên hệ ngay</Button>
           </div>
@@ -91,12 +95,13 @@ export function Header() {
                     : "text-zinc-400 hover:text-white hover:bg-white/5"
                 }`}
               >
-                {label}
+                {t(label)}
               </Link>
             );
           })}
-          <div className="pt-3 mt-1 border-t border-white/5">
-            <Button fullWidth onClick={() => { setMenuOpen(false); openContact(); }}>Liên hệ ngay</Button>
+          <div className="pt-3 mt-1 border-t border-white/5 flex flex-col gap-3">
+            <LanguageSwitcher className="self-start" />
+            <Button fullWidth onClick={() => { setMenuOpen(false); openContact(); }}>{t("Liên hệ ngay")}</Button>
           </div>
         </div>
       )}

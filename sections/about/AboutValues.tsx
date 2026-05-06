@@ -4,8 +4,10 @@
 import { motion } from "framer-motion";
 import { aboutValues as values } from "@/lib/constants";
 import Text from "@/components/ui/label";
+import { useT } from "@/lib/i18n";
 
 export function AboutValues() {
+  const t = useT();
   return (
     <section className="w-full bg-white pb-24 pt-12">
       <div className="max-w-6xl mx-auto px-6">
@@ -20,10 +22,10 @@ export function AboutValues() {
             className="md:w-80 shrink-0 self-center"
           >
             <Text className="text-4xl md:text-4xl text-[#1D1D1D] leading-tight mb-6">
-              Giá trị cốt lõi<br />tại AVIXO
+              {t("Giá trị cốt lõi")}<br />{t("tại AVIXO")}
             </Text>
             <p className="text-[#505050] text-base leading-relaxed">
-              AVIXO vận hành như một đơn vị cung cấp giải pháp và công cụ công nghệ giao dịch tiên tiến. Chúng tôi khẳng định:
+              {t("AVIXO vận hành như một đơn vị cung cấp giải pháp và công cụ công nghệ giao dịch tiên tiến. Chúng tôi khẳng định:")}
             </p>
           </motion.div>
 
@@ -42,8 +44,8 @@ export function AboutValues() {
                   <img src={icon} alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }} className="object-contain" />
                 </div>
                 <div className="flex flex-col bg-white border border-zinc-100 rounded-2xl p-6 shadow-sm">
-                  <h3 className="font-semibold text-lg text-[#1D1D1D] mb-1">{title}</h3>
-                  <p className="text-sm text-[#505050] leading-relaxed">{desc}</p>
+                  <h3 className="font-semibold text-lg text-[#1D1D1D] mb-1">{t(title)}</h3>
+                  <p className="text-sm text-[#505050] leading-relaxed">{t(desc)}</p>
                 </div>
               </motion.div>
             ))}

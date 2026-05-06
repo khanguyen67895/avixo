@@ -6,9 +6,11 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 import { GlowBackground } from "@/components/common/GlowBackground";
+import { useT } from "@/lib/i18n";
 
 export function Solutions() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const t = useT();
 
   const cards = [
     {
@@ -66,10 +68,10 @@ export function Solutions() {
           className="text-center"
         >
           <Text className="text-2xl sm:text-3xl md:text-4xl leading-16 tracking-tight text-[#1D1D1D]">
-            Giải pháp cho mọi đối tác
+            {t("Giải pháp cho mọi đối tác")}
           </Text>
           <p className="max-w-2xl mx-auto text-base md:text-lg text-[#505050] px-2 pb-6 md:pb-0">
-            AVIXO là hệ sinh thái toàn diện nơi công nghệ, dữ liệu và con người cùng tạo giá trị dài hạn trên Forex, Gold, Crypto, Chứng khoán và Hàng hóa.
+            {t("AVIXO là hệ sinh thái toàn diện nơi công nghệ, dữ liệu và con người cùng tạo giá trị dài hạn trên Forex, Gold, Crypto, Chứng khoán và Hàng hóa.")}
           </p>
         </motion.div>
 
@@ -108,10 +110,10 @@ export function Solutions() {
                   height={130}
                   className="mb-6 object-contain"
                 />
-                <Text className="text-2xl font-semibold text-[#1D1D1D] mb-3">{card.title}</Text>
-                <p className="text-[#505050] text-base leading-relaxed mb-8 flex-1">{card.description}</p>
+                <Text className="text-2xl font-semibold text-[#1D1D1D] mb-3">{t(card.title)}</Text>
+                <p className="text-[#505050] text-base leading-relaxed mb-8 flex-1">{t(card.description)}</p>
                 <Button variant={isHovered ? "primary" : "light"} fullWidth href={card.href}>
-                  {card.buttonText}
+                  {t(card.buttonText)}
                 </Button>
               </motion.div>
             );

@@ -4,8 +4,10 @@
 import Button from "@/components/ui/button";
 import { motion } from "framer-motion";
 import Text from "@/components/ui/label";
+import { useT } from "@/lib/i18n";
 
 export function Hero() {
+  const t = useT();
   const stats = [
     { value: "63K+", label: "GLOBAL USER" },
     { value: "6+", label: "LIVE PRODUCTS" },
@@ -25,13 +27,13 @@ export function Hero() {
           transition={{ duration: 0.8 }}
         >
           <Text as="h2" className="text-3xl sm:text-4xl md:text-6xl leading-18 tracking-tight text-white font-normal mb-2">
-            Công Nghệ Định Lượng
+            {t("Công Nghệ Định Lượng")}
           </Text>
           <Text as="h2" className="text-3xl sm:text-4xl md:text-6xl tracking-tight text-[#37C0FF] mb-4 font-normal">
-            Tài Chính Toàn Cầu
+            {t("Tài Chính Toàn Cầu")}
           </Text>
           <h2 className="max-w-3xl mx-auto text-sm sm:text-base md:text-lg leading-6 text-white mb-6 px-2">
-            Hệ sinh thái đầu tư thông minh ứng dụng Big Data & AI, có 15 năm kinh <br /> nghiệm thực chiến, phục vụ nhà đầu tư cá nhân, tổ chức và cộng đồng IB toàn cầu
+            {t("Hệ sinh thái đầu tư thông minh ứng dụng Big Data & AI, có 15 năm kinh nghiệm thực chiến, phục vụ nhà đầu tư cá nhân, tổ chức và cộng đồng IB toàn cầu")}
           </h2>
         </motion.div>
 
@@ -45,7 +47,7 @@ export function Hero() {
           {stats.map((stat, index) => (
             <div key={index} className="flex flex-col items-start">
               <span className="text-xl md:text-2xl font-bold text-[#00b4ff] mb-2">{stat.value}</span>
-              <span className="text-xs tracking-widest text-zinc-500 uppercase">{stat.label}</span>
+              <span className="text-xs tracking-widest text-zinc-500 uppercase">{t(stat.label)}</span>
             </div>
           ))}
         </motion.div>
@@ -57,8 +59,8 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-125 mx-auto"
         >
-          <Button href="/about" fullWidth className="font-manrope font-semibold">Khám phá AVIXO</Button>
-          <Button href="/solutions" variant="outline" fullWidth className="font-manrope font-semibold">Tìm hiểu nhà đầu tư</Button>
+          <Button href="/about" fullWidth className="font-manrope font-semibold">{t("Khám phá AVIXO")}</Button>
+          <Button href="/solutions" variant="outline" fullWidth className="font-manrope font-semibold">{t("Tìm hiểu nhà đầu tư")}</Button>
         </motion.div>
       </div>
 

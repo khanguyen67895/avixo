@@ -7,15 +7,17 @@ import { InvestorTab } from "./InvestorTab";
 import { IBTab } from "./IBTab";
 import { StrategicTab } from "./StrategicTab";
 import { PARTNERS_TABS, type PartnersTabId } from "@/lib/constants";
+import { useT } from "@/lib/i18n";
 
 type TabId = PartnersTabId;
 
 export function Partners() {
+  const t = useT();
   const searchParams = useSearchParams();
 
   const initialTab = (() => {
     const tab = searchParams.get("tab") as TabId | null;
-    return tab && PARTNERS_TABS.some((t) => t.id === tab) ? tab : "investor";
+    return tab && PARTNERS_TABS.some((p) => p.id === tab) ? tab : "investor";
   })();
 
   const [active, setActive] = useState<TabId>(initialTab);
@@ -45,7 +47,7 @@ export function Partners() {
                     active === tab.id ? "text-white" : "text-[#1D1D1D] hover:text-zinc-800"
                   }`}
                 >
-                  {tab.label}
+                  {t(tab.label)}
                 </span>
               </button>
             ))}

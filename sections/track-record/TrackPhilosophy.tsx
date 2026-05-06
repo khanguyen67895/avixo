@@ -5,8 +5,10 @@ import { motion } from "framer-motion";
 import { trackPhilosophyFeatures as features } from "@/lib/constants";
 import Text from "@/components/ui/label";
 import { GlowBackground } from "@/components/common/GlowBackground";
+import { useT } from "@/lib/i18n";
 
 export function TrackPhilosophy() {
+  const t = useT();
   return (
     <GlowBackground src="/images/ic_bg1.png" className="w-full py-24 pt-12">
       <div className="relative z-10 max-w-6xl mx-auto px-6">
@@ -21,10 +23,10 @@ export function TrackPhilosophy() {
             className="md:w-80 shrink-0 pt-4 self-center"
           >
             <Text as="h2" className="text-3xl md:text-4xl text-[#1D1D1D] leading-16 mb-6">
-              Triết lý<br />Minh Bạch
+              {t("Triết lý")}<br />{t("Minh Bạch")}
             </Text>
             <p className="text-[#505050] text-base leading-6">
-              Tại AVIXO, chúng tôi định nghĩa lại sự tin cậy trong quản lý tài sản số thông qua dữ liệu cứng và quyền truy cập trực tiếp.
+              {t("Tại AVIXO, chúng tôi định nghĩa lại sự tin cậy trong quản lý tài sản số thông qua dữ liệu cứng và quyền truy cập trực tiếp.")}
             </p>
           </motion.div>
 
@@ -43,8 +45,8 @@ export function TrackPhilosophy() {
                   <img src={icon} alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }} className="object-contain" />
                 </div>
                 <div className="flex flex-col bg-white border border-zinc-100 rounded-2xl p-6 shadow-sm">
-                  <h3 className="font-semibold text-[#000000] text-lg mb-1">{title}</h3>
-                  <p className="text-sm text-[#505050] leading-5">{desc}</p>
+                  <h3 className="font-semibold text-[#000000] text-lg mb-1">{t(title)}</h3>
+                  <p className="text-sm text-[#505050] leading-5">{t(desc)}</p>
                 </div>
               </motion.div>
             ))}

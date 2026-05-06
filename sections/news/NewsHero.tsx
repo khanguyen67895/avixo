@@ -6,10 +6,12 @@ import { motion } from "framer-motion";
 import { useQuery } from "@tanstack/react-query";
 import Text from "@/components/ui/label";
 import { fetchNews } from "@/lib/newsApi";
+import { useT } from "@/lib/i18n";
 
 const FALLBACK_IMG = "/images/news1.png";
 
 export function NewsHero() {
+  const t = useT();
   const { data: articles = [] } = useQuery({
     queryKey: ["news", "Tất cả"],
     queryFn: fetchNews,
@@ -32,7 +34,7 @@ export function NewsHero() {
             transition={{ duration: 0.5 }}
             className="flex-3 flex flex-col"
           >
-            <Text className="text-[32px] font-semibold text-[#1D1D1D] mb-4">Tin Mới</Text>
+            <Text className="text-[32px] font-semibold text-[#1D1D1D] mb-4">{t("Tin Mới")}</Text>
             <Link href={`/news/${featured.id}`} className="relative p-2 rounded-2xl overflow-hidden group flex-1 flex flex-col bg-white border border-[#E5E5E5] shadow-sm hover:shadow-md transition-shadow">
               <div className="relative w-full aspect-video">
                 <img
@@ -56,7 +58,7 @@ export function NewsHero() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="flex-2 flex flex-col"
           >
-            <Text className="text-[32px] font-semibold text-[#1D1D1D] mb-4">Tin Hot</Text>
+            <Text className="text-[32px] font-semibold text-[#1D1D1D] mb-4">{t("Tin Hot")}</Text>
             <div className="flex flex-col gap-4">
               {hot.map(item => (
                 <Link

@@ -3,8 +3,10 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Text from "@/components/ui/label";
+import { useT } from "@/lib/i18n";
 
 export function PartnersHero() {
+  const t = useT();
   return (
     <section className="relative w-full min-h-150 bg-black flex items-center overflow-hidden">
       {/* Pixel dot-grid background */}
@@ -22,14 +24,13 @@ export function PartnersHero() {
           className="flex-1 flex flex-col px-6 md:pl-80"
         >
           <Text as="h1" className="text-5xl md:text-6xl text-white leading-tight mb-4">
-            AVIXO Giải pháp<br />đầu tư ứng dụng<br />
+            {t("AVIXO Giải pháp")}<br />{t("đầu tư ứng dụng")}<br />
             <span className="bg-linear-to-r from-[#37C0FF] to-[#0076FF] bg-clip-text text-transparent">
-              Big Data &amp; AI
+              {t("Big Data & AI")}
             </span>
           </Text>
           <p className="text-white text-base md:text-base">
-            Phục vụ nhà đầu tư cá nhân với độ chính xác lượng tử, tối ưu hóa lợi nhuận<br />
-            thông qua phân tích dữ liệu thời gian thực và quản trị rủi ro tự động.
+            {t("Phục vụ nhà đầu tư cá nhân với độ chính xác lượng tử, tối ưu hóa lợi nhuận thông qua phân tích dữ liệu thời gian thực và quản trị rủi ro tự động.")}
           </p>
         </motion.div>
 

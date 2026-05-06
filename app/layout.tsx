@@ -21,8 +21,13 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Next.js App with Framer Motion",
-  description: "Modern web application template",
+  title: "Live to trade. Trade to live",
+  description: "Live to trade. Trade to live",
+  icons: {
+    icon: "/images/ic_logo.png",
+    shortcut: "/images/ic_logo.png",
+    apple: "/images/ic_logo.png",
+  },
 };
 
 export default function RootLayout({

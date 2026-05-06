@@ -8,9 +8,11 @@ import Tag from "@/components/ui/tag";
 import { GlowBackground } from "@/components/common/GlowBackground";
 import { coachingSteps as steps, coachingLeftFeatures as leftFeatures } from "@/lib/constants";
 import { useContactModal } from "@/components/common/contact-context";
+import { useT } from "@/lib/i18n";
 
 export function Coaching() {
   const { open } = useContactModal();
+  const t = useT();
   return (
     <GlowBackground src="/images/ic_bg1.png" as="section" className="w-full pb-24 flex flex-col items-center overflow-hidden">
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center mb-16">
@@ -21,10 +23,10 @@ export function Coaching() {
           transition={{ duration: 0.7 }}
         >
           <Text as="h2" className="text-3xl md:text-4xl text-[#1D1D1D] leading-16">
-            AI Trade Coaching 1:1
+            {t("AI Trade Coaching 1:1")}
           </Text>
           <p className="text-[#505050] text-base md:text-lg max-w-2xl mx-auto">
-            Phù hợp với nhà đầu tư mới hoặc người cần sự đồng hành, huấn luyện cá nhân hóa để xây dựng sự nghiệp trading bền vững.
+            {t("Phù hợp với nhà đầu tư mới hoặc người cần sự đồng hành, huấn luyện cá nhân hóa để xây dựng sự nghiệp trading bền vững.")}
           </p>
         </motion.div>
       </div>
@@ -39,10 +41,10 @@ export function Coaching() {
           className="flex-1"
         >
           <Text as="h3" className="text-xl md:text-2xl font-semibold text-[#1D1D1D] mb-2">
-            Cá nhân hóa theo chuẩn quỹ
+            {t("Cá nhân hóa theo chuẩn quỹ")}
           </Text>
           <p className="text-[#505050] text-sm leading-relaxed mb-8">
-            Sự kết hợp hoàn hảo giữa trí tuệ nhân tạo (GPT) và chuyên gia đầu tư để huấn luyện cá nhân hóa theo phong cách giao dịch, quy mô vốn và mục tiêu riêng biệt của từng nhà đầu tư.
+            {t("Sự kết hợp hoàn hảo giữa trí tuệ nhân tạo (GPT) và chuyên gia đầu tư để huấn luyện cá nhân hóa theo phong cách giao dịch, quy mô vốn và mục tiêu riêng biệt của từng nhà đầu tư.")}
           </p>
 
           <div className="flex flex-col gap-6 mb-8">
@@ -51,18 +53,18 @@ export function Coaching() {
                 <img src={f.icon} alt="" className="w-15 h-15 object-contain -mt-3" />
            
                 <div>
-                  <p className="font-semibold text-[#1D1D1D] text-lg">{f.title}</p>
-                  <p className="text-[#505050] text-sm mt-0.5">{f.desc}</p>
+                  <p className="font-semibold text-[#1D1D1D] text-lg">{t(f.title)}</p>
+                  <p className="text-[#505050] text-sm mt-0.5">{t(f.desc)}</p>
                 </div>
               </div>
             ))}
           </div>
 
           <div className="flex flex-wrap gap-2 mb-8">
-            {["1:1 Mentoring", "Risk Management", "Scalp"].map(t => <Tag bordered hasZap={false} key={t}>{t}</Tag>)}
+            {["1:1 Mentoring", "Risk Management", "Scalp"].map(tag => <Tag bordered hasZap={false} key={tag}>{tag}</Tag>)}
           </div>
           <div className="flex-1">
-            <Button onClick={open} className="w-3/4">Huấn luyện chuyên sâu ngay</Button>
+            <Button onClick={open} className="w-3/4">{t("Huấn luyện chuyên sâu ngay")}</Button>
           </div>
         </motion.div>
 
@@ -94,8 +96,8 @@ export function Coaching() {
               </div>
               {/* text */}
               <div className="md:w-112.25 pb-6 p-4 bg-neutral-50 rounded-[20px] outline-1 -outline-offset-1 outline-neutral-200 flex flex-col gap-2">
-                <p className="font-semibold text-[#1D1D1D] text-lg leading-8">{s.title}</p>
-                <p className="text-[#505050] text-sm leading-5">{s.desc}</p>
+                <p className="font-semibold text-[#1D1D1D] text-lg leading-8">{t(s.title)}</p>
+                <p className="text-[#505050] text-sm leading-5">{t(s.desc)}</p>
               </div>
             </motion.div>
           ))}

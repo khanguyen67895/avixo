@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { useQuery } from "@tanstack/react-query";
 import { NEWS_CATEGORIES as CATEGORIES, CATEGORY_COLORS } from "@/lib/constants";
 import { fetchNews, fetchNewsByCategory } from "@/lib/newsApi";
-import { CTA } from "./CTA";
+import { useT } from "@/lib/i18n";
 
 const FALLBACK_IMG = "/images/news1.png";
 
@@ -20,6 +20,7 @@ function formatDate(iso: string) {
 const PAGE_SIZE = 9;
 
 export function NewsList() {
+  const t = useT();
   const [active, setActive] = useState("Tất cả");
   const [showAll, setShowAll] = useState(false);
 
@@ -47,7 +48,7 @@ export function NewsList() {
                   : "bg-[#EFEFEF] border border-[#F9F9F9] text-zinc-600 hover:border-[#37C0FF] hover:text-[#37C0FF]"
               }`}
             >
-              {cat}
+              {t(cat)}
             </button>
           ))}
         </div>
@@ -99,7 +100,7 @@ export function NewsList() {
               onClick={() => setShowAll(true)}
               className="px-10 py-3 rounded-full bg-[#37C0FF] text-white font-semibold text-sm hover:opacity-90 transition-opacity"
             >
-              Xem thêm
+              {t("Xem thêm")}
             </button>
           </div>
         )}

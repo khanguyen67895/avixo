@@ -6,6 +6,7 @@ import ic_logo2 from "@/public/images/ic_logo2.png";
 import Button from "@/components/ui/button";
 import Text from "@/components/ui/label";
 import { GlowBackground } from "@/components/common/GlowBackground";
+import { useT } from "@/lib/i18n";
 
 const topics = ["Đầu tư Cá nhân", "Đối tác IB", "Đầu tư chiến lược"];
 
@@ -16,6 +17,7 @@ const TOPIC_TO_VALUE: Record<string, string> = {
 };
 
 export function AboutContact() {
+  const t = useT();
   const [topic, setTopic] = useState("Đầu tư Cá nhân");
   const [form, setForm] = useState({ name: "", phone: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
@@ -59,29 +61,29 @@ export function AboutContact() {
           {/* Left */}
           <div className="flex flex-col items-center text-center gap-4">
             <img src={ic_logo2.src} alt="AVIXO" className="w-56 h-56 object-contain" />
-            <Text as="h2" className="text-4xl text-[#1D1D1D]">Liên hệ với AVIXO</Text>
-            <p className="text-[#505050] text-base max-w-xs">Chúng tôi luôn sẵn sàng lắng nghe và đồng hành cùng sự phát triển của bạn.</p>
+            <Text as="h2" className="text-4xl text-[#1D1D1D]">{t("Liên hệ với AVIXO")}</Text>
+            <p className="text-[#505050] text-base max-w-xs">{t("Chúng tôi luôn sẵn sàng lắng nghe và đồng hành cùng sự phát triển của bạn.")}</p>
           </div>
 
           {/* Right: form */}
           <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-            <Text as="h3" className="text-2xl font-semibold text-[#1D1D1D]">Gửi yêu cầu hỗ trợ</Text>
+            <Text as="h3" className="text-2xl font-semibold text-[#1D1D1D]">{t("Gửi yêu cầu hỗ trợ")}</Text>
 
             {/* Topic */}
             <div className="flex flex-col gap-2">
-              <label className="text-sm text-zinc-700">Chủ đề</label>
+              <label className="text-sm text-zinc-700">{t("Chủ đề")}</label>
               <div className="flex flex-wrap gap-4">
-                {topics.map((t) => (
-                  <label key={t} className="flex items-center gap-2 cursor-pointer text-sm text-zinc-700">
+                {topics.map((opt) => (
+                  <label key={opt} className="flex items-center gap-2 cursor-pointer text-sm text-zinc-700">
                     <input
                       type="radio"
                       name="topic"
-                      value={t}
-                      checked={topic === t}
-                      onChange={() => setTopic(t)}
+                      value={opt}
+                      checked={topic === opt}
+                      onChange={() => setTopic(opt)}
                       className="accent-[#37C0FF]"
                     />
-                    {t}
+                    {t(opt)}
                   </label>
                 ))}
               </div>
@@ -89,19 +91,19 @@ export function AboutContact() {
 
             {/* Name */}
             <div className="flex flex-col gap-1.5">
-              <label className="text-sm text-zinc-700">Họ Và Tên</label>
+              <label className="text-sm text-zinc-700">{t("Họ Và Tên")}</label>
               <input
                 required
                 value={form.name}
                 onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
-                placeholder="Tên của bạn"
+                placeholder={t("Tên của bạn")}
                 className="border border-zinc-200 rounded-xl px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-300 focus:outline-none focus:border-[#37C0FF] transition-colors"
               />
             </div>
 
             {/* Phone */}
             <div className="flex flex-col gap-1.5">
-              <label className="text-sm text-zinc-700">Số điện thoại</label>
+              <label className="text-sm text-zinc-700">{t("Số điện thoại")}</label>
               <input
                 type="tel"
                 value={form.phone}
@@ -113,7 +115,7 @@ export function AboutContact() {
 
             {/* Email */}
             <div className="flex flex-col gap-1.5">
-              <label className="text-sm text-zinc-700">Email Liên hệ</label>
+              <label className="text-sm text-zinc-700">{t("Email Liên hệ")}</label>
               <input
                 required
                 type="email"
@@ -126,26 +128,26 @@ export function AboutContact() {
 
             {/* Message */}
             <div className="flex flex-col gap-1.5">
-              <label className="text-sm text-zinc-700">Nội dung</label>
+              <label className="text-sm text-zinc-700">{t("Nội dung")}</label>
               <textarea
                 required
                 rows={4}
                 value={form.message}
                 onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
-                placeholder="nội dung tin nhắn"
+                placeholder={t("nội dung tin nhắn")}
                 className="border border-zinc-200 rounded-xl px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-300 focus:outline-none focus:border-[#37C0FF] transition-colors resize-none"
               />
             </div>
 
             {status === "success" && (
-              <p className="text-sm text-green-600 font-medium">✅ Yêu cầu đã được gửi thành công!</p>
+              <p className="text-sm text-green-600 font-medium">{t("✅ Yêu cầu đã được gửi thành công!")}</p>
             )}
             {status === "error" && (
-              <p className="text-sm text-red-500 font-medium">❌ Có lỗi xảy ra, vui lòng thử lại.</p>
+              <p className="text-sm text-red-500 font-medium">{t("❌ Có lỗi xảy ra, vui lòng thử lại.")}</p>
             )}
 
             <Button type="submit" variant="primary" disabled={loading}>
-              {loading ? "Đang gửi..." : "Gửi yêu cầu"}
+              {loading ? t("Đang gửi...") : t("Gửi yêu cầu")}
             </Button>
           </form>
 

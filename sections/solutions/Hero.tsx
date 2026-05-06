@@ -3,8 +3,10 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Text from "@/components/ui/label";
+import { useT } from "@/lib/i18n";
 
 export function Hero() {
+  const t = useT();
   return (
     <section className="hidden md:flex relative w-full md:h-auto bg-black items-center overflow-hidden pt-20">
       {/* dot-grid background */}
@@ -23,10 +25,10 @@ export function Hero() {
           className="w-full md:flex-1 md:pl-80 text-center md:text-left"
         >
           <Text as="h1" className="text-5xl md:text-6xl text-white leading-18 mb-4">
-            Giải pháp<br />và công nghệ
+            {t("Giải pháp")}<br />{t("và công nghệ")}
           </Text>
           <p className="text-white text-base md:text-lg leading-6 mx-auto md:mx-0">
-            Bộ công cụ toàn diện — từ semi-auto đến AI trading — kiểm <br /> chứng 15 năm thực chiến trên 5 thị trường tài chính khốc liệt nhất.
+            {t("Bộ công cụ toàn diện — từ semi-auto đến AI trading — kiểm chứng 15 năm thực chiến trên 5 thị trường tài chính khốc liệt nhất.")}
           </p>
         </motion.div>
 

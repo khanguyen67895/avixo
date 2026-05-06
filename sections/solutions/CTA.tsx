@@ -3,8 +3,10 @@
 import { motion } from "framer-motion";
 import Text from "@/components/ui/label";
 import Button from "@/components/ui/button";
+import { useT } from "@/lib/i18n";
 
 export function CTA() {
+  const t = useT();
   return (
     <section className="relative w-full py-24 bg-linear-to-b from-[#0D103E] to-[#08112B] flex flex-col items-center border-t border-white/5 overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(#1e3a8a_1px,transparent_1px)] bg-size-[24px_24px] opacity-20 pointer-events-none" />
@@ -17,8 +19,8 @@ export function CTA() {
           transition={{ duration: 0.6 }}
         >
           <Text as="h2" className="text-4xl md:text-5xl tracking-tight text-white mb-8">
-            Tham gia hệ sinh thái <br className="hidden sm:block" />
-            <span className="text-[#00b4ff]">AVIXO</span> hôm nay
+            {t("Tham gia hệ sinh thái")} <br className="hidden sm:block" />
+            <span className="text-[#00b4ff]">AVIXO</span> {t("AVIXO hôm nay").replace("AVIXO ", "")}
           </Text>
         </motion.div>
 
@@ -31,10 +33,10 @@ export function CTA() {
         >
           <input
             type="email"
-            placeholder="Email"
+            placeholder={t("Email")}
             className="flex-1 bg-transparent outline-none text-sm text-white placeholder:text-white/40 px-2 py-2"
           />
-          <Button variant="primary" className="text-sm shrink-0 py-2! px-6!">Theo dõi</Button>
+          <Button variant="primary" className="text-sm shrink-0 py-2! px-6!">{t("Theo dõi")}</Button>
         </motion.div>
 
         <motion.p
@@ -44,7 +46,7 @@ export function CTA() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-white text-[16px]"
         >
-          Cập nhật bài viết, ưu đãi và thông báo mới qua email.
+          {t("Cập nhật bài viết, ưu đãi và thông báo mới qua email.")}
         </motion.p>
       </div>
     </section>

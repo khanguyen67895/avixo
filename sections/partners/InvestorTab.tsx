@@ -12,8 +12,10 @@ import {
   riskItems,
 } from "@/lib/constants";
 import { CTA } from "./CTA";
+import { useT } from "@/lib/i18n";
 
 export function InvestorTab() {
+  const t = useT();
   return (
     <div className="w-full">
 
@@ -27,11 +29,10 @@ export function InvestorTab() {
             className="text-center pb-12 mb-12"
           >
             <Text as="h2" className="text-3xl md:text-4xl text-[#1D1D1D] leading-16">
-              Nhà đầu tư được gì từ AVIXO?
+              {t("Nhà đầu tư được gì từ AVIXO?")}
             </Text>
             <p className="text-[#505050] text-base max-w-2xl mx-auto leading-6">
-              Phục vụ nhà đầu tư cá nhân với độ chính xác lượng tử, tối ưu hóa lợi nhuận
-              thông qua phân tích dữ liệu thời gian thực và quản trị rủi ro tự động.
+              {t("Phục vụ nhà đầu tư cá nhân với độ chính xác lượng tử, tối ưu hóa lợi nhuận thông qua phân tích dữ liệu thời gian thực và quản trị rủi ro tự động.")}
             </p>
           </motion.div>
 
@@ -47,8 +48,8 @@ export function InvestorTab() {
                 <div className="relative w-48 h-48 shrink-0">
                   <img src={f.icon} alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }} className="object-contain" />
                 </div>
-                <p className="font-bold text-[#1D1D1D] text-lg mt-6 mb-2">{f.title}</p>
-                <p className="text-[#505050] text-base leading-relaxed">{f.desc}</p>
+                <p className="font-bold text-[#1D1D1D] text-lg mt-6 mb-2">{t(f.title)}</p>
+                <p className="text-[#505050] text-base leading-relaxed">{t(f.desc)}</p>
               </motion.div>
             ))}
           </div>
@@ -65,10 +66,10 @@ export function InvestorTab() {
           className="relative z-10"
         >
           <Text as="h2" className="text-3xl md:text-4xl text-[#1D1D1D] leading-16">
-            Sản phẩm dành cho bạn
+            {t("Sản phẩm dành cho bạn")}
           </Text>
           <p className="text-[#505050] text-base max-w-2xl mx-auto leading-6">
-            Cá nhân hóa lộ trình đầu tư dựa trên mục tiêu <br /> tài chính và khẩu vị rủi ro của bạn.
+            {t("Cá nhân hóa lộ trình đầu tư dựa trên mục tiêu tài chính và khẩu vị rủi ro của bạn.")}
           </p>
         </motion.div>
       </div>
@@ -102,18 +103,18 @@ export function InvestorTab() {
               className="flex-1 flex flex-col justify-center"
             >
               <Text as="h3" className="text-2xl md:text-2xl font-semibold text-[#1D1D1D] mb-3 leading-8">
-                {p.title}
+                {t(p.title)}
               </Text>
               <p className="text-[#505050] text-sm md:text-base leading-5 mb-6 max-w-sm">
-                {p.desc}
+                {t(p.desc)}
               </p>
               <div className="flex flex-wrap gap-2 mb-8">
-                {p.tags.map((t) => (
-                  <Tag key={t}>{t}</Tag>
+                {p.tags.map((tag) => (
+                  <Tag key={tag}>{tag}</Tag>
                 ))}
               </div>
               <div className="flex-1">
-                <Button href="#" className="w-1/2">{p.cta}</Button>
+                <Button href="#" className="w-1/2">{t(p.cta)}</Button>
               </div>
             </motion.div>
           </div>
@@ -144,11 +145,10 @@ export function InvestorTab() {
           >
             <div className="text-center mb-4">
               <Text as="h2" className="text-2xl md:text-2xl font-semibold text-[#1D1D1D] mb-3 leading-8">
-                Những gì cần hiểu trước khi sử dụng
+                {t("Những gì cần hiểu trước khi sử dụng")}
               </Text>
               <p className="text-[#505050] text-sm leading-5 max-w-xl mx-auto">
-                Tại AVIXO, chúng tôi ưu tiên sự minh bạch và trách nhiệm. Đầu tư tài chính
-                luôn đi kèm với những biến động không lường trước được.
+                {t("Tại AVIXO, chúng tôi ưu tiên sự minh bạch và trách nhiệm. Đầu tư tài chính luôn đi kèm với những biến động không lường trước được.")}
               </p>
             </div>
 
@@ -165,23 +165,23 @@ export function InvestorTab() {
                   <span className="items-center justify-center text-lg font-semibold text-[#0076FF]">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <p className="text-[#131313] text-sm leading-relaxed">{text}</p>
+                  <p className="text-[#131313] text-sm leading-relaxed">{t(text)}</p>
                 </motion.div>
               ))}
             </div>
 
             <div className="mt-10 text-center">
               <p className="text-xs tracking-widest text-gray-400 font-['Manrope'] uppercase">
-                Vui lòng xác nhận bạn đã hiểu các rủi ro trên
+                {t("Vui lòng xác nhận bạn đã hiểu các rủi ro trên")}
               </p>
             </div>
           </motion.div>
         </div>
       </GlowBackground>
       <CTA
-        title={`Sẵn sàng để tối ưu hóa \n danh mục đầu tư?`}
-        titleButtonLeft="Xem giải pháp"
-        titleButtonRight="Đăng ký tư vấn" />
+        title={t("Sẵn sàng để tối ưu hóa \n danh mục đầu tư?")}
+        titleButtonLeft={t("Xem giải pháp")}
+        titleButtonRight={t("Đăng ký tư vấn")} />
     </div>
   );
 }

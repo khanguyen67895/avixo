@@ -8,6 +8,7 @@ import Tag from "@/components/ui/tag";
 import { type ApiArticleDetailResponse, fetchNews } from "@/lib/newsApi";
 import Text from "@/components/ui/label";
 import { CTA } from "./CTA";
+import { useT } from "@/lib/i18n";
 
 type ArticleDetail = ApiArticleDetailResponse["article"];
 
@@ -20,6 +21,7 @@ function formatDate(iso: string) {
 }
 
 export function NewsDetail({ article }: { article: ArticleDetail }) {
+  const t = useT();
   // Fetch all news to build sidebar (Tin Hot) and related articles
   const { data: allArticles = [] } = useQuery({
     queryKey: ["news", "Tất cả"],
@@ -45,7 +47,7 @@ export function NewsDetail({ article }: { article: ArticleDetail }) {
             {/* Back */}
             <Link href="/news" className="inline-flex items-center gap-1.5 text-sm text-[#A6A6A6] hover:text-zinc-800 transition-colors mb-6">
               <ArrowLeft size={15} />
-              Quay lại
+              {t("Quay lại")}
             </Link>
 
             {/* Meta top */}
@@ -97,7 +99,7 @@ export function NewsDetail({ article }: { article: ArticleDetail }) {
               rel="noopener noreferrer"
               className="inline-block mt-6 text-sm text-[#37C0FF] hover:underline"
             >
-              Đọc bài gốc tại {article.source} →
+              {t("Đọc bài gốc tại")} {article.source} →
             </a>
 
             {/* Meta bottom */}
@@ -112,14 +114,14 @@ export function NewsDetail({ article }: { article: ArticleDetail }) {
 
             {/* Disclaimer */}
             <p className="text-xs text-zinc-400 mt-4 leading-relaxed">
-              Tuyên bố miễn trừ trách nhiệm: Bao gồm cả quan điểm của bên thứ ba. Đây không phải lời khuyên tài chính.{" "}
-              <a href="#" className="text-[#37C0FF] hover:underline">Xem Điều khoản & Điều kiện.</a>
+              {t("Tuyên bố miễn trừ trách nhiệm: Bao gồm cả quan điểm của bên thứ ba. Đây không phải lời khuyên tài chính.")}{" "}
+              <a href="#" className="text-[#37C0FF] hover:underline">{t("Xem Điều khoản & Điều kiện.")}</a>
             </p>
 
             {/* Related articles */}
             {related.length > 0 && (
               <div className="mt-12">
-                <Text className="text-3xl font-bold text-[#1D1D1D] mb-6">Tin cùng thể loại</Text>
+                <Text className="text-3xl font-bold text-[#1D1D1D] mb-6">{t("Tin cùng thể loại")}</Text>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
                   {related.map(item => (
                     <Link key={item.id} href={`/news/${item.id}`} className="group flex flex-col bg-white border border-[#E5E5E5] rounded-2xl p-2 hover:shadow-md transition-shadow">
@@ -147,7 +149,7 @@ export function NewsDetail({ article }: { article: ArticleDetail }) {
           {/* ── Sidebar: Tin Hot ── */}
           <div className="lg:w-72 shrink-0">
             <div className="sticky top-24">
-              <Text className="text-[32px] font-semibold text-[#1D1D1D] mb-5">Tin Hot</Text>
+              <Text className="text-[32px] font-semibold text-[#1D1D1D] mb-5">{t("Tin Hot")}</Text>
               <div className="flex flex-col gap-5">
                 {hot.map(item => (
                   <Link key={item.id} href={`/news/${item.id}`} className="group flex flex-col bg-white border border-[#E5E5E5] rounded-2xl p-2 hover:shadow-md transition-shadow">

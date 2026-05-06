@@ -12,9 +12,11 @@ import {
   HOW_IT_WORKS_TEXT_Y as TEXT_Y,
   HOW_IT_WORKS_CARD_W as CARD_W,
 } from "@/lib/constants";
+import { useT } from "@/lib/i18n";
 
 export function HowItWorks() {
   const [active, setActive] = useState(0);
+  const t = useT();
 
   useEffect(() => {
     const t = setInterval(() => setActive(p => (p + 1) % steps.length), 4000);
@@ -38,11 +40,10 @@ export function HowItWorks() {
           className="text-center mb-12 md:mb-20"
         >
           <Text className="text-2xl sm:text-3xl md:text-4xl tracking-tight text-[#1D1D1D] mb-4">
-            Phương thức hoạt động của AVIXO
+            {t("Phương thức hoạt động của AVIXO")}
           </Text>
           <p className="max-w-2xl mx-auto text-sm text-[#505050] px-2">
-            Chúng tôi không chỉ cung cấp công cụ, chúng tôi xây dựng một nền tảng tư duy
-            và công nghệ bền vững cho sự thịnh vượng tài chính toàn cầu.
+            {t("Chúng tôi không chỉ cung cấp công cụ, chúng tôi xây dựng một nền tảng tư duy và công nghệ bền vững cho sự thịnh vượng tài chính toàn cầu.")}
           </p>
         </motion.div>
       </div>
@@ -97,10 +98,10 @@ export function HowItWorks() {
             className="text-center px-2"
           >
             <Text as="h3" className="text-xl font-bold text-zinc-900 mb-3 leading-snug">
-              {steps[active].title}
+              {t(steps[active].title)}
             </Text>
             <p className="text-zinc-500 text-sm leading-relaxed">
-              {steps[active].desc}
+              {t(steps[active].desc)}
             </p>
           </motion.div>
         </AnimatePresence>
@@ -232,10 +233,10 @@ export function HowItWorks() {
                 style={{ top: TEXT_Y[active], left: 144, right: 0, transform: "translateY(-50%)" }}
               >
                 <Text as="h3" className="text-2xl md:text-2xl font-semibold text-[#1D1D1D] mb-4 leading-8">
-                  {steps[active].title}
+                  {t(steps[active].title)}
                 </Text>
                 <p className="text-[#505050] text-base leading-relaxed max-w-xs">
-                  {steps[active].desc}
+                  {t(steps[active].desc)}
                 </p>
               </motion.div>
             </AnimatePresence>

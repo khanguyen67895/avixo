@@ -6,10 +6,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { createPortal } from "react-dom";
 import { useContactModal } from "./contact-context";
+import { useT } from "@/lib/i18n";
 
 import { CONTACT_SUBJECTS as SUBJECTS } from "@/lib/constants";
 
 function AnimatedCard({ close }: { close: () => void }) {
+  const t = useT();
   const [subject, setSubject] = useState("investor");
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
@@ -73,20 +75,20 @@ function AnimatedCard({ close }: { close: () => void }) {
         </div>
 
         <h2 className="text-2xl font-bold text-zinc-900 mb-3 leading-snug">
-          Liên hệ với AVIXO
+          {t("Liên hệ với AVIXO")}
         </h2>
         <p className="text-zinc-500 text-sm leading-relaxed max-w-[220px]">
-          Chúng tôi luôn sẵn sàng lắng nghe và đồng hành cùng sự phát triển của bạn.
+          {t("Chúng tôi luôn sẵn sàng lắng nghe và đồng hành cùng sự phát triển của bạn.")}
         </p>
       </div>
 
       {/* ── Right panel ── transparent so ic_bg1 shows through entire card */}
       <div className="relative z-10 flex-1 px-8 py-10 flex flex-col gap-5">
-        <h3 className="text-lg font-bold text-zinc-900">Gửi yêu cầu hỗ trợ</h3>
+        <h3 className="text-lg font-bold text-zinc-900">{t("Gửi yêu cầu hỗ trợ")}</h3>
 
         {/* Subject */}
         <div>
-          <label className="block text-sm font-medium text-zinc-700 mb-3">Chủ đề</label>
+          <label className="block text-sm font-medium text-zinc-700 mb-3">{t("Chủ đề")}</label>
           <div className="flex flex-wrap gap-4">
             {SUBJECTS.map((s) => (
               <label key={s.value} className="flex items-center gap-2 cursor-pointer">
@@ -107,7 +109,7 @@ function AnimatedCard({ close }: { close: () => void }) {
                   onClick={() => setSubject(s.value)}
                   className="text-sm text-zinc-700 select-none"
                 >
-                  {s.label}
+                  {t(s.label)}
                 </span>
               </label>
             ))}
@@ -116,10 +118,10 @@ function AnimatedCard({ close }: { close: () => void }) {
 
         {/* Name */}
         <div>
-          <label className="block text-sm font-medium text-zinc-700 mb-1.5">Họ Và Tên</label>
+          <label className="block text-sm font-medium text-zinc-700 mb-1.5">{t("Họ Và Tên")}</label>
           <input
             type="text"
-            placeholder="Tên của bạn"
+            placeholder={t("Tên của bạn")}
             value={name}
             onChange={(e) => setName(e.target.value)}
             className="w-full rounded-xl border border-zinc-200 px-4 py-3 text-sm text-zinc-800 placeholder:text-zinc-400 outline-none focus:border-[#37C0FF] focus:ring-1 focus:ring-[#37C0FF]/30 transition bg-white/90"
@@ -128,7 +130,7 @@ function AnimatedCard({ close }: { close: () => void }) {
 
         {/* Phone */}
         <div>
-          <label className="block text-sm font-medium text-zinc-700 mb-1.5">Số điện thoại</label>
+          <label className="block text-sm font-medium text-zinc-700 mb-1.5">{t("Số điện thoại")}</label>
           <input
             type="tel"
             placeholder="0912 345 678"
@@ -140,7 +142,7 @@ function AnimatedCard({ close }: { close: () => void }) {
 
         {/* Email */}
         <div>
-          <label className="block text-sm font-medium text-zinc-700 mb-1.5">Email Liên hệ</label>
+          <label className="block text-sm font-medium text-zinc-700 mb-1.5">{t("Email Liên hệ")}</label>
           <input
             type="email"
             placeholder="name@gmail.com"
@@ -152,9 +154,9 @@ function AnimatedCard({ close }: { close: () => void }) {
 
         {/* Message */}
         <div>
-          <label className="block text-sm font-medium text-zinc-700 mb-1.5">Nội dung</label>
+          <label className="block text-sm font-medium text-zinc-700 mb-1.5">{t("Nội dung")}</label>
           <textarea
-            placeholder="nội dung tin nhắn"
+            placeholder={t("nội dung tin nhắn")}
             rows={4}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
@@ -164,10 +166,10 @@ function AnimatedCard({ close }: { close: () => void }) {
 
         {/* Status messages */}
         {status === "success" && (
-          <p className="text-sm text-green-600 font-medium text-center">✅ Yêu cầu đã được gửi thành công!</p>
+          <p className="text-sm text-green-600 font-medium text-center">{t("✅ Yêu cầu đã được gửi thành công!")}</p>
         )}
         {status === "error" && (
-          <p className="text-sm text-red-500 font-medium text-center">❌ Có lỗi xảy ra, vui lòng thử lại.</p>
+          <p className="text-sm text-red-500 font-medium text-center">{t("❌ Có lỗi xảy ra, vui lòng thử lại.")}</p>
         )}
 
         {/* Submit */}
@@ -177,7 +179,7 @@ function AnimatedCard({ close }: { close: () => void }) {
           disabled={loading}
           className="w-full py-3.5 rounded-full bg-gradient-to-r from-[#37C0FF] to-[#0076FF] text-white font-semibold text-sm hover:opacity-90 active:scale-[0.98] transition-all shadow-[0_4px_20px_rgba(55,192,255,0.35)] disabled:opacity-60 disabled:cursor-not-allowed"
         >
-          {loading ? "Đang gửi..." : "Gửi tin nhắn ngay"}
+          {loading ? t("Đang gửi...") : t("Gửi tin nhắn ngay")}
         </button>
       </div>
     </motion.div>

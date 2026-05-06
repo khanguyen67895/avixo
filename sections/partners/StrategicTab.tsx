@@ -13,9 +13,11 @@ import {
 import Tag from "@/components/ui/tag";
 import { useContactModal } from "@/components/common/contact-context";
 import { CTA } from "./CTA";
+import { useT } from "@/lib/i18n";
 
 export function StrategicTab() {
   const { open } = useContactModal();
+  const t = useT();
   return (
     <div className="w-full">
 
@@ -29,12 +31,10 @@ export function StrategicTab() {
             className="text-center pb-12 mb-12"
           >
             <Text as="h2" className="text-3xl md:text-4xl text-[#1D1D1D] leading-16">
-              AVIXO Đối tác chiến lược dài hạn
+              {t("AVIXO Đối tác chiến lược dài hạn")}
             </Text>
             <p className="text-[#505050] text-base max-w-2xl mx-auto leading-6">
-              AVIXO định hình hệ sinh thái công nghệ đầu tư tài chính thế hệ mới, kết nối giá trị giữa
-              các nhà đầu tư, tổ chức và đối tác chiến lược toàn cầu qua nền tảng Quantum Intelligence.
-              Cung cấp hạ tầng công nghệ và mạng lưới kết nối vượt trội để tối ưu hóa hiệu suất đầu tư.
+              {t("AVIXO định hình hệ sinh thái công nghệ đầu tư tài chính thế hệ mới, kết nối giá trị giữa các nhà đầu tư, tổ chức và đối tác chiến lược toàn cầu qua nền tảng Quantum Intelligence. Cung cấp hạ tầng công nghệ và mạng lưới kết nối vượt trội để tối ưu hóa hiệu suất đầu tư.")}
             </p>
           </motion.div>
 
@@ -50,8 +50,8 @@ export function StrategicTab() {
                 <div className="relative w-48 h-48 shrink-0">
                   <img src={f.icon} alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }} className="object-contain" />
                 </div>
-                <p className="font-bold text-[#1D1D1D] text-lg mt-6 mb-2">{f.title}</p>
-                <p className="text-[#505050] text-base leading-relaxed">{f.desc}</p>
+                <p className="font-bold text-[#1D1D1D] text-lg mt-6 mb-2">{t(f.title)}</p>
+                <p className="text-[#505050] text-base leading-relaxed">{t(f.desc)}</p>
               </motion.div>
             ))}
           </div>
@@ -68,13 +68,13 @@ export function StrategicTab() {
             className="flex-1"
           >
             <Text as="h2" className="text-3xl md:text-4xl text-[#1D1D1D] leading-16">
-              Minh bạch<br />và dữ liệu
+              {t("Minh bạch")}<br />{t("và dữ liệu")}
             </Text>
             <p className="text-[#1D1D1D] text-base mx-auto leading-6 mb-8">
-              Hệ thống báo cáo minh bạch cho phép đối tác tổ chức <br /> truy xuất và thẩm định dữ liệu vận hành thời gian thực.
+              {t("Hệ thống báo cáo minh bạch cho phép đối tác tổ chức truy xuất và thẩm định dữ liệu vận hành thời gian thực.")}
             </p>
             <div className="flex-1">
-              <Button onClick={open} className="w-1/2">Liên hệ kết nối</Button>
+              <Button onClick={open} className="w-1/2">{t("Liên hệ kết nối")}</Button>
             </div>
           </motion.div>
 
@@ -99,8 +99,8 @@ export function StrategicTab() {
                
                 <div className="flex-1 min-w-0 rounded-2xl p-px" style={{ background: "linear-gradient(to bottom, rgba(229,229,229,0.5) 0%, rgba(229,229,229,0) 100%)" }}>
                   <div className="rounded-2xl px-5 py-4 bg-white shadow-sm">
-                    <p className="text-[#505050] text-sm mb-0.5">{s.label}</p>
-                    <Text className="font-semibold text-[#1D1D1D] text-xl md:text-2xl">{s.value}</Text>
+                    <p className="text-[#505050] text-sm mb-0.5">{t(s.label)}</p>
+                    <Text className="font-semibold text-[#1D1D1D] text-xl md:text-2xl">{t(s.value)}</Text>
                   </div>
                 </div>
               </motion.div>
@@ -124,25 +124,25 @@ export function StrategicTab() {
 
             <div className="flex-1 px-10 py-5">
               <Tag bg="bg-[#FFD395]" border="border-[#FFA852]" bordered hasZap={false} className="mb-4 rounded-full">
-                Founder Strategic Network &amp; Partnership
+                {t("Founder Strategic Network & Partnership")}
               </Tag>
               <Text as="h2" className="text-3xl md:text-6xl text-[#1D1D1D] mb-1 leading-18">
-                Trần Đại Nghĩa
+                {t("Trần Đại Nghĩa")}
               </Text>
               <p className="text-[#013989] text-base font-medium mb-5 leading-6">
-                Strategic Partner &amp; Ecosystem Developer
+                {t("Strategic Partner & Ecosystem Developer")}
               </p>
               <p className="text-[#1D1D1D] text-base leading-relaxed mb-8 max-w-lg">
-                {`Với hơn 15 năm kinh nghiệm trong thị trường tài chính quốc tế, ông Trần Đại Nghĩa đóng vai trò là "kiến trúc sư" kết nối hệ sinh thái AVIXO. Ông tập trung vào việc mở rộng mạng lưới đối tác chiến lược tại khu vực Đông Nam Á và Châu Âu, mang lại những cơ hội hợp tác độc quyền cho các tổ chức đầu tư.`}
+                {t("Với hơn 15 năm kinh nghiệm trong thị trường tài chính quốc tế, ông Trần Đại Nghĩa đóng vai trò là \"kiến trúc sư\" kết nối hệ sinh thái AVIXO. Ông tập trung vào việc mở rộng mạng lưới đối tác chiến lược tại khu vực Đông Nam Á và Châu Âu, mang lại những cơ hội hợp tác độc quyền cho các tổ chức đầu tư.")}
               </p>
               <div className="flex gap-12">
                 <div>
                   <Text className="text-[#099CFF] text-2xl font-semibold">200+</Text>
-                  <p className="text-[#505050] text-base">Đối tác và tổ chức</p>
+                  <p className="text-[#505050] text-base">{t("Đối tác và tổ chức")}</p>
                 </div>
                 <div>
                   <Text className="text-[#099CFF] text-2xl font-semibold">15+</Text>
-                  <p className="text-[#505050] text-base">Quốc gia hiện diện</p>
+                  <p className="text-[#505050] text-base">{t("Quốc gia hiện diện")}</p>
                 </div>
               </div>
             </div>
@@ -167,10 +167,10 @@ export function StrategicTab() {
 
             <div className="relative z-10 text-center mb-10">
               <Text as="h2" className="text-3xl md:text-4xl text-white leading-16 mb-4">
-                Mô hình hợp tác
+                {t("Mô hình hợp tác")}
               </Text>
               <p className="text-white text-sm leading-6 max-w-xl mx-auto">
-                Chúng tôi luôn chào đón các đề xuất hợp tác chiến lược mang tính bền vững và tạo ra giá trị thực cho cộng đồng đầu tư.
+                {t("Chúng tôi luôn chào đón các đề xuất hợp tác chiến lược mang tính bền vững và tạo ra giá trị thực cho cộng đồng đầu tư.")}
               </p>
             </div>
 
@@ -188,8 +188,8 @@ export function StrategicTab() {
                     <img src="/images/ic_broker.png" alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }} className="object-contain" />
                   </div>
                   <div>
-                    <p className="font-semibold text-white text-lg mb-1">{m.title}</p>
-                    <p className="text-white text-sm leading-relaxed">{m.desc}</p>
+                    <p className="font-semibold text-white text-lg mb-1">{t(m.title)}</p>
+                    <p className="text-white text-sm leading-relaxed">{t(m.desc)}</p>
                   </div>
                 </motion.div>
               ))}
@@ -198,10 +198,10 @@ export function StrategicTab() {
         </div>
       </div>
 
-      <CTA 
-        title="Bắt đầu hợp tác cùng AVIXO"
-        titleButtonLeft="Liên hệ trao đổi chiến lược"
-        titleButtonRight="Hồ sơ nhà đầu tư" />
+      <CTA
+        title={t("Bắt đầu hợp tác cùng AVIXO")}
+        titleButtonLeft={t("Liên hệ trao đổi chiến lược")}
+        titleButtonRight={t("Hồ sơ nhà đầu tư")} />
 
     </div>
   );
