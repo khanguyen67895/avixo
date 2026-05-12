@@ -44,7 +44,7 @@ const CATEGORY_ENDPOINT: Record<string, string> = {
 
 // ─── Fetch ────────────────────────────────────────────────────────────────────
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:4000";
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
 async function apiFetch<T>(path: string): Promise<T> {
   const res = await fetch(`${BASE_URL}${path}`, { next: { revalidate: 60 } } as RequestInit);
