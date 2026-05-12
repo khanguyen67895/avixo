@@ -22,9 +22,24 @@ export function AboutContact() {
   const [form, setForm] = useState({ name: "", phone: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [errors, setErrors] = useState<{ name?: string; phone?: string; email?: string; message?: string }>({});
+
+  function validate() {
+    const errs: typeof errors = {};
+    if (!form.name.trim()) errs.name = "Vui lòng nhập họ và tên";
+    if (!form.phone.trim()) errs.phone = "Vui lòng nhập số điện thoại";
+    else if (!/^(0\d{9}|\+84\d{9})$/.test(form.phone.replace(/\s/g, ""))) errs.phone = "Số điện thoại không hợp lệ";
+    if (!form.email.trim()) errs.email = "Vui lòng nhập email";
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) errs.email = "Email không hợp lệ";
+    if (!form.message.trim()) errs.message = "Vui lòng nhập nội dung";
+    return errs;
+  }
 
   async function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
     e.preventDefault();
+    const errs = validate();
+    if (Object.keys(errs).length) { setErrors(errs); return; }
+    setErrors({});
     setLoading(true);
     setStatus("idle");
     try {
@@ -93,12 +108,12 @@ export function AboutContact() {
             <div className="flex flex-col gap-1.5">
               <label className="text-sm text-zinc-700">{t("Họ Và Tên")}</label>
               <input
-                required
                 value={form.name}
-                onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
+                onChange={e => { setForm(f => ({ ...f, name: e.target.value })); setErrors(p => ({ ...p, name: undefined })); }}
                 placeholder={t("Tên của bạn")}
-                className="border border-zinc-200 rounded-xl px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-300 focus:outline-none focus:border-[#37C0FF] transition-colors"
+                className={`border rounded-xl px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-300 focus:outline-none transition-colors ${errors.name ? "border-red-400 focus:border-red-400" : "border-zinc-200 focus:border-[#37C0FF]"}`}
               />
+              {errors.name && <p className="text-xs text-red-500">{errors.name}</p>}
             </div>
 
             {/* Phone */}
@@ -107,36 +122,37 @@ export function AboutContact() {
               <input
                 type="tel"
                 value={form.phone}
-                onChange={e => setForm(f => ({ ...f, phone: e.target.value }))}
+                onChange={e => { setForm(f => ({ ...f, phone: e.target.value })); setErrors(p => ({ ...p, phone: undefined })); }}
                 placeholder="0912 345 678"
-                className="border border-zinc-200 rounded-xl px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-300 focus:outline-none focus:border-[#37C0FF] transition-colors"
+                className={`border rounded-xl px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-300 focus:outline-none transition-colors ${errors.phone ? "border-red-400 focus:border-red-400" : "border-zinc-200 focus:border-[#37C0FF]"}`}
               />
+              {errors.phone && <p className="text-xs text-red-500">{errors.phone}</p>}
             </div>
 
             {/* Email */}
             <div className="flex flex-col gap-1.5">
               <label className="text-sm text-zinc-700">{t("Email Liên hệ")}</label>
               <input
-                required
                 type="email"
                 value={form.email}
-                onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
+                onChange={e => { setForm(f => ({ ...f, email: e.target.value })); setErrors(p => ({ ...p, email: undefined })); }}
                 placeholder="name@gmail.com"
-                className="border border-zinc-200 rounded-xl px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-300 focus:outline-none focus:border-[#37C0FF] transition-colors"
+                className={`border rounded-xl px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-300 focus:outline-none transition-colors ${errors.email ? "border-red-400 focus:border-red-400" : "border-zinc-200 focus:border-[#37C0FF]"}`}
               />
+              {errors.email && <p className="text-xs text-red-500">{errors.email}</p>}
             </div>
 
             {/* Message */}
             <div className="flex flex-col gap-1.5">
               <label className="text-sm text-zinc-700">{t("Nội dung")}</label>
               <textarea
-                required
                 rows={4}
                 value={form.message}
-                onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
+                onChange={e => { setForm(f => ({ ...f, message: e.target.value })); setErrors(p => ({ ...p, message: undefined })); }}
                 placeholder={t("nội dung tin nhắn")}
-                className="border border-zinc-200 rounded-xl px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-300 focus:outline-none focus:border-[#37C0FF] transition-colors resize-none"
+                className={`border rounded-xl px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-300 focus:outline-none transition-colors resize-none ${errors.message ? "border-red-400 focus:border-red-400" : "border-zinc-200 focus:border-[#37C0FF]"}`}
               />
+              {errors.message && <p className="text-xs text-red-500">{errors.message}</p>}
             </div>
 
             {status === "success" && (

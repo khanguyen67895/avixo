@@ -20,9 +20,23 @@ function AnimatedCard({ close }: { close: () => void }) {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [errors, setErrors] = useState<{ name?: string; phone?: string; email?: string; message?: string }>({});
+
+  function validate() {
+    const errs: typeof errors = {};
+    if (!name.trim()) errs.name = "Vui lòng nhập họ và tên";
+    if (!phone.trim()) errs.phone = "Vui lòng nhập số điện thoại";
+    else if (!/^(0\d{9}|\+84\d{9})$/.test(phone.replace(/\s/g, ""))) errs.phone = "Số điện thoại không hợp lệ";
+    if (!email.trim()) errs.email = "Vui lòng nhập email";
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errs.email = "Email không hợp lệ";
+    if (!message.trim()) errs.message = "Vui lòng nhập nội dung";
+    return errs;
+  }
 
   async function handleSubmit() {
-    if (!name.trim() || !email.trim() || !message.trim()) return;
+    const errs = validate();
+    if (Object.keys(errs).length) { setErrors(errs); return; }
+    setErrors({});
     setLoading(true);
     setStatus("idle");
     try {
@@ -124,9 +138,10 @@ function AnimatedCard({ close }: { close: () => void }) {
             type="text"
             placeholder={t("Tên của bạn")}
             value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="w-full rounded-xl border border-zinc-200 px-4 py-3 text-sm text-zinc-800 placeholder:text-zinc-400 outline-none focus:border-[#37C0FF] focus:ring-1 focus:ring-[#37C0FF]/30 transition bg-white/90"
+            onChange={(e) => { setName(e.target.value); setErrors(p => ({ ...p, name: undefined })); }}
+            className={`w-full rounded-xl border px-4 py-3 text-sm text-zinc-800 placeholder:text-zinc-400 outline-none focus:ring-1 transition bg-white/90 ${errors.name ? "border-red-400 focus:border-red-400 focus:ring-red-200" : "border-zinc-200 focus:border-[#37C0FF] focus:ring-[#37C0FF]/30"}`}
           />
+          {errors.name && <p className="mt-1 text-xs text-red-500">{errors.name}</p>}
         </div>
 
         {/* Phone */}
@@ -136,9 +151,10 @@ function AnimatedCard({ close }: { close: () => void }) {
             type="tel"
             placeholder="0912 345 678"
             value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            className="w-full rounded-xl border border-zinc-200 px-4 py-3 text-sm text-zinc-800 placeholder:text-zinc-400 outline-none focus:border-[#37C0FF] focus:ring-1 focus:ring-[#37C0FF]/30 transition bg-white/90"
+            onChange={(e) => { setPhone(e.target.value); setErrors(p => ({ ...p, phone: undefined })); }}
+            className={`w-full rounded-xl border px-4 py-3 text-sm text-zinc-800 placeholder:text-zinc-400 outline-none focus:ring-1 transition bg-white/90 ${errors.phone ? "border-red-400 focus:border-red-400 focus:ring-red-200" : "border-zinc-200 focus:border-[#37C0FF] focus:ring-[#37C0FF]/30"}`}
           />
+          {errors.phone && <p className="mt-1 text-xs text-red-500">{errors.phone}</p>}
         </div>
 
         {/* Email */}
@@ -148,9 +164,10 @@ function AnimatedCard({ close }: { close: () => void }) {
             type="email"
             placeholder="name@gmail.com"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="w-full rounded-xl border border-zinc-200 px-4 py-3 text-sm text-zinc-800 placeholder:text-zinc-400 outline-none focus:border-[#37C0FF] focus:ring-1 focus:ring-[#37C0FF]/30 transition bg-white/90"
+            onChange={(e) => { setEmail(e.target.value); setErrors(p => ({ ...p, email: undefined })); }}
+            className={`w-full rounded-xl border px-4 py-3 text-sm text-zinc-800 placeholder:text-zinc-400 outline-none focus:ring-1 transition bg-white/90 ${errors.email ? "border-red-400 focus:border-red-400 focus:ring-red-200" : "border-zinc-200 focus:border-[#37C0FF] focus:ring-[#37C0FF]/30"}`}
           />
+          {errors.email && <p className="mt-1 text-xs text-red-500">{errors.email}</p>}
         </div>
 
         {/* Message */}
@@ -160,9 +177,10 @@ function AnimatedCard({ close }: { close: () => void }) {
             placeholder={t("nội dung tin nhắn")}
             rows={4}
             value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            className="w-full rounded-xl border border-zinc-200 px-4 py-3 text-sm text-zinc-800 placeholder:text-zinc-400 outline-none focus:border-[#37C0FF] focus:ring-1 focus:ring-[#37C0FF]/30 transition resize-none bg-white/90"
+            onChange={(e) => { setMessage(e.target.value); setErrors(p => ({ ...p, message: undefined })); }}
+            className={`w-full rounded-xl border px-4 py-3 text-sm text-zinc-800 placeholder:text-zinc-400 outline-none focus:ring-1 transition resize-none bg-white/90 ${errors.message ? "border-red-400 focus:border-red-400 focus:ring-red-200" : "border-zinc-200 focus:border-[#37C0FF] focus:ring-[#37C0FF]/30"}`}
           />
+          {errors.message && <p className="mt-1 text-xs text-red-500">{errors.message}</p>}
         </div>
 
         {/* Status messages */}
