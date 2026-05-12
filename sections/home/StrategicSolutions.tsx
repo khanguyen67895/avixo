@@ -32,9 +32,9 @@ export function StrategicSolutions() {
           className="text-center mt-10"
         >
           <Text as="h2" className="text-3xl md:text-4xl tracking-tight text-[#1D1D1D] leading-16">
-            {t("Giải pháp chiến lược")}
+            {t("Giải Pháp Chiến Lược")}
           </Text>
-          <p className="max-w-2xl mx-auto text-base text-[#505050] leading-6">
+          <p className="max-w-2xl mx-auto text-base text-[#131313] leading-6">
             {t("Các thuật toán được tinh chỉnh qua 15 năm thực chiến trên thị trường quốc tế.")}
           </p>
         </motion.div>

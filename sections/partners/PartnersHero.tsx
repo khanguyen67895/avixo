@@ -24,7 +24,7 @@ export function PartnersHero() {
           className="flex-1 flex flex-col px-6 md:pl-80"
         >
           <Text as="h1" className="text-5xl md:text-6xl text-white leading-tight mb-4">
-            {t("AVIXO Giải pháp")}<br />{t("đầu tư ứng dụng")}<br />
+            {t("AVIXO Giải Pháp")}<br />{t("Đầu Tư Ứng Dụng")}<br />
             <span className="bg-linear-to-r from-[#37C0FF] to-[#0076FF] bg-clip-text text-transparent">
               {t("Big Data & AI")}
             </span>

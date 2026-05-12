@@ -26,9 +26,9 @@ export function IBTab() {
             className="text-center pb-12 mb-12"
           >
             <Text as="h2" className="text-3xl md:text-4xl text-[#1D1D1D] leading-16">
-              {t("AVIXO phục vụ cộng đồng IB toàn cầu")}
+              {t("AVIXO Phục Vụ Cộng Đồng IB Toàn Cầu")}
             </Text>
-            <p className="text-[#505050] text-base max-w-2xl mx-auto leading-6">
+            <p className="text-[#131313] text-base max-w-2xl mx-auto leading-6">
               {t("Nền tảng hội tụ công nghệ Quant Trading, hệ thống traffic và mạng lưới chiến lược để nâng tầm sự nghiệp IB của bạn.")}
             </p>
           </motion.div>
@@ -46,7 +46,7 @@ export function IBTab() {
                   <img src={f.icon} alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }} className="object-contain" />
                 </div>
                 <p className="font-bold text-[#1D1D1D] text-lg mt-6 mb-2">{t(f.title)}</p>
-                <p className="text-[#505050] text-base leading-relaxed">{t(f.desc)}</p>
+                <p className="text-[#131313] text-base leading-relaxed">{t(f.desc)}</p>
               </motion.div>
             ))}
           </div>
@@ -64,9 +64,9 @@ export function IBTab() {
           className="text-center mb-20"
         >
           <Text as="h2" className="text-3xl md:text-4xl text-[#1D1D1D] leading-16">
-            {t("Giá trị hệ sinh thái cho IB")}
+            {t("Giá Trị Hệ Sinh Thái Cho IB")}
           </Text>
-          <p className="text-[#505050] text-base max-w-2xl mx-auto leading-6">
+          <p className="text-[#131313] text-base max-w-2xl mx-auto leading-6">
             {t("Định vị vai trò và tối ưu hóa lợi thế cạnh tranh của bạn trong thị trường tài chính hiện đại.")}
           </p>
         </motion.div>
@@ -109,9 +109,9 @@ export function IBTab() {
               {t("IB Solution Toolset")}
             </Text>
             <Text as="h2" className="text-3xl md:text-4xl leading-8 mb-5">
-              <span className="bg-linear-to-r from-[#37C0FF] to-[#0076FF] bg-clip-text text-transparent">{t("Hệ thống phễu")} <br />{t("Công cụ")}</span>
+              <span className="bg-linear-to-r from-[#37C0FF] to-[#0076FF] bg-clip-text text-transparent">{t("Hệ Thống Phễu")} <br />{t("Công Cụ")}</span>
             </Text>
-            <p className="text-[#505050] text-base leading-5 mb-8 max-w-xs">
+            <p className="text-[#131313] text-base leading-5 mb-8 max-w-xs">
               {t("Cung cấp kho vũ khí công nghệ để IB chăm sóc khách hàng và tối ưu tỷ lệ chuyển đổi hiệu quả nhất.")}
             </p>
             <div className="flex-1">
@@ -139,13 +139,13 @@ export function IBTab() {
                 <img src={tool.icon} alt="" className="shrink-0 w-24 h-24 object-contain" />
                 <div className="rounded-2xl px-5 py-4 border border-[#E5E5E5] shadow-sm">
                   <p className="font-semibold text-[#1D1D1D] text-lg mb-1 leading-8">{t(tool.title)}</p>
-                  <p className="text-[#505050] text-sm leading-5">{t(tool.desc)}</p>
+                  <p className="text-[#131313] text-sm leading-5">{t(tool.desc)}</p>
                 </div>
               </motion.div>
             ))}
           </motion.div>
         </div>
-      {/* ── Section: Minh bạch & Tuân thủ ── */}
+      {/* ── Section: Minh Bạch & Tuân Thủ ── */}
         <div className="relative z-10 max-w-5xl mx-auto px-6 py-20">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -161,7 +161,7 @@ export function IBTab() {
             />
             <div className="text-center mb-10">
               <Text as="h2" className="text-3xl md:text-4xl text-white mb-4 leading-8">
-                {t("Minh bạch & Tuân thủ")}
+                {t("Minh Bạch & Tuân Thủ")}
               </Text>
               <p className="text-white text-sm leading-5">
                 {t("Tại AVIXO, chúng tôi cam kết cung cấp dữ liệu xác thực, được kiểm chứng qua các nền tảng Myfxbook công khai. Mọi thuật toán đều dựa trên logic toán học, không phải phỏng đoán.")}
@@ -194,7 +194,7 @@ export function IBTab() {
         </div>
 
       <CTA
-        title={t("Nâng tầm sự nghiệp?")}
+        title={t("Nâng Tầm Sự Nghiệp?")}
         titleButtonLeft={t("Liên hệ hợp tác")}
         titleButtonRight={t("Xem pháp lý và minh bạch")} />
     </div>

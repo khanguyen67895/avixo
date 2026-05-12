@@ -19,8 +19,8 @@ export function CTA() {
           transition={{ duration: 0.6 }}
         >
           <Text as="h2" className="text-4xl md:text-5xl tracking-tight text-white mb-8">
-            {t("Giữ kết nối với")} <br className="hidden sm:block" />
-            <span className="text-[#00b4ff]">{t("Tương lai tài chính")}</span>
+            {t("Giữ Kết Nối Với")} <br className="hidden sm:block" />
+            <span className="text-[#00b4ff]">{t("Tương Lai Tài Chính")}</span>
           </Text>
         </motion.div>
 

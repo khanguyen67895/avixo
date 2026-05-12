@@ -40,9 +40,9 @@ export function HowItWorks() {
           className="text-center mb-12 md:mb-20"
         >
           <Text className="text-2xl sm:text-3xl md:text-4xl tracking-tight text-[#1D1D1D] mb-4">
-            {t("Phương thức hoạt động của AVIXO")}
+            {t("Phương Thức Hoạt Động Của AVIXO")}
           </Text>
-          <p className="max-w-2xl mx-auto text-sm text-[#505050] px-2">
+          <p className="max-w-2xl mx-auto text-sm text-[#131313] px-2">
             {t("Chúng tôi không chỉ cung cấp công cụ, chúng tôi xây dựng một nền tảng tư duy và công nghệ bền vững cho sự thịnh vượng tài chính toàn cầu.")}
           </p>
         </motion.div>
@@ -235,7 +235,7 @@ export function HowItWorks() {
                 <Text as="h3" className="text-2xl md:text-2xl font-semibold text-[#1D1D1D] mb-4 leading-8">
                   {t(steps[active].title)}
                 </Text>
-                <p className="text-[#505050] text-base leading-relaxed max-w-xs">
+                <p className="text-[#131313] text-base leading-relaxed max-w-xs">
                   {t(steps[active].desc)}
                 </p>
               </motion.div>

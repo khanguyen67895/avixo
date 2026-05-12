@@ -29,9 +29,9 @@ export function InvestorTab() {
             className="text-center pb-12 mb-12"
           >
             <Text as="h2" className="text-3xl md:text-4xl text-[#1D1D1D] leading-16">
-              {t("Nhà đầu tư được gì từ AVIXO?")}
+              {t("Nhà Đầu Tư Được Gì Từ AVIXO?")}
             </Text>
-            <p className="text-[#505050] text-base max-w-2xl mx-auto leading-6">
+            <p className="text-[#131313] text-base max-w-2xl mx-auto leading-6">
               {t("Phục vụ nhà đầu tư cá nhân với độ chính xác lượng tử, tối ưu hóa lợi nhuận thông qua phân tích dữ liệu thời gian thực và quản trị rủi ro tự động.")}
             </p>
           </motion.div>
@@ -49,7 +49,7 @@ export function InvestorTab() {
                   <img src={f.icon} alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }} className="object-contain" />
                 </div>
                 <p className="font-bold text-[#1D1D1D] text-lg mt-6 mb-2">{t(f.title)}</p>
-                <p className="text-[#505050] text-base leading-relaxed">{t(f.desc)}</p>
+                <p className="text-[#131313] text-base leading-relaxed">{t(f.desc)}</p>
               </motion.div>
             ))}
           </div>
@@ -66,9 +66,9 @@ export function InvestorTab() {
           className="relative z-10"
         >
           <Text as="h2" className="text-3xl md:text-4xl text-[#1D1D1D] leading-16">
-            {t("Sản phẩm dành cho bạn")}
+            {t("Sản Phẩm Dành Cho Bạn")}
           </Text>
-          <p className="text-[#505050] text-base max-w-2xl mx-auto leading-6">
+          <p className="text-[#131313] text-base max-w-2xl mx-auto leading-6">
             {t("Cá nhân hóa lộ trình đầu tư dựa trên mục tiêu tài chính và khẩu vị rủi ro của bạn.")}
           </p>
         </motion.div>
@@ -105,7 +105,7 @@ export function InvestorTab() {
               <Text as="h3" className="text-2xl md:text-2xl font-semibold text-[#1D1D1D] mb-3 leading-8">
                 {t(p.title)}
               </Text>
-              <p className="text-[#505050] text-sm md:text-base leading-5 mb-6 max-w-sm">
+              <p className="text-[#131313] text-sm md:text-base leading-5 mb-6 max-w-sm">
                 {t(p.desc)}
               </p>
               <div className="flex flex-wrap gap-2 mb-8">
@@ -147,7 +147,7 @@ export function InvestorTab() {
               <Text as="h2" className="text-2xl md:text-2xl font-semibold text-[#1D1D1D] mb-3 leading-8">
                 {t("Những gì cần hiểu trước khi sử dụng")}
               </Text>
-              <p className="text-[#505050] text-sm leading-5 max-w-xl mx-auto">
+              <p className="text-[#131313] text-sm leading-5 max-w-xl mx-auto">
                 {t("Tại AVIXO, chúng tôi ưu tiên sự minh bạch và trách nhiệm. Đầu tư tài chính luôn đi kèm với những biến động không lường trước được.")}
               </p>
             </div>
@@ -179,9 +179,9 @@ export function InvestorTab() {
         </div>
       </GlowBackground>
       <CTA
-        title={t("Sẵn sàng để tối ưu hóa \n danh mục đầu tư?")}
-        titleButtonLeft={t("Xem giải pháp")}
-        titleButtonRight={t("Đăng ký tư vấn")} />
+        title={t("Sẵn Sàng Để Tối Ưu Hóa \n Danh Mục Đầu Tư?")}
+        titleButtonLeft={t("Xem Giải Pháp")}
+        titleButtonRight={t("Đăng Ký Tư Vấn")} />
     </div>
   );
 }

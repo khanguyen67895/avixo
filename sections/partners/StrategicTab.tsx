@@ -31,9 +31,9 @@ export function StrategicTab() {
             className="text-center pb-12 mb-12"
           >
             <Text as="h2" className="text-3xl md:text-4xl text-[#1D1D1D] leading-16">
-              {t("AVIXO Đối tác chiến lược dài hạn")}
+              {t("AVIXO Đối Tác Chiến Lược Dài Hạn")}
             </Text>
-            <p className="text-[#505050] text-base max-w-2xl mx-auto leading-6">
+            <p className="text-[#131313] text-base max-w-2xl mx-auto leading-6">
               {t("AVIXO định hình hệ sinh thái công nghệ đầu tư tài chính thế hệ mới, kết nối giá trị giữa các nhà đầu tư, tổ chức và đối tác chiến lược toàn cầu qua nền tảng Quantum Intelligence. Cung cấp hạ tầng công nghệ và mạng lưới kết nối vượt trội để tối ưu hóa hiệu suất đầu tư.")}
             </p>
           </motion.div>
@@ -51,7 +51,7 @@ export function StrategicTab() {
                   <img src={f.icon} alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }} className="object-contain" />
                 </div>
                 <p className="font-bold text-[#1D1D1D] text-lg mt-6 mb-2">{t(f.title)}</p>
-                <p className="text-[#505050] text-base leading-relaxed">{t(f.desc)}</p>
+                <p className="text-[#131313] text-base leading-relaxed">{t(f.desc)}</p>
               </motion.div>
             ))}
           </div>
@@ -68,7 +68,7 @@ export function StrategicTab() {
             className="flex-1"
           >
             <Text as="h2" className="text-3xl md:text-4xl text-[#1D1D1D] leading-16">
-              {t("Minh bạch")}<br />{t("và dữ liệu")}
+              {t("Minh Bạch")}<br />{t("Và Dữ Liệu")}
             </Text>
             <p className="text-[#1D1D1D] text-base mx-auto leading-6 mb-8">
               {t("Hệ thống báo cáo minh bạch cho phép đối tác tổ chức truy xuất và thẩm định dữ liệu vận hành thời gian thực.")}
@@ -99,7 +99,7 @@ export function StrategicTab() {
                
                 <div className="flex-1 min-w-0 rounded-2xl p-px" style={{ background: "linear-gradient(to bottom, rgba(229,229,229,0.5) 0%, rgba(229,229,229,0) 100%)" }}>
                   <div className="rounded-2xl px-5 py-4 bg-white shadow-sm">
-                    <p className="text-[#505050] text-sm mb-0.5">{t(s.label)}</p>
+                    <p className="text-[#131313] text-sm mb-0.5">{t(s.label)}</p>
                     <Text className="font-semibold text-[#1D1D1D] text-xl md:text-2xl">{t(s.value)}</Text>
                   </div>
                 </div>
@@ -138,11 +138,11 @@ export function StrategicTab() {
               <div className="flex gap-12">
                 <div>
                   <Text className="text-[#099CFF] text-2xl font-semibold">200+</Text>
-                  <p className="text-[#505050] text-base">{t("Đối tác và tổ chức")}</p>
+                  <p className="text-[#131313] text-base">{t("Đối tác và tổ chức")}</p>
                 </div>
                 <div>
                   <Text className="text-[#099CFF] text-2xl font-semibold">15+</Text>
-                  <p className="text-[#505050] text-base">{t("Quốc gia hiện diện")}</p>
+                  <p className="text-[#131313] text-base">{t("Quốc gia hiện diện")}</p>
                 </div>
               </div>
             </div>
@@ -150,7 +150,7 @@ export function StrategicTab() {
         </div>
       {/* </GlowBackground> */}
 
-      {/* ── Section 4: Mô hình hợp tác ── */}
+      {/* ── Section 4: Mô Hình Hợp Tác ── */}
       <div className="w-full bg-white">
         <div className="max-w-6xl mx-auto px-10 pb-20">
           <motion.div
@@ -167,7 +167,7 @@ export function StrategicTab() {
 
             <div className="relative z-10 text-center mb-10">
               <Text as="h2" className="text-3xl md:text-4xl text-white leading-16 mb-4">
-                {t("Mô hình hợp tác")}
+                {t("Mô Hình Hợp Tác")}
               </Text>
               <p className="text-white text-sm leading-6 max-w-xl mx-auto">
                 {t("Chúng tôi luôn chào đón các đề xuất hợp tác chiến lược mang tính bền vững và tạo ra giá trị thực cho cộng đồng đầu tư.")}
@@ -199,7 +199,7 @@ export function StrategicTab() {
       </div>
 
       <CTA
-        title={t("Bắt đầu hợp tác cùng AVIXO")}
+        title={t("Bắt Đầu Hợp Tác Cùng AVIXOs")}
         titleButtonLeft={t("Liên hệ trao đổi chiến lược")}
         titleButtonRight={t("Hồ sơ nhà đầu tư")} />
 

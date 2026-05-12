@@ -25,7 +25,7 @@ export function Coaching() {
           <Text as="h2" className="text-3xl md:text-4xl text-[#1D1D1D] leading-16">
             {t("AI Trade Coaching 1:1")}
           </Text>
-          <p className="text-[#505050] text-base md:text-lg max-w-2xl mx-auto">
+          <p className="text-[#131313] text-base md:text-lg max-w-2xl mx-auto">
             {t("Phù hợp với nhà đầu tư mới hoặc người cần sự đồng hành, huấn luyện cá nhân hóa để xây dựng sự nghiệp trading bền vững.")}
           </p>
         </motion.div>
@@ -41,9 +41,9 @@ export function Coaching() {
           className="flex-1"
         >
           <Text as="h3" className="text-xl md:text-2xl font-semibold text-[#1D1D1D] mb-2">
-            {t("Cá nhân hóa theo chuẩn quỹ")}
+            {t("Cá Nhân Hóa Theo Chuẩn Quỹ")}
           </Text>
-          <p className="text-[#505050] text-sm leading-relaxed mb-8">
+          <p className="text-[#131313] text-sm leading-relaxed mb-8">
             {t("Sự kết hợp hoàn hảo giữa trí tuệ nhân tạo (GPT) và chuyên gia đầu tư để huấn luyện cá nhân hóa theo phong cách giao dịch, quy mô vốn và mục tiêu riêng biệt của từng nhà đầu tư.")}
           </p>
 
@@ -54,7 +54,7 @@ export function Coaching() {
            
                 <div>
                   <p className="font-semibold text-[#1D1D1D] text-lg">{t(f.title)}</p>
-                  <p className="text-[#505050] text-sm mt-0.5">{t(f.desc)}</p>
+                  <p className="text-[#131313] text-sm mt-0.5">{t(f.desc)}</p>
                 </div>
               </div>
             ))}
@@ -64,7 +64,7 @@ export function Coaching() {
             {["1:1 Mentoring", "Risk Management", "Scalp"].map(tag => <Tag bordered hasZap={false} key={tag}>{tag}</Tag>)}
           </div>
           <div className="flex-1">
-            <Button onClick={open} className="w-3/4">{t("Huấn luyện chuyên sâu ngay")}</Button>
+            <Button onClick={open} className="w-3/4">{t("Huấn Luyện Chuyên Sâu Ngay")}</Button>
           </div>
         </motion.div>
 
@@ -97,7 +97,7 @@ export function Coaching() {
               {/* text */}
               <div className="md:w-112.25 pb-6 p-4 bg-neutral-50 rounded-[20px] outline-1 -outline-offset-1 outline-neutral-200 flex flex-col gap-2">
                 <p className="font-semibold text-[#1D1D1D] text-lg leading-8">{t(s.title)}</p>
-                <p className="text-[#505050] text-sm leading-5">{t(s.desc)}</p>
+                <p className="text-[#131313] text-sm leading-5">{t(s.desc)}</p>
               </div>
             </motion.div>
           ))}

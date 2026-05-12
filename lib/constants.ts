@@ -13,17 +13,17 @@ import {
 export const investorFeatures = [
   {
     icon: "/images/ic_analysis.png",
-    title: "Phân tích Real-time",
+    title: "Phân Tích Real-time",
     desc: "Công cụ công nghệ cao giúp phân tích thị trường, hiệu suất và quản trị rủi ro ngay lập tức theo thời gian thực (Real-time).",
   },
   {
     icon: "/images/ic_mindset_tab1.png",
-    title: "Tư duy Chuyên nghiệp",
+    title: "Tư Duy Chuyên Nghiệp",
     desc: "Chương trình đào tạo tư duy đầu tư chuyên nghiệp, giúp nhà đầu tư cá nhân tiếp cận các chiến lược của các quỹ lớn.",
   },
   {
     icon: "/images/ic_support_ai.png",
-    title: "Hỗ trợ AI & Chuyên gia",
+    title: "Hỗ Trợ AI & Chuyên Gia",
     desc: "Sự kết hợp hoàn hảo giữa trí tuệ nhân tạo và kinh nghiệm thực chiến từ các chuyên gia tài chính hàng đầu.",
   },
 ];
@@ -32,7 +32,7 @@ export const investorProducts = [
   {
     img: "/images/ic_bg_application_ai.png",
     imgLeft: true,
-    title: "Hỗ trợ phân tích",
+    title: "Hỗ Trợ Phân Tích",
     desc: "Tăng cường khả năng phán đoán thị trường bằng bộ công cụ theo dấu dòng tiền lớn.",
     tags: ["Semi Boomerang", "Smart Money"],
     cta: "Download now",
@@ -40,7 +40,7 @@ export const investorProducts = [
   {
     img: "/images/ic_bg_application_ai1.png",
     imgLeft: false,
-    title: "Bot tự động & Kiểm soát",
+    title: "Bot Tự Động & Kiểm Soát",
     desc: "Vận hành chiến lược 24/7 với cơ chế kiểm soát drawdown nghiêm ngặt theo tham số cá nhân.",
     tags: ["AUTO BMR & SMN", "Arrow Big Trend"],
     cta: "Download now",
@@ -48,7 +48,7 @@ export const investorProducts = [
   {
     img: "/images/ic_bg_mindset.png",
     imgLeft: true,
-    title: "Coaching cá nhân hóa",
+    title: "Coaching Cá Nhân Hóa",
     desc: "Làm việc trực tiếp cùng chuyên gia và AI để tinh chỉnh hệ thống giao dịch của riêng bạn.",
     tags: ["AI Trade Coaching 1:1"],
     cta: "Đăng ký ngay",
@@ -67,17 +67,17 @@ export const riskItems = [
 export const ibHighlights = [
   {
     icon: "/images/ic_connect_global.png",
-    title: "Kết nối toàn cầu",
+    title: "Kết Nối Toàn Cầu",
     desc: "Kết nối cộng đồng IB Việt Nam với thị trường tài chính toàn cầu thông qua các tiêu chuẩn vận hành quốc tế.",
   },
   {
     icon: "/images/ic_platform.png",
-    title: "Nền tảng hội tụ",
+    title: "Nền Tảng Hội Tụ",
     desc: "Sự kết hợp hoàn hảo giữa Quant Trading Technology, hệ thống Traffic mạnh mẽ và Strategic Network chiều sâu.",
   },
   {
     icon: "/images/ic_scale.png",
-    title: "Quy mô ấn tượng",
+    title: "Quy Mô Ấn Tượng",
     desc: "Gia nhập hệ sinh thái với hơn 63K+ trader và mạng lưới IB tinh hoa trên toàn thế giới.",
   },
 ];
@@ -127,7 +127,7 @@ export const ibTools = [
   {
     Icon: GraduationCap,
     icon: "/images/ic_global_border.png",
-    title: "Coaching cá nhân hóa",
+    title: "Coaching Cá Nhân Hóa",
     desc: "Làm việc trực tiếp cùng chuyên gia để tinh chỉnh hệ thống giao dịch của riêng bạn.",
   },
 ];
@@ -163,12 +163,12 @@ export const strategicStats = [
 export const strategicCoopModels = [
   {
     Icon: ShieldCheck,
-    title: "Tuân thủ Pháp lý",
+    title: "Tuân Thủ Pháp Lý",
     desc: "AVIXO hoạt động với tư cách đơn vị cung cấp giải pháp công nghệ (Tech Provider), đảm bảo sự minh bạch và tuân thủ các khung pháp lý hiện hành tại Việt Nam.",
   },
   {
     Icon: Globe,
-    title: "Kết nối Broker Quốc tế",
+    title: "Kết Nối Broker Quốc Tế",
     desc: "Chúng tôi chỉ hợp tác với các nhà môi giới được cấp phép bởi ASIC, FCA, CySEC, đảm bảo an toàn vốn tối đa cho người dùng cuối.",
   },
 ];
@@ -176,9 +176,9 @@ export const strategicCoopModels = [
 // ─── Partners / Partners tabs ─────────────────────────────────────────────────
 
 export const PARTNERS_TABS = [
-  { id: "investor", label: "Nhà đầu tư" },
-  { id: "ib", label: "Cộng đồng IB" },
-  { id: "strategic", label: "Đối tác chiến lược" },
+  { id: "investor", label: "Nhà Đầu Tư" },
+  { id: "ib", label: "Cộng Đồng IB" },
+  { id: "strategic", label: "Đối Tác Chiến Lược" },
 ] as const;
 
 export type PartnersTabId = (typeof PARTNERS_TABS)[number]["id"];
@@ -206,15 +206,15 @@ export const semiBotFeatures = [
 // ─── Solutions / Coaching ─────────────────────────────────────────────────────
 
 export const coachingSteps = [
-  { icon: "/images/ic_global_border1.png", title: "Đánh giá năng lực",    desc: "Phân tích lịch sử giao dịch bằng AI để tìm ra điểm yếu." },
-  { icon: "/images/ic_mindset.png",         title: "Thiết lập chiến lược", desc: "Xây dựng hệ thống giao dịch phù hợp với tính cách." },
-  { icon: "/images/ic_global_border.png",        title: "Thực chiến 1:1",       desc: "Giao dịch trực tiếp dưới sự giám sát của chuyên gia." },
-  { icon: "/images/ic_global_border.png",        title: "Tối ưu hiệu suất",     desc: "Đánh giá định kỳ và tinh chỉnh thuật toán cá nhân." },
+  { icon: "/images/ic_global_border1.png", title: "Đánh Giá Năng Lực",    desc: "Phân tích lịch sử giao dịch bằng AI để tìm ra điểm yếu." },
+  { icon: "/images/ic_mindset.png",         title: "Thiết Lập Chiến Lược", desc: "Xây dựng hệ thống giao dịch phù hợp với tính cách." },
+  { icon: "/images/ic_global_border.png",        title: "Thực Chiến 1:1",       desc: "Giao dịch trực tiếp dưới sự giám sát của chuyên gia." },
+  { icon: "/images/ic_global_border.png",        title: "Tối Ưu Hiệu Suất",     desc: "Đánh giá định kỳ và tinh chỉnh thuật toán cá nhân." },
 ];
 
 export const coachingLeftFeatures = [
-  { icon: "/images/ic_mentality.png", title: "Tâm lý giao dịch", desc: "Kiểm soát cảm xúc bằng AI phân tích hành vi." },
-  { icon: "/images/ic_manage.png",    title: "Quản trị rủi ro",  desc: "Kiểm soát cảm xúc bằng AI phân tích hành vi." },
+  { icon: "/images/ic_mentality.png", title: "Tâm Lý Giao Dịch", desc: "Kiểm soát cảm xúc bằng AI phân tích hành vi." },
+  { icon: "/images/ic_manage.png",    title: "Quản Trị Rủi Ro",  desc: "Kiểm soát cảm xúc bằng AI phân tích hành vi." },
 ];
 
 // ─── Home / StrategicSolutions ────────────────────────────────────────────────
@@ -275,7 +275,7 @@ export const howItWorksSteps = [
   {
     bg: "/images/ic_bg_application_ai.png",
     line: "/images/ic_line_application_ai.png",
-    title: "Ứng dụng công nghệ AI và Big data",
+    title: "Ứng Dụng Công Nghệ AI Và Big Data",
     desc: "Khai thác sức mạnh của Big Data và AI để phân tích hàng triệu biến số thị trường trong thời gian thực, loại bỏ hoàn toàn yếu tố cảm xúc trong quyết định đầu tư.",
     Icon: Cpu,
     stepIcon: "/images/ic_global_border1.png",
@@ -283,7 +283,7 @@ export const howItWorksSteps = [
   {
     bg: "/images/ic_bg_mindset.png",
     line: "/images/ic_line_mindset.png",
-    title: "Huấn luyện tư duy đầu tư chuyên nghiệp",
+    title: "Huấn Luyện Tư Duy Đầu Tư Chuyên Nghiệp",
     desc: "Chuyển giao phương pháp luận và tư duy định lượng cho cộng đồng, giúp nhà đầu tư làm chủ tài chính một cách khoa học.",
     Icon: Brain,
     stepIcon: "/images/ic_global_border2.png",
@@ -291,7 +291,7 @@ export const howItWorksSteps = [
   {
     bg: "/images/ic_bg_ibglobal.png",
     line: "/images/ic_line_ibglobal.png",
-    title: "Phát triển mạng lưới IB Global",
+    title: "Phát Triển Mạng Lưới IB Global",
     desc: "Xây dựng hệ sinh thái liên kết toàn cầu, hỗ trợ các đối tác phát triển bền vững dựa trên giá trị thực và tính minh bạch tuyệt đối.",
     Icon: Globe,
     stepIcon: "/images/ic_global_border.png",
@@ -314,13 +314,13 @@ export const homeFounders = [
   },
   {
     name: "Nguyễn Quang Việt",
-    role: "Xây dựng mạng lưới IB toàn cầu",
+    role: "Xây Dựng Mạng Lưới IB Toàn Cầu",
     desc: "Nhà sáng lập Interlink Community. Chuyên gia phát triển traffic và hệ thống khách hàng quy mô lớn.",
     avatar: "/images/ic_profile2.png",
   },
   {
     name: "Trần Đại Nghĩa",
-    role: "Mở rộng quan hệ đối tác quốc tế",
+    role: "Mở Rộng Quan Hệ Đối Tác Quốc Tế",
     desc: "Chuyên gia kết nối nhà đầu tư và đối tác chiến lược. Xây dựng network đầu tư và hệ sinh thái tài chính.",
     avatar: "/images/ic_profile3.png",
   },
@@ -383,7 +383,7 @@ export const trackRecords = [
 export const trackPhilosophyFeatures = [
   {
     icon: "/images/ic_philosophy1.png",
-    title: "Xác thực 100%",
+    title: "Xác Thực 100%",
     desc: "Mọi con số đều có thể kiểm chứng thông qua các cổng dữ liệu độc lập và báo cáo kiểm toán nội bộ.",
   },
   {
@@ -398,7 +398,7 @@ export const trackPhilosophyFeatures = [
   },
   {
     icon: "/images/ic_philosophy4.png",
-    title: "Nguồn gốc rõ ràng",
+    title: "Nguồn Gốc Rõ Ràng",
     desc: "Hiệu suất phải đi kèm chú thích nguồn gốc và điều kiện thực hiện cụ thể cho từng thị trường.",
   },
 ];
@@ -451,17 +451,17 @@ export const aboutValues = [
   },
   {
     icon: "/images/ic_mindset.png",
-    title: "Minh bạch tuyệt đối",
+    title: "Minh Bạch Tuyệt Đối",
     desc: "Sự tin cậy được xây dựng từ hệ thống báo cáo và dữ liệu công khai, trung thực.",
   },
   {
     icon: "/images/ic_global_border.png",
-    title: "Con người làm chủ",
+    title: "Con Người Làm Chủ",
     desc: "Lấy con người làm trung tâm của mọi sự phát triển và giá trị tạo ra. Công nghệ hỗ trợ cho nhà đầu tư quyết định cuối cùng.",
   },
   {
     icon: "/images/ic_global_border.png",
-    title: "Bền vững dài hạn",
+    title: "Bền Vững Dài Hạn",
     desc: "Chúng tôi không tìm kiếm lợi nhuận tức thời, mà tập trung vào sự phát triển ổn định kiểm soát rủi ro.",
   },
 ];
@@ -471,12 +471,12 @@ export const aboutValues = [
 export const aboutMainCards = [
   {
     icon: "/images/ic_growth.png",
-    title: "Cơ sở pháp lý",
+    title: "Cơ Sở Pháp Lý",
     desc: "Mọi hoạt động thương mại và vận hành của AVIXO được thực hiện dựa trên sự tuân thủ nghiêm ngặt hệ thống pháp luật hiện hành.",
   },
   {
     icon: "/images/ic_community.png",
-    title: "Quan hệ đối tác Broker",
+    title: "Quan Hệ Đối Tác Broker",
     desc: "AVIXO thiết lập quan hệ đối tác chiến lược với các sàn giao dịch quốc tế sở hữu giấy phép uy tín (FCA, ASIC, CySEC) trong vai trò Introducing Broker (IB). Mối quan hệ này dựa trên các thỏa thuận minh bạch và được kiểm soát chặt chẽ.",
   },
 ];
@@ -484,17 +484,17 @@ export const aboutMainCards = [
 export const aboutSubCards = [
   {
     icon: "/images/ic_traffic.png",
-    title: "Xác minh thực tế",
+    title: "Xác Minh Thực Tế",
     desc: "Sẵn sàng công khai đối soát tài khoản Live đã được xác minh theo yêu cầu của đối tác và khách hàng chiến lược.",
   },
   {
     icon: "/images/ic_traffic.png",
-    title: "Chỉ số rủi ro",
+    title: "Chỉ Số Rủi Ro",
     desc: "Công bố chi tiết Maximum Drawdown và các tham số quản trị rủi ro cho từng dòng sản phẩm.",
   },
   {
     icon: "/images/ic_global_semi.png",
-    title: "Lợi nhuận trung bình",
+    title: "Lợi Nhuận Trung Bình",
     desc: "Báo cáo hiệu suất hàng tháng dựa trên dữ liệu lịch sử thực tế, cung cấp cái nhìn khách quan về kỳ vọng đầu tư.",
   },
 ];
@@ -523,8 +523,8 @@ export const aboutEvents = [
 // ─── Components / ContactModal ────────────────────────────────────────────────
 
 export const CONTACT_SUBJECTS = [
-  { value: "investor", label: "Đầu tư Cá nhân" },
-  { value: "ib", label: "Đối tác IB" },
-  { value: "strategic", label: "Đầu tư chiến lược" },
+  { value: "investor", label: "Đầu Tư Cá Nhân" },
+  { value: "ib", label: "Đối Tác IB" },
+  { value: "strategic", label: "Đầu Tư Chiến Lược" },
 ];
 

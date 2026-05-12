@@ -23,9 +23,9 @@ export function TrackPhilosophy() {
             className="md:w-80 shrink-0 pt-4 self-center"
           >
             <Text as="h2" className="text-3xl md:text-4xl text-[#1D1D1D] leading-16 mb-6">
-              {t("Triết lý")}<br />{t("Minh Bạch")}
+              {t("Triết Lý")}<br />{t("Minh Bạch")}
             </Text>
-            <p className="text-[#505050] text-base leading-6">
+            <p className="text-[#131313] text-base leading-6">
               {t("Tại AVIXO, chúng tôi định nghĩa lại sự tin cậy trong quản lý tài sản số thông qua dữ liệu cứng và quyền truy cập trực tiếp.")}
             </p>
           </motion.div>
@@ -46,7 +46,7 @@ export function TrackPhilosophy() {
                 </div>
                 <div className="flex flex-col bg-white border border-zinc-100 rounded-2xl p-6 shadow-sm">
                   <h3 className="font-semibold text-[#000000] text-lg mb-1">{t(title)}</h3>
-                  <p className="text-sm text-[#505050] leading-5">{t(desc)}</p>
+                  <p className="text-sm text-[#131313] leading-5">{t(desc)}</p>
                 </div>
               </motion.div>
             ))}

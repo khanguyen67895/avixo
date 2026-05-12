@@ -59,8 +59,8 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-125 mx-auto"
         >
-          <Button href="/about" fullWidth className="font-manrope font-semibold">{t("Khám phá AVIXO")}</Button>
-          <Button href="/solutions" variant="outline" fullWidth className="font-manrope font-semibold">{t("Tìm hiểu nhà đầu tư")}</Button>
+          <Button href="/about" fullWidth className="font-manrope font-semibold">{t("Khám Phá AVIXO")}</Button>
+          <Button href="/solutions" variant="outline" fullWidth className="font-manrope font-semibold">{t("Tìm Hiểu Nhà Đầu Tư")}</Button>
         </motion.div>
       </div>
 

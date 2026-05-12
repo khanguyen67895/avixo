@@ -41,7 +41,7 @@ export function TrackHero() {
 
       <div className="relative z-10 flex flex-col items-center text-center px-6">
         <Text as="h1" className="text-3xl sm:text-4xl md:text-6xl tracking-tight text-white mb-2 font-science">
-          {t("Số liệu thực chiến")}
+          {t("Số Liệu Thực Chiến")}
         </Text>
         <motion.p
           initial={{ opacity: 0, y: 16 }}

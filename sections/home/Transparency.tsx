@@ -28,7 +28,7 @@ export function Transparency() {
 
           <div className="relative z-10 max-w-3xl mx-auto px-6 md:px-0">
             <Text as="h2" className="text-2xl sm:text-3xl md:text-4xl tracking-tight text-white mb-6 leading-16">
-              {t("Minh bạch là nền tảng của")}<br />{t("mọi niềm tin")}
+              {t("Minh Bạch Là Nền Tảng Của")}<br />{t("Mọi Niềm Tin")}
             </Text>
 
             <p className="text-white text-sm mb-12 leading-5">
@@ -40,13 +40,13 @@ export function Transparency() {
                 <div className="relative shrink-0 w-5 h-5 mt-0.5">
                   <img src="/images/ic_tick.png" alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }} className="object-contain" />
                 </div>
-                <span className="text-white font-semibold text-lg">{t("Track Record & Minh bạch")}</span>
+                <span className="text-white font-semibold text-lg">{t("Track Record & Minh Bạch")}</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="relative shrink-0 w-5 h-5 mt-0.5">
                   <img src="/images/ic_commit.png" alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }} className="object-contain" />
                 </div>
-                <span className="text-white font-semibold text-lg">{t("Pháp lý & cam kết")}</span>
+                <span className="text-white font-semibold text-lg">{t("Pháp Lý & Cam Kết")}</span>
               </div>
             </div>
           </div>

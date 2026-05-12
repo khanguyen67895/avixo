@@ -14,8 +14,8 @@ export function AboutFounders() {
 
         {/* Heading */}
         <div className="text-center mb-16">
-          <Text className="text-4xl md:text-4xl text-[#1D1D1D] leading-16 mb-3">{t("Đội ngũ sáng lập")}</Text>
-          <p className="text-[#505050] text-base leading-6">{t("Ba Founders — ba thế mạnh bổ trợ nhau — một hệ sinh thái không thể sao chép.")}</p>
+          <Text className="text-4xl md:text-4xl text-[#1D1D1D] leading-16 mb-3">{t("Đội Ngũ Sáng Lập")}</Text>
+          <p className="text-[#131313] text-base leading-6">{t("Ba Founders — ba thế mạnh bổ trợ nhau — một hệ sinh thái không thể sao chép.")}</p>
         </div>
 
         <div className="relative w-full">

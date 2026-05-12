@@ -29,21 +29,21 @@ export function Footer() {
           {/* Links Columns */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-16">
             <div className="flex flex-col gap-4">
-              <Text className="text-white font-semibold text-lg mb-2">{t("Giải pháp")}</Text>
+              <Text className="text-white font-semibold text-lg mb-2">{t("Giải Pháp")}</Text>
               <Link href="/partners?tab=investor" className="text-[#FFFFFF] hover:text-[#00b4ff] text-sm transition-colors">{t("Nhà đầu tư")}</Link>
               <Link href="/partners?tab=ib" className="text-[#FFFFFF] hover:text-[#00b4ff] text-sm transition-colors">{t("Cộng đồng IB")}</Link>
               <Link href="/partners?tab=strategic" className="text-[#FFFFFF] hover:text-[#00b4ff] text-sm transition-colors">{t("Đối tác chiến lược")}</Link>
             </div>
 
             <div className="flex flex-col gap-4">
-              <Text className="text-white font-semibold text-lg mb-2">{t("Sản phẩm")}</Text>
+              <Text className="text-white font-semibold text-lg mb-2">{t("Sản Phẩm")}</Text>
               <Link href="/solutions#semi-bot" className="text-[#FFFFFF] hover:text-[#00b4ff] text-sm transition-colors">SEMI - BOT</Link>
               <Link href="/solutions#full-auto-bot" className="text-[#FFFFFF] hover:text-[#00b4ff] text-sm transition-colors">FULL - AUTO BOT</Link>
               <Link href="/solutions#arrow-big-trend" className="text-[#FFFFFF] hover:text-[#00b4ff] text-sm transition-colors">AI Coaching</Link>
             </div>
 
             <div className="flex flex-col gap-4 col-span-2 md:col-span-1">
-              <Text className="text-white font-semibold text-lg mb-2">{t("Pháp lý")}</Text>
+              <Text className="text-white font-semibold text-lg mb-2">{t("Pháp Lý")}</Text>
               <Link href="/" className="text-[#FFFFFF] hover:text-[#00b4ff] text-sm transition-colors">Legal Policy</Link>
               <Link href="/" className="text-[#FFFFFF] hover:text-[#00b4ff] text-sm transition-colors">Privacy</Link>
               <button onClick={open} className="text-[#FFFFFF] hover:text-[#00b4ff] text-sm transition-colors text-left">{t("Liên hệ")}</button>

@@ -24,9 +24,9 @@ export function AboutHero() {
             className="flex-1 pt-4"
           >
             <Text as="h1" className="text-3xl md:text-6xl text-[#1D1D1D] leading-16 mb-6">
-              {t("Tầm nhìn")}<br />{t("& Sứ mệnh")}
+              {t("Tầm Nhìn")}<br />{t("& Sứ Mệnh")}
             </Text>
-            <p className="text-[#505050] text-base leading-6 max-w-sm">
+            <p className="text-[#131313] text-base leading-6 max-w-sm">
               {t("Không chỉ là công cụ — AVIXO là hệ sinh thái toàn diện nơi công nghệ, dữ liệu và con người cùng tạo giá trị dài hạn trên Forex, Gold, Crypto, Chứng khoán và Hàng hóa.")}
             </p>
           </motion.div>
@@ -88,7 +88,7 @@ export function AboutHero() {
             {stats.map((s, i) => (
               <div key={i} className="flex flex-col gap-1">
                 <Text className="text-4xl text-[#1D1D1D]">{s.value}</Text>
-                <span className="text-base text-[#505050]">{t(s.label)}</span>
+                <span className="text-base text-[#131313]">{t(s.label)}</span>
               </div>
             ))}
           </motion.div>

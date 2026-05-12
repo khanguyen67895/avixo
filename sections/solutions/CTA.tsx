@@ -19,8 +19,8 @@ export function CTA() {
           transition={{ duration: 0.6 }}
         >
           <Text as="h2" className="text-4xl md:text-5xl tracking-tight text-white mb-8">
-            {t("Tham gia hệ sinh thái")} <br className="hidden sm:block" />
-            <span className="text-[#00b4ff]">AVIXO</span> {t("AVIXO hôm nay").replace("AVIXO ", "")}
+            {t("Tham Gia Hệ Sinh Thái")} <br className="hidden sm:block" />
+            <span className="text-[#00b4ff]">AVIXO</span> {t("AVIXO Hôm Nay").replace("AVIXO ", "")}
           </Text>
         </motion.div>
 

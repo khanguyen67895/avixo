@@ -25,7 +25,7 @@ export function Hero() {
           className="w-full md:flex-1 md:pl-80 text-center md:text-left"
         >
           <Text as="h1" className="text-5xl md:text-6xl text-white leading-18 mb-4">
-            {t("Giải pháp")}<br />{t("và công nghệ")}
+            {t("Giải Pháp")}<br />{t("Và Công Nghệ")}
           </Text>
           <p className="text-white text-base md:text-lg leading-6 mx-auto md:mx-0">
             {t("Bộ công cụ toàn diện — từ semi-auto đến AI trading — kiểm chứng 15 năm thực chiến trên 5 thị trường tài chính khốc liệt nhất.")}

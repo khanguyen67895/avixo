@@ -76,7 +76,7 @@ function AnimatedCard({ close }: { close: () => void }) {
         </div>
 
         <Text as={'h2'} className="text-4xl text-[#1D1D1D] mb-3 leading-snug">
-          {t("Liên hệ với AVIXO")}
+          {t("Liên Hệ Với AVIXO")}
         </Text>
         <p className="text-zinc-500 text-sm leading-relaxed max-w-55">
           {t("Chúng tôi luôn sẵn sàng lắng nghe và đồng hành cùng sự phát triển của bạn.")}
@@ -85,7 +85,7 @@ function AnimatedCard({ close }: { close: () => void }) {
 
       {/* ── Right panel ── transparent so ic_bg1 shows through entire card */}
       <div className="relative z-10 flex-1 px-8 py-10 flex flex-col gap-5">
-        <Text as="h3" className="text-2xl font-semibold text-[#1D1D1D]">Gửi yêu cầu hỗ trợ</Text>
+        <Text as="h3" className="text-2xl font-semibold text-[#1D1D1D]">Gửi Yêu Cầu Hỗ Trợ</Text>
 
         {/* Subject */}
         <div>

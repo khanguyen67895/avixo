@@ -5,24 +5,21 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import Button from "../ui/button";
-import { useContactModal } from "./contact-context";
 import { useT } from "@/lib/i18n";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export function Header() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-  const { open: openContact } = useContactModal();
   const t = useT();
 
   const links = [
     { href: "/", label: "Trang Chủ" },
-    { href: "/solutions", label: "Giải pháp" },
-    { href: "/partners", label: "Đối tác" },
-    { href: "/news", label: "Tin tức" },
-    { href: "/track-record", label: "Track record" },
-    { href: "/about", label: "Tìm hiểu AVIXO" },
+    { href: "/solutions", label: "Giải Pháp" },
+    { href: "/partners", label: "Đối Tác" },
+    { href: "/news", label: "Tin Tức" },
+    { href: "/track-record", label: "Track Record" },
+    { href: "/about", label: "Tìm Hiểu AVIXO" },
   ];
 
   return (
@@ -44,7 +41,7 @@ export function Header() {
                 className={`relative py-2 text-[16px] font-medium transition-colors ${
                   isActive
                     ? "bg-clip-text text-transparent bg-linear-to-r from-[#37C0FF] to-[#0076FF]"
-                    : "text-zinc-400 hover:text-white"
+                    : "text-zinc-100 hover:text-[#37C0FF]"
                 }`}
               >
                 {isActive && (

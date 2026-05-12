@@ -29,9 +29,9 @@ export function Founders() {
             as="h2"
             className="text-2xl sm:text-3xl md:text-4xl tracking-tight text-[#1D1D1D] my-4 leading-16"
           >
-            {t("Đội ngũ sáng lập")}
+            {t("Đội Ngũ Sáng Lập")}
           </Text>
-          <p className="text-[#505050] text-base leading-6">
+          <p className="text-[#131313] text-base leading-6">
             {t("Ba Founders — ba thế mạnh bổ trợ nhau — một hệ sinh thái không thể sao chép.")}
           </p>
         </motion.div>
@@ -59,7 +59,7 @@ export function Founders() {
                 <h3 className="text-lg font-semibold text-[#1D1D1D] leading-8 mb-2">
                   {t(founder.name)}
                 </h3>
-                <p className="text-sm text-[#505050] leading-5 mb-6">
+                <p className="text-sm text-[#131313] leading-5 mb-6">
                   {t(founder.desc)}
                 </p>
                 <div className="flex justify-center">

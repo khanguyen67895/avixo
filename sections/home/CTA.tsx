@@ -19,8 +19,8 @@ export function CTA() {
           transition={{ duration: 0.6 }}
         >
           <Text as="h2" className="text-4xl md:text-5xl tracking-tight text-white mb-6">
-            {t("Tham gia hệ sinh thái")} <br className="hidden sm:block" />
-            <span className="text-[#00b4ff]">AVIXO</span> {t("AVIXO hôm nay").replace("AVIXO ", "")}
+            {t("Tham Gia Hệ Sinh Thái")} <br className="hidden sm:block" />
+            <span className="text-[#00b4ff]">AVIXO</span> {t("AVIXO Hôm Nay").replace("AVIXO ", "")}
           </Text>
         </motion.div>
 
@@ -41,8 +41,8 @@ export function CTA() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
-          <Button variant="primary" href="/about">{t("Khám phá AVIXO ngay")}</Button>
-          <Button variant="outline" href="/partners?tab=investor">{t("Hồ sơ nhà đầu tư")}</Button>
+          <Button variant="primary" href="/about">{t("Khám Phá AVIXO Ngay")}</Button>
+          <Button variant="outline" href="/partners?tab=investor">{t("Hồ Sơ Nhà Đầu Tư")}</Button>
         </motion.div>
       </div>
     </section>

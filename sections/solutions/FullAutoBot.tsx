@@ -25,7 +25,7 @@ export function FullAutoBot() {
           <Text as="h2" className="text-3xl md:text-4xl text-[#1D1D1D] leading-16">
             {t("Hệ Thống Giao Dịch Tự Động")}
           </Text>
-          <p className="text-[#505050] text-base md:text-lg max-w-2xl mx-auto">
+          <p className="text-[#131313] text-base md:text-lg max-w-2xl mx-auto">
             {t("Phù hợp với người muốn hệ thống hóa quy trình, tối ưu thời gian và loại bỏ hoàn toàn yếu tố cảm xúc trong giao dịch.")}
           </p>
         </motion.div>
@@ -49,7 +49,7 @@ export function FullAutoBot() {
             <Text as="h3" className="text-xl md:text-2xl font-semibold text-[#1D1D1D] leading-8">
               {t("AUTO BMR")}<br />&amp; {t("SMN · MGH Pro")}
             </Text>
-            <p className="text-[#505050] text-sm mb-8 leading-5">
+            <p className="text-[#131313] text-sm mb-8 leading-5">
               {t("Boomerang Reversal kiểm soát Drawdown, Smart Money bám sát dòng tiền lớn, kết hợp MGH Multi-layer Hedging giúp giảm thiểu rủi ro tối đa trong giai đoạn thị trường biến động mạnh.")}
             </p>
             <div className="flex flex-wrap gap-2 mb-8">
@@ -79,7 +79,7 @@ export function FullAutoBot() {
             <Text as="h3" className="text-xl md:text-2xl font-semibold text-[#1D1D1D] leading-8">
               {t("Arrow Big Trend")}<br />&amp; {t("AI Trading Swing")}
             </Text>
-            <p className="text-[#505050] text-sm mb-8 leading-5">
+            <p className="text-[#131313] text-sm mb-8 leading-5">
               {t("Bot bắt xu hướng lớn kết hợp AI phân tích đa khung thời gian, tự động điều chỉnh tham số theo chu kỳ thị trường, tối ưu tỉ lệ R:R dài hạn cho các vị thế lớn.")}
             </p>
             <div className="flex flex-wrap gap-2 mb-8">

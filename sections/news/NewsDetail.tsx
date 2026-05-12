@@ -47,7 +47,7 @@ export function NewsDetail({ article }: { article: ArticleDetail }) {
             {/* Back */}
             <Link href="/news" className="inline-flex items-center gap-1.5 text-sm text-[#A6A6A6] hover:text-zinc-800 transition-colors mb-6">
               <ArrowLeft size={15} />
-              {t("Quay lại")}
+              {t("Quay Lại")}
             </Link>
 
             {/* Meta top */}
@@ -121,7 +121,7 @@ export function NewsDetail({ article }: { article: ArticleDetail }) {
             {/* Related articles */}
             {related.length > 0 && (
               <div className="mt-12">
-                <Text className="text-3xl font-bold text-[#1D1D1D] mb-6">{t("Tin cùng thể loại")}</Text>
+                <Text className="text-3xl font-bold text-[#1D1D1D] mb-6">{t("Tin Cùng Thể Loại")}</Text>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
                   {related.map(item => (
                     <Link key={item.id} href={`/news/${item.id}`} className="group flex flex-col bg-white border border-[#E5E5E5] rounded-2xl p-2 hover:shadow-md transition-shadow">
@@ -137,7 +137,7 @@ export function NewsDetail({ article }: { article: ArticleDetail }) {
                         <h4 className="text-sm font-bold text-[#1D1D1D] leading-snug mb-1 line-clamp-3 group-hover:text-[#37C0FF] transition-colors">
                           {item.title}
                         </h4>
-                        <p className="text-xs text-[#505050] line-clamp-2">{item.description}</p>
+                        <p className="text-xs text-[#131313] line-clamp-2">{item.description}</p>
                       </div>
                     </Link>
                   ))}
@@ -165,7 +165,7 @@ export function NewsDetail({ article }: { article: ArticleDetail }) {
                       <h4 className="text-sm font-bold text-[#1D1D1D] leading-snug mb-1 line-clamp-2 group-hover:text-[#37C0FF] transition-colors">
                         {item.title}
                       </h4>
-                      <p className="text-xs text-[#505050] line-clamp-2">{item.description}</p>
+                      <p className="text-xs text-[#131313] line-clamp-2">{item.description}</p>
                     </div>
                   </Link>
                 ))}

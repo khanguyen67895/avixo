@@ -15,8 +15,8 @@ export function AboutEvents() {
 
         {/* Heading */}
           <div className="flex flex-col items-center text-center mb-12">
-            <Text as="h2" className="text-4xl md:text-4xl text-[#1D1D1D] leading-16 mb-3">{t("Sự kiện nổi bật")}</Text>
-            <p className="text-[#505050] text-base">{t("Những dấu ấn quan trọng trong hành trình phát triển của AVIXO và cộng đồng đầu tư.")}</p>
+            <Text as="h2" className="text-4xl md:text-4xl text-[#1D1D1D] leading-16 mb-3">{t("Sự Kiện Nổi Bật")}</Text>
+            <p className="text-[#131313] text-base">{t("Những dấu ấn quan trọng trong hành trình phát triển của AVIXO và cộng đồng đầu tư.")}</p>
           </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

@@ -21,8 +21,8 @@ export function AboutLegal() {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <Text className="text-4xl md:text-4xl text-[#1D1D1D] leading-16 mb-6">{t("Pháp lý & minh bạch")}</Text>
-          <p className="text-[#505050] text-base leading-6">
+          <Text className="text-4xl md:text-4xl text-[#1D1D1D] leading-16 mb-6">{t("Pháp Lý & Minh Bạch")}</Text>
+          <p className="text-[#131313] text-base leading-6">
             {t("AVIXO tuyệt đối không đưa ra các cam kết lợi nhuận cố định hay bảo đảm vốn dưới bất kỳ hình thức nào. Chúng tôi giáo dục người dùng về tính rủi ro của thị trường tài chính và khuyến khích sự thận trọng trong mọi quyết định.")}
           </p>
         </motion.div>

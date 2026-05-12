@@ -18,7 +18,7 @@ const variants: Record<Exclude<Variant, "outline">, string> = {
     primary:
         "bg-gradient-to-r from-[#37C0FF] to-[#0076FF] text-white hover:opacity-90 border border-[#0076FF] hover:scale-105 shadow-[0_0_15px_rgba(55,192,255,0.3)]",
     light:
-        "bg-[#EFEFEF] font-semibold text-[#505050] shadow-[inset_0px_1.5px_6px_0px_rgba(255,255,255,1.00),inset_0px_-2px_4px_0px_rgba(137,137,137,0.08)] border border-[#F9F9F9] hover:opacity-90",
+        "bg-[#EFEFEF] font-semibold text-[#131313] shadow-[inset_0px_1.5px_6px_0px_rgba(255,255,255,1.00),inset_0px_-2px_4px_0px_rgba(137,137,137,0.08)] border border-[#F9F9F9] hover:opacity-90",
 };
 
 export default function Button({

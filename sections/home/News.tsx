@@ -32,9 +32,9 @@ export function News() {
           className="text-center mt-8"
         >
           <Text as="h2" className="text-2xl sm:text-3xl md:text-4xl tracking-tight text-[#1D1D1D] leading-16">
-            {t("Tin tức mới nhất")}
+            {t("Tin Tức Mới Nhất")}
           </Text>
-          <p className="text-[#505050] text-base leading-6">
+          <p className="text-[#131313] text-base leading-6">
             {t("Thông tin mới nhất, được tổng hợp từ kinh nghiệm và dữ liệu thực tiễn quốc tế.")}
           </p>
         </motion.div>
@@ -61,7 +61,7 @@ export function News() {
                   <h3 className="text-[#1D1D1D] text-base leading-snug mb-2">
                     {article.title}
                   </h3>
-                  <p className="text-sm text-[#505050] leading-relaxed line-clamp-2">
+                  <p className="text-sm text-[#131313] leading-relaxed line-clamp-2">
                     {article.description}
                   </p>
                 </div>
@@ -86,7 +86,7 @@ export function News() {
           className="px-8 pt-8 pb-20 text-center"
         >
           <Text as="h3" className="text-2xl font-semibold text-[#1D1D1D] mb-2">
-            {t("Nhận tin mới nhất từ chúng tôi")}
+            {t("Nhận Tin Mới Nhất Từ Chúng Tôi")}
           </Text>
           <p className="text-zinc-500 text-sm mb-8">
             {t("Cập nhật bài viết, ưu đãi và thông báo mới qua email.")}

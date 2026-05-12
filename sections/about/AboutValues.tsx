@@ -22,9 +22,9 @@ export function AboutValues() {
             className="md:w-80 shrink-0 self-center"
           >
             <Text className="text-4xl md:text-4xl text-[#1D1D1D] leading-tight mb-6">
-              {t("Giá trị cốt lõi")}<br />{t("tại AVIXO")}
+              {t("Giá Trị Cốt Lõi")}<br />{t("Tại AVIXO")}
             </Text>
-            <p className="text-[#505050] text-base leading-relaxed">
+            <p className="text-[#131313] text-base leading-relaxed">
               {t("AVIXO vận hành như một đơn vị cung cấp giải pháp và công cụ công nghệ giao dịch tiên tiến. Chúng tôi khẳng định:")}
             </p>
           </motion.div>
@@ -45,7 +45,7 @@ export function AboutValues() {
                 </div>
                 <div className="flex flex-col bg-white border border-zinc-100 rounded-2xl p-6 shadow-sm">
                   <h3 className="font-semibold text-lg text-[#1D1D1D] mb-1">{t(title)}</h3>
-                  <p className="text-sm text-[#505050] leading-relaxed">{t(desc)}</p>
+                  <p className="text-sm text-[#131313] leading-relaxed">{t(desc)}</p>
                 </div>
               </motion.div>
             ))}

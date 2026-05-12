@@ -21,9 +21,9 @@ export function TrackRecords() {
           className="text-center mb-16"
         >
           <Text as="h2" className="text-2xl md:text-4xl text-[#1D1D1D] leading-16 mb-4">
-            {t("Những con số minh bạch")}<br />{t("có thể kiểm chứng.")}
+            {t("Những Con Số Minh Bạch")}<br />{t("Có Thể Kiểm Chứng.")}
           </Text>
-          <p className="text-[#505050] text-base">{t("Kết quả giao dịch thực tế từ hệ thống AVIXO.")}</p>
+          <p className="text-[#131313] text-base">{t("Kết quả giao dịch thực tế từ hệ thống AVIXO.")}</p>
         </motion.div>
 
         {/* Phone + stat cards */}
@@ -46,11 +46,11 @@ export function TrackRecords() {
               <div className="w-full flex-1 rounded-2xl border border-zinc-100 bg-white shadow-[0_4px_24px_0_rgba(0,0,0,0.07)] p-6">
                 <div className="flex items-center justify-between mb-4">
                   <div>
-                    <p className="text-[14px] text-[#505050] mb-1">{t("ROI")}</p>
+                    <p className="text-[14px] text-[#131313] mb-1">{t("ROI")}</p>
                     <Text className="text-[24px] text-[#4CAF50]">{r.roi}</Text>
                   </div>
                   <div className="text-right">
-                    <p className="text-[14px] text-[#505050] mb-1">{t("Max drawdown")}</p>
+                    <p className="text-[14px] text-[#131313] mb-1">{t("Max drawdown")}</p>
                     <Text className={`text-[24px] ${i === 1 ? "text-[#FF6900]" : "text-[#FF4D4D]"}`}>{r.drawdown}</Text>
                   </div>
                 </div>

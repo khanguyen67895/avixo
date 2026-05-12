@@ -24,9 +24,9 @@ export function SemiBot() {
             <Tag bordered>SEMI BOT</Tag>
           </div>
           <Text as="h2" className="text-3xl md:text-4xl text-[#1D1D1D] leading-16">
-            {t("Giải pháp giao dịch bán tự động")}
+            {t("Giải Pháp Giao Dịch Bán Tự Động")}
           </Text>
-          <p className="text-[#505050] text-base md:text-lg max-w-2xl mx-auto leading-6">
+          <p className="text-[#131313] text-base md:text-lg max-w-2xl mx-auto leading-6">
             {t("Phù hợp với nhà đầu tư đã có kinh nghiệm, muốn giữ quyền quyết định cuối cùng và cần công cụ trợ lực mạnh mẽ.")}
           </p>
         </motion.div>
@@ -43,7 +43,7 @@ export function SemiBot() {
           <Text as="h3" className="text-2xl md:text-2xl font-semibold text-[#1D1D1D] mb-2">
             {t("Semi Boomerang")}<br />&amp; {t("Smart Money")}
           </Text>
-          <p className="text-[#505050] text-[16px] mb-8 leading-6">
+          <p className="text-[#131313] text-[16px] mb-8 leading-6">
             {t("Chiến lược hồi giá kết hợp Smart Money / Liquidity / Order Flow. Hỗ trợ phân tích vùng cung cầu, BOS, CHoCH")}
           </p>
 
@@ -60,7 +60,7 @@ export function SemiBot() {
                 <img src={f.icon} alt="" className="w-6 h-6 object-contain shrink-0 mt-1" />
                 <div>
                   <p className="font-semibold text-zinc-900 text-lg">{t(f.title)}</p>
-                  <p className="text-[#505050] text-[14px] mt-0.5 leading-relaxed">{t(f.desc)}</p>
+                  <p className="text-[#131313] text-[14px] mt-0.5 leading-relaxed">{t(f.desc)}</p>
                 </div>
               </motion.div>
             ))}

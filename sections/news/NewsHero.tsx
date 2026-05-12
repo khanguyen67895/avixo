@@ -71,7 +71,7 @@ export function NewsHero() {
                   </div>
                   <div className="flex flex-col p-1">
                     <h4 className="text-[16px] text-[#1D1D1D] leading-snug mt-2 line-clamp-2">{item.title}</h4>
-                    <p className="text-[14px] text-[#505050] leading-relaxed line-clamp-2">{item.description}</p>
+                    <p className="text-[14px] text-[#131313] leading-relaxed line-clamp-2">{item.description}</p>
                   </div>
                 </Link>
               ))}
