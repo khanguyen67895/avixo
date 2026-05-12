@@ -1,11 +1,5 @@
 import React from "react";
 import clsx from "clsx";
-import { Science_Gothic } from "next/font/google";
-
-export const scienceGothic = Science_Gothic({
-  subsets: ["latin", "vietnamese"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-});
 
 type TextProps = {
   as?: React.ElementType;
@@ -21,7 +15,7 @@ export default function Text({
 }: TextProps) {
   return (
     <Component
-      className={clsx(scienceGothic.className, className)}
+      className={clsx("font-(family-name:--font-science-gothic)", className)}
       {...props}
     >
       {children}

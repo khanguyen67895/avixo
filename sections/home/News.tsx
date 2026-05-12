@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
+import { NewsImage } from "@/components/ui/NewsImage";
 import { useQuery } from "@tanstack/react-query";
 import Text from "@/components/ui/label";
 import { GlowBackground } from "@/components/common/GlowBackground";
@@ -50,7 +50,7 @@ export function News() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="bg-white h-69.5 rounded-[20px] shadow-[0_2px_16px_rgba(0,0,0,0.07)] overflow-hidden cursor-pointer hover:shadow-[0_4px_24px_rgba(0,0,0,0.12)] transition-shadow p-2"
               >
-                  <Image
+                  <NewsImage
                     src={article.imageUrl ?? FALLBACK_IMG}
                     alt={article.title}
                     height={365}

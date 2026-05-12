@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { createPortal } from "react-dom";
 import { useContactModal } from "./contact-context";
+import Text from "../ui/label";
 import { useT } from "@/lib/i18n";
 
 import { CONTACT_SUBJECTS as SUBJECTS } from "@/lib/constants";
@@ -51,7 +52,7 @@ function AnimatedCard({ close }: { close: () => void }) {
       animate={{ opacity: 1, scale: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.95, y: 20 }}
       transition={{ duration: 0.28, ease: "easeOut" }}
-      className="relative w-full max-w-4xl rounded-[28px] overflow-hidden shadow-2xl flex flex-col md:flex-row bg-white"
+      className="relative w-full max-w-6xl rounded-[28px] shadow-2xl flex flex-col md:flex-row bg-white max-h-[90dvh] overflow-y-auto"
     >
       {/* <img src="/images/ic_bg1.png" alt="" className="object-cover pointer-events-none absolute inset-0 w-full h-full" /> */}
 
@@ -63,8 +64,8 @@ function AnimatedCard({ close }: { close: () => void }) {
         <X size={16} />
       </button>
 
-      {/* ── Left panel ── transparent, bg shows through */}
-      <div className="relative z-10 flex flex-col items-center justify-center text-center px-10 py-12 md:w-[40%]">
+      {/* ── Left panel ── hidden on mobile */}
+      <div className="hidden md:flex relative z-10 flex-col items-center justify-center text-center px-10 py-12 md:w-[40%]">
         <div className="relative w-36 h-36 mb-6">
           <img
             src="/images/ic_investor.png"
@@ -74,17 +75,17 @@ function AnimatedCard({ close }: { close: () => void }) {
           />
         </div>
 
-        <h2 className="text-2xl font-bold text-zinc-900 mb-3 leading-snug">
+        <Text as={'h2'} className="text-4xl text-[#1D1D1D] mb-3 leading-snug">
           {t("Liên hệ với AVIXO")}
-        </h2>
-        <p className="text-zinc-500 text-sm leading-relaxed max-w-[220px]">
+        </Text>
+        <p className="text-zinc-500 text-sm leading-relaxed max-w-55">
           {t("Chúng tôi luôn sẵn sàng lắng nghe và đồng hành cùng sự phát triển của bạn.")}
         </p>
       </div>
 
       {/* ── Right panel ── transparent so ic_bg1 shows through entire card */}
       <div className="relative z-10 flex-1 px-8 py-10 flex flex-col gap-5">
-        <h3 className="text-lg font-bold text-zinc-900">{t("Gửi yêu cầu hỗ trợ")}</h3>
+        <Text as="h3" className="text-2xl font-semibold text-[#1D1D1D]">Gửi yêu cầu hỗ trợ</Text>
 
         {/* Subject */}
         <div>
@@ -177,7 +178,7 @@ function AnimatedCard({ close }: { close: () => void }) {
           type="button"
           onClick={handleSubmit}
           disabled={loading}
-          className="w-full py-3.5 rounded-full bg-gradient-to-r from-[#37C0FF] to-[#0076FF] text-white font-semibold text-sm hover:opacity-90 active:scale-[0.98] transition-all shadow-[0_4px_20px_rgba(55,192,255,0.35)] disabled:opacity-60 disabled:cursor-not-allowed"
+          className="w-full py-3.5 rounded-full bg-linear-to-r from-[#37C0FF] to-[#0076FF] text-white font-semibold text-sm hover:opacity-90 active:scale-[0.98] transition-all shadow-[0_4px_20px_rgba(55,192,255,0.35)] disabled:opacity-60 disabled:cursor-not-allowed"
         >
           {loading ? t("Đang gửi...") : t("Gửi tin nhắn ngay")}
         </button>
@@ -200,7 +201,7 @@ export function ContactModal() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+          className="fixed inset-0 z-200 flex items-center justify-center p-4"
           style={{ background: "rgba(0,0,0,0.45)", backdropFilter: "blur(4px)" }}
           onClick={(e) => { if (e.target === e.currentTarget) close(); }}
         >

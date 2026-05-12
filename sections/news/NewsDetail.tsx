@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { NewsImage } from "@/components/ui/NewsImage";
 import Link from "next/link";
 import { ArrowLeft, Heart, Share2 } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
@@ -67,7 +67,7 @@ export function NewsDetail({ article }: { article: ArticleDetail }) {
 
             {/* Featured image */}
             <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-zinc-100 mb-8">
-              <Image
+              <NewsImage
                 src={article.imageUrl ?? FALLBACK_IMG}
                 alt={article.title}
                 fill
@@ -126,7 +126,7 @@ export function NewsDetail({ article }: { article: ArticleDetail }) {
                   {related.map(item => (
                     <Link key={item.id} href={`/news/${item.id}`} className="group flex flex-col bg-white border border-[#E5E5E5] rounded-2xl p-2 hover:shadow-md transition-shadow">
                       <div className="relative w-full aspect-4/3 rounded-xl overflow-hidden bg-zinc-100">
-                        <Image
+                        <NewsImage
                           src={item.imageUrl ?? FALLBACK_IMG}
                           alt={item.title}
                           fill
@@ -154,7 +154,7 @@ export function NewsDetail({ article }: { article: ArticleDetail }) {
                 {hot.map(item => (
                   <Link key={item.id} href={`/news/${item.id}`} className="group flex flex-col bg-white border border-[#E5E5E5] rounded-2xl p-2 hover:shadow-md transition-shadow">
                     <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-zinc-100">
-                      <Image
+                      <NewsImage
                         src={item.imageUrl ?? FALLBACK_IMG}
                         alt={item.title}
                         fill

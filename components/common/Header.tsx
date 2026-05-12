@@ -99,10 +99,6 @@ export function Header() {
               </Link>
             );
           })}
-          <div className="pt-3 mt-1 border-t border-white/5 flex flex-col gap-3">
-            <LanguageSwitcher className="self-start" />
-            <Button fullWidth onClick={() => { setMenuOpen(false); openContact(); }}>{t("Liên hệ ngay")}</Button>
-          </div>
         </div>
       )}
     </header>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Manrope } from "next/font/google";
+import { Geist, Geist_Mono, Manrope, Science_Gothic } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 import { Header } from "@/components/common/Header";
@@ -20,6 +20,12 @@ const manrope = Manrope({
   subsets: ["latin"],
 });
 
+const scienceGothic = Science_Gothic({
+  variable: "--font-science-gothic",
+  subsets: ["latin", "vietnamese"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
+
 export const metadata: Metadata = {
   title: "Live to trade. Trade to live",
   description: "Live to trade. Trade to live",
@@ -38,7 +44,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${manrope.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${manrope.variable} ${scienceGothic.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-black text-white">
         <Providers>

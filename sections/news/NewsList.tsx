@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import { NewsImage } from "@/components/ui/NewsImage";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useQuery } from "@tanstack/react-query";
@@ -70,7 +70,7 @@ export function NewsList() {
                   transition={{ duration: 0.4, delay: i * 0.05 }}
                   className="bg-white p-2 rounded-2xl border border-[#E5E5E5] shadow-sm overflow-hidden hover:shadow-md transition-shadow group"
                 >
-                    <Image
+                    <NewsImage
                       src={article.imageUrl ?? FALLBACK_IMG}
                       alt={article.title}
                       width={367}
