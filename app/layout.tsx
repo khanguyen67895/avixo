@@ -28,11 +28,11 @@ const scienceGothic = Science_Gothic({
 
 export const metadata: Metadata = {
   title: "Live to trade. Trade to live",
-  description: "Live to trade. Trade to live",
+  description: "An intelligent investment ecosystem powered by Big Data & AI",
   icons: {
-    icon: "/images/ic_logo.png",
-    shortcut: "/images/ic_logo.png",
-    apple: "/images/ic_logo.png",
+    icon: "/images/ic_logo.svg",
+    shortcut: "/images/ic_logo.svg",
+    apple: "/images/ic_logo.svg",
   },
 };
 

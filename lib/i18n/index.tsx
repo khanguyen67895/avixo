@@ -19,6 +19,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     try {
       const saved = (typeof window !== "undefined" ? window.localStorage.getItem(STORAGE_KEY) : null) as Locale | null;
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       if (saved === "vi" || saved === "en") setLocaleState(saved);
     } catch {}
   }, []);
