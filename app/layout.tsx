@@ -30,9 +30,9 @@ export const metadata: Metadata = {
   title: "Live to trade. Trade to live",
   description: "An intelligent investment ecosystem powered by Big Data & AI",
   icons: {
-    icon: "/images/ic_logo.svg",
-    shortcut: "/images/ic_logo.svg",
-    apple: "/images/ic_logo.svg",
+    icon: "/images/ic_favicon.svg",
+    shortcut: "/images/ic_favicon.svg",
+    apple: "/images/ic_logo@3x.png",
   },
 };
 
