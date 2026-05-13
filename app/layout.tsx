@@ -34,6 +34,20 @@ export const metadata: Metadata = {
     shortcut: "/images/ic_favicon.svg",
     apple: "/images/ic_logo@3x.png",
   },
+  openGraph: {
+    title: "Live to trade. Trade to live",
+    description: "An intelligent investment ecosystem powered by Big Data & AI",
+    url: "https://avixo.trading",
+    siteName: "Avixo",
+    images: [{ url: "/images/ic_logo@3x.png", width: 192, height: 192 }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Live to trade. Trade to live",
+    description: "An intelligent investment ecosystem powered by Big Data & AI",
+    images: ["/images/ic_logo@3x.png"],
+  },
 };
 
 export default function RootLayout({
